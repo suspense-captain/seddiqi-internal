@@ -1,0 +1,108 @@
+@import "./../../../assets/styles/main.scss";
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(20);
+  border-bottom: rem(1) solid getColorHex("grey-light-5");
+  padding: rem(13 0);
+  @include md {
+    margin-bottom: rem(32);
+  }
+  .searchIcon {
+    margin-right: rem(12);
+    [dir="rtl"] & {
+      margin-left: rem(12);
+    }
+    @include md {
+      margin-right: rem(20);
+      [dir="rtl"] & {
+        margin-left: rem(20);
+      }
+    }
+  }
+
+  .searchInput {
+    border: none;
+    outline: none;
+    flex: 1;
+    @include body_regular;
+    font-size: rem(12);
+    color: getColorHex("green-metallic");
+    @include md {
+      font-size: rem(14);
+    }
+  }
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(13);
+  cursor: pointer;
+}
+
+.checkboxInput {
+  display: none;
+}
+
+.customCheckbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(20);
+  height: rem(20);
+  margin-right: rem(8);
+  [dir="rtl"] & {
+    margin-left: rem(8);
+  }
+  .checkboxTickbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .tickIcon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 26%;
+    top: 7%;
+    [dir="rtl"] & {
+      right: 26%;
+    }
+  }
+}
+
+.checkboxTitle {
+  font-size: rem(12);
+  color: getColorHex("grey");
+  @include md {
+    font-size: rem(14);
+  }
+}
+
+.checkboxLabel > .checkboxTickbox + p {
+  margin: 0;
+}
+
+.viewMoreButton {
+  button {
+    background: none;
+    border: none;
+    color: getColorHex("black-dark");
+    cursor: pointer;
+    margin: rem(0 0 8);
+    border-bottom: rem(1) solid getColorHex("black-dark");
+    padding: rem(5 0);
+    @include md {
+      margin: rem(0 0 23);
+    }
+  }
+}

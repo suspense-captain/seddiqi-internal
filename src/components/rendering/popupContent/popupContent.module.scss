@@ -1,0 +1,79 @@
+@import "./../../../assets/styles/main.scss";
+
+.contentContainer {
+  width: rem(280);
+  height: rem(280);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   gap: rem(10);
+  @include md {
+    width: rem(480);
+    height: rem(420);
+    gap: rem(20);
+  }
+  .popupText {
+    width: rem(280);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: rem(15);
+    gap: rem(12);
+    @include md {
+    width: rem(480);
+    }
+    .popupHeader {
+      font-size: rem(12);
+      line-height: rem(18);
+      font-weight: 500;
+      @include heading_regular;
+      text-transform: uppercase;
+      letter-spacing: rem(0.4);
+      text-align: center;
+      margin-top: rem(0);
+      margin-bottom: rem(0);
+      color: getColorHex("black-dark");
+      @include md {
+        font-size: rem(16);
+        line-height: rem(20);
+      }
+    }
+
+    .popupSubtext {
+      font-weight: 300;
+      font-size: rem(14);
+      line-height: rem(22);
+      letter-spacing: rem(0.2);
+      text-align: center;
+      @include body_regular;
+      color: getColorHex("grey-mid");
+      margin-top: rem(0);
+      @include md {
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(26);
+      }
+    }
+  }
+
+  .bar {
+    width: rem(280);
+    height: rem(1);
+    background: getColorHex("grey-light");
+    [dir="rtl"] & {
+      margin: 0;
+    }
+    @include md {
+      width: rem(384);
+    }
+  }
+
+  .iconContainer {
+    width: rem(232);
+    margin-top: rem(27);
+    @include md {
+      width: 100%;
+    }
+  }
+}

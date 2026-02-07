@@ -1,0 +1,161 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, rem(502));
+  // justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  // margin: rem(60) 0 0 0;
+  gap: rem(32);
+  @include iphone12-fix {
+    gap: unset;
+
+    & > * {
+      padding-bottom: rem(60);
+    }
+    & > *:last-child {
+      padding-bottom: rem(0);
+    }
+  }
+  width: 100%;
+  justify-content: center;
+
+  @include md {
+    gap: rem(120);
+    // margin: rem(120) 0 0 0;
+  }
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  .columnOne,
+  .columnTwo {
+    display: flex;
+    margin: 0 rem(32);
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: rem(16) 0 rem(16) 0;
+    max-width: rem(502);
+
+    .label {
+      background-color: getColorHex("tint-grey");
+      padding: rem(6) rem(12);
+      display: inline-block;
+      min-width: rem(60);
+      width: auto;
+      margin: 0 auto;
+      font-size: rem(10);
+      text-transform: uppercase;
+      margin-bottom: rem(24);
+      border-radius: rem(4) 0;
+      p{
+        margin: 0;
+        color: getColorHex("brown-dark");
+      }
+    }
+
+    .containerWrapper {
+      margin-bottom: rem(32);
+
+      @include lg {
+        margin-bottom: rem(60);
+      }
+    }
+
+    @include md {
+      margin: 0;
+    }
+
+    .columnContent {
+      display: flex;
+      flex-direction: column;
+      gap: rem(24);
+      @include iphone12-fix {
+        gap: unset;
+
+        & > * {
+          margin-top: rem(24);
+        }
+      }
+      // background-color: rgb(209, 209, 34);
+      align-items: center;
+
+      [dir="rtl"] & {
+        align-items: center;
+      }
+    }
+    .image {
+      border-radius: rem(16 0);
+      object-fit: cover;
+      // width: 100%;
+      height: rem(448);
+      border-radius: rem(16) 0 rem(16) 0;
+      overflow: hidden;
+
+      @include md {
+        padding: 0;
+        width: rem(502);
+        height: rem(700);
+      }
+    }
+  }
+  .columnTwo {
+    .image {
+      margin-bottom: rem(32);
+
+      @include md {
+        margin-bottom: rem(60);
+      }
+    }
+  }
+}
+
+.headingPrimary {
+  color: getColorHex("opulent-bronze");
+  margin: 0;
+  @include heading_light;
+}
+
+.headingSecondary {
+  line-height: rem(26);
+  letter-spacing: rem(0.4);
+  color: getColorHex("black-dark");
+  @include body_regular;
+
+  h2{
+    color: getColorHex("opulent-bronze");
+  }
+}
+
+.titleColor {
+  color: getColorHex("opulent-bronze");
+}
+
+.subTitleColor {
+  color: getColorHex("black-dark");
+}
+
+.barColor {
+  background: getColorHex("metallic");
+}
+
+.desc {
+  text-align: center;
+
+  p{
+    margin: 0;
+  }
+}
+
+.bar {
+  width: rem(70);
+  height: rem(2);
+  background: getColorHex("metallic");
+}
+
+.discoverBtn {
+  text-transform: capitalize;
+}

@@ -1,0 +1,34 @@
+@import "../../assets/styles/main.scss";
+
+.storiesContainer h2 {
+  margin-bottom: rem(20);
+}
+
+.searchStoryTitle {
+  margin-bottom: rem(24);
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+  text-transform: uppercase;
+  color: getColorHex("grey");
+}
+
+.viewAllBtn {
+  text-transform: capitalize;
+}
+.viewAllBtnContainer {
+  margin-top: rem(24);
+}
+.storyCards {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: rem(24);
+}
+
+.storyCard {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  @include md{
+    flex: 1 1 calc(40% - 40px);
+  }
+}

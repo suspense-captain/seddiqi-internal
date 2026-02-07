@@ -1,0 +1,26 @@
+@import "./../../../assets/styles/main.scss";
+
+.brandSearchContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.brandListingContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.brandsButton{
+  max-width: rem(183);
+  margin: rem(30) auto 0;
+  
+  @include lg{
+    margin: rem(60) auto 0;
+  }
+}

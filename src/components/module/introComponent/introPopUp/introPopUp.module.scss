@@ -1,0 +1,193 @@
+@import "./../../../../assets/styles/main.scss";
+
+.container {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: getColorHex("white");
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  gap: rem(40);
+  flex-direction: column;
+  overflow-y: scroll;
+
+  @include breakpoint-min-width(rem(1250)) {
+    align-items: center;
+    justify-content: center;
+    gap: rem(100);
+    flex-direction: row;
+  }
+
+  .section {
+    margin: rem(60 78);
+    background: getColorHex("white");
+    display: flex;
+    gap: rem(40);
+    flex-direction: column;
+
+    @include breakpoint-min-width(rem(1250)) {
+      justify-content: center;
+      max-width: rem(1030);
+      margin: 0;
+      gap: rem(100);
+      width: 100%;
+      flex-direction: row;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: rem(16) 0;
+  max-height: rem(340);
+  flex: 1;
+  min-height: rem(340);
+  z-index: 100;
+
+  video {
+    height: rem(535) !important;
+    width: 100%;
+    object-fit: cover;
+    border-radius: rem(16) 0;
+  }
+
+  @include breakpoint-min-width(rem(1250)) {
+    min-height: rem(535);
+    flex-direction: row;
+    min-width: rem(400);
+    max-width: rem(400);
+    max-height: rem(535);
+  }
+}
+
+.imgFull {
+  max-width: 100%;
+}
+
+.image2 {
+  flex: 1;
+  object-fit: cover;
+  width: 100%;
+  // min-width: rem(400);
+  // min-height: rem(535);
+  height: rem(535);
+}
+
+.closeIcon {
+  z-index: 99999;
+  cursor: pointer;
+  // width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: rem(-50);
+
+  @include breakpoint-min-width(rem(1250)) {
+    width: auto;
+    position: absolute;
+    right: rem(80);
+    top: rem(80);
+  }
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.title {
+  @include heading_regular;
+  color: getColorHex("green-dark");
+  margin: 0;
+  font-size: rem(18) !important;
+  font-weight: 500;
+  line-height: rem(26) !important;
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  
+  @include md {
+    font-size: rem(40);
+    line-height: rem(46);
+
+  }
+}
+
+.description {
+  @include body_regular;
+  color: getColorHex("green-dark");
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  p {
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+
+}
+
+.cta {
+  text-transform: capitalize;
+  display: inline-block;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+
+.descriptionWrapper {
+  position: relative;
+  cursor: pointer;
+
+  &.expanded .description {
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  @include md {
+    cursor: default;
+
+    .description {
+      display: block;
+      -webkit-line-clamp: unset;
+      -webkit-box-orient: unset;
+      overflow: visible;
+      text-overflow: unset;
+    }
+
+    .ellipsisOverlay {
+      display: none;
+    }
+  }
+}
+
+.ellipsisOverlay {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: rem(26);
+  width: 100%;
+  // background: linear-gradient(to bottom, transparent 0%, white 90%);
+  cursor: pointer;
+}

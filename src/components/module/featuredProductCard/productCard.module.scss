@@ -1,0 +1,105 @@
+@import "./../../../assets/styles/main.scss";
+
+
+.productContainer {
+  // min-width: rem(348);
+  height: rem(594);
+  background-color: getColorHex("white");
+  // padding: rem(16);
+  padding-top: rem(0);
+  border: rem(1) solid getColorHex("grey-light-4", 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: background-color 0.3s ease;
+  border-left: none; 
+
+
+  .productTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    svg {
+      margin: rem(16);
+    }
+  }
+
+  .newContainer {
+    padding: rem(6 12);
+    background-color: getColorHex("green-greyish");
+    display: inline-block;
+    gap: rem(10);
+    border-radius: rem(4);
+    cursor: pointer;
+    margin: rem(16);
+
+    .new {
+      font-size: rem(10);
+      font-weight: 400;
+      line-height: rem(14);
+      letter-spacing: rem(0.4);
+      text-align: left;
+      color: getColorHex("black-dark");
+      text-transform: uppercase;
+    }
+  }
+
+  .productBottom {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+    align-items: center;
+    padding: 0 rem(28) rem(40) rem(28);
+
+    [dir="rtl"] & { 
+      align-items: flex-start;
+    }
+
+    .title,
+    .price {
+      @include heading_light; 
+      text-transform: uppercase;
+      [dir="rtl"] & { 
+       text-align: right;
+      }
+    }
+
+    .title {
+      color: getColorHex("grey-space");
+    }
+    
+    .price {
+      color: getColorHex("black");
+    }
+
+    .type {
+      @include body_regular; 
+      font-size: rem(18);
+      line-height: rem(28);
+      letter-spacing: rem(0.4);
+      text-align: center;
+      color: getColorHex("grey");
+    }
+  }
+
+  .imgContainer {
+    position: relative;
+    width: rem(275);
+    width: 100%;
+    height: rem(464);
+    margin: 0 auto;
+    z-index: 10;
+  }
+}
+
+.firstItem {
+  border-left: rem(1) solid getColorHex("grey-light-4", 0.4);
+}
+

@@ -1,0 +1,62 @@
+@import "./../../../../assets/styles/rolex/rolexMain.scss";
+
+.rolexTwoColumnImageWrapper {
+  padding: 0 rem(28);
+
+  .title,
+  .description {
+    max-width: rem(620);
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .title {
+    font-size: rem(30);
+    line-height: rem(24);
+    font-weight: 700;
+    margin-bottom: rem(20);
+    color: getColorHex("rolex-brown");
+
+    @include md {
+      font-size: rem(40);
+      line-height: rem(44);
+    }
+  }
+
+  .description {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 300;
+    margin-bottom: rem(60);
+    color: getColorHex("rolex-black");
+    @include md {
+      margin-bottom: rem(90);
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    gap: rem(12);
+    flex-direction: column;
+
+    @include md {
+      flex-direction: row;
+      gap: rem(8);
+    }
+
+    .image {
+      object-fit: cover;
+      display: block;
+
+      max-width: rem(336);
+      height: rem(380);
+      margin: 0 auto;
+
+      @include md {
+        max-width: rem(500);
+        height: rem(556);
+      }
+    }
+  }
+}

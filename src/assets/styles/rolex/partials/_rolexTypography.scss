@@ -1,0 +1,170 @@
+@mixin rolex_light {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin rolex_regular {
+  font-family: "Helvetica", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin rolex_bold {
+  font-family: "Helvetica", sans-serif !important;
+  font-weight: 700;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+
+.rolex {
+  @include rolex_regular;
+
+  div{
+    @include rolex_regular();
+  }
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include rolex_bold();
+
+    em {
+      font-style: italic;
+    }
+  }
+
+
+  .h1,
+  h1 {
+    font-size: rem(34);
+    line-height: rem(40);
+    @include md {
+      font-size: rem(48);
+      line-height: rem(54);
+    }
+  }
+  .h2,
+  h2 {
+    font-size: rem(28);
+    line-height: rem(34);
+    @include md {
+      font-size: rem(40);
+      line-height: rem(46);
+    }
+  }
+  .h3,
+  h3 {
+    font-size: rem(22);
+    line-height: rem(30);
+    @include md {
+      font-size: rem(32);
+      line-height: rem(38);
+    }
+  }
+  .h4,
+  h4 {
+    font-size: rem(18);
+    line-height: rem(26);
+    @include md {
+      font-size: rem(26);
+      line-height: rem(32);
+    }
+  }
+  .h5,
+  h5 {
+    font-size: rem(14);
+    line-height: rem(20);
+    @include md {
+      font-size: rem(20);
+      line-height: rem(26);
+    }
+  }
+  .h6,
+  h6 {
+    font-size: rem(16);
+    line-height: rem(20);
+  }
+
+  .rich-text,
+  .rich-text p,
+  .rich-text span {
+    @include rolex_regular();
+    font-size: rem(16);
+    letter-spacing: rem(0.4);
+    line-height: rem(26);
+
+    @include md {
+      font-size: rem(20);
+      line-height: rem(28);
+    }
+  }
+
+  .rich-text strong {
+    @include rolex_bold();
+  }
+
+  .rich-text a {
+    text-decoration: underline;
+  }
+
+  .rich-text ul,
+  .rich-text ol {
+    padding-left: rem(0);
+    list-style-position: inside;
+
+    p {
+      display: inline-block;
+    }
+  }
+
+  .rich-text iframe {
+    width: 100%;
+    height: 100%;
+    min-height: rem(350);
+
+    @include md {
+      min-height: rem(500);
+    }
+  }
+
+  .rich-text h1,
+  .rich-text h2,
+  .rich-text h3,
+  .rich-text h4,
+  .rich-text h5,
+  .rich-text h6 {
+    margin-top: rem(12);
+    margin-bottom: rem(8);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  transition: padding 0.3s ease;
+  padding-top: rem(120);
+
+  @include md{
+    padding-top: rem(152);
+  }
+
+  &.scrolledPadding{
+
+    @include md{
+      padding-top: rem(78);
+    }
+  }
+}

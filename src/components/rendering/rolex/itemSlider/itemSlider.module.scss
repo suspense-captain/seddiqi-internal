@@ -1,0 +1,264 @@
+@import "./../../../../assets/styles/rolex/rolexMain.scss";
+
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  @include iphone12-fix {
+    gap: unset;
+    & > *:first-child {
+      padding-bottom: rem(16);
+    }
+  }
+  padding: 0 rem(28);
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: rem(1220);
+
+  @include md {
+    max-width: rem(1320);
+    padding: 0 rem(60);
+  }
+
+  @include xl {
+    max-width: rem(1460);
+    padding: 0 rem(120);
+  }
+
+  .title {
+    @include rolex_bold;
+    font-size: rem(20);
+    letter-spacing: rem(0.6);
+    line-height: rem(28);
+    color: getColorHex("rolex-brown");
+    margin: 0;
+    color: #462c1f;
+
+    @include md {
+      font-size: rem(28);
+      line-height: rem(32);
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .sliderSwiper {
+    @include md {
+      overflow: visible;
+    }
+    opacity: 0;
+
+    &:global(.swiper-initialized) {
+      opacity: 1;
+    }
+
+    & > div {
+      & + div {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='16' fill='%23F2F2F2'/%3E%3Cg clip-path='url(%23clip0_210_5134)'%3E%3Cpath d='M20.5 16L19.2 17.4L13.1 23.5L11.6 22L17.7 15.9L11.5 9.9L13 8.5L19.1 14.6L20.5 16Z' fill='%23212121'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_210_5134'%3E%3Crect width='15' height='15' fill='white' transform='translate(8.5 8.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='16' fill='%23F2F2F2'/%3E%3Cpath d='M19 16L18.1333 16.9333L14.0667 21L13.0667 20L17.1333 15.9333L13 11.9333L14 11L18.0667 15.0667L19 16Z' fill='%23462C1F'/%3E%3C/svg%3E%0A");
+        background-size: rem(32);
+        width: rem(32);
+        height: rem(32);
+
+        @include md {
+          display: block;
+        }
+
+        &:after {
+          content: none;
+        }
+
+        &:global(.swiper-button-prev) {
+          transform: translateY(-50%) rotate(-180deg);
+
+          @include md {
+            display: flex;
+            left: rem(-46);
+          }
+
+          @include xl {
+            left: rem(-76);
+          }
+        }
+
+        &:global(.swiper-button-next) {
+          @include md {
+            display: flex;
+            right: rem(-46);
+          }
+
+          @include xl {
+            right: rem(-76);
+          }
+        }
+
+        &:global(.swiper-button-disabled) {
+          display: none;
+        }
+      }
+
+      &:global(.swiper-pagination) {
+        display: flex;
+        gap: rem(6);
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        background: none;
+        position: relative;
+        border: 0;
+        top: auto;
+        bottom: auto;
+        transform: translate(0, 0);
+        margin: rem(26) 0 0;
+
+        @include md {
+          margin: rem(38) 0 0;
+        }
+
+        & > span {
+          margin: 0;
+          background: getColorHex("rolex-grey");
+          opacity: 1;
+          border-radius: 0;
+          width: rem(16);
+          height: rem(2);
+          transition: width 0.3s ease;
+
+          &:global(.swiper-pagination-bullet-active) {
+            background-color: getColorHex("rolex-green");
+            width: rem(40);
+          }
+        }
+      }
+    }
+  }
+
+  .sliderSlide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: opacity 0.3s ease;
+
+    @include md {
+      max-width: none;
+    }
+
+    &.hiddenSlide {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .imgHeight {
+    height: rem(112);
+    width: auto;
+    object-fit: cover;
+
+    @include md {
+      height: rem(200);
+      width: rem(300);
+    }
+  }
+
+  .sliderLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(12);
+    @include iphone12-fix {
+      gap: unset;
+      & > *:first-child {
+        padding-bottom: rem(12);
+      }
+    }
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .sliderText {
+    @include rolex_bold;
+    font-size: rem(14);
+    letter-spacing: rem(0.4);
+    line-height: rem(22);
+    color: getColorHex("rolex-brown");
+    display: flex;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    color: #462c1f;
+
+    @include md {
+      font-size: rem(16);
+      line-height: rem(20);
+    }
+
+    &:hover {
+      color: getColorHex("green-rolex");
+    }
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .sliderButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='16' fill='%23F2F2F2'/%3E%3Cg clip-path='url(%23clip0_210_5134)'%3E%3Cpath d='M20.5 16L19.2 17.4L13.1 23.5L11.6 22L17.7 15.9L11.5 9.9L13 8.5L19.1 14.6L20.5 16Z' fill='%23212121'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_210_5134'%3E%3Crect width='15' height='15' fill='white' transform='translate(8.5 8.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: rem(32);
+    width: rem(32);
+    height: rem(32);
+
+    @include md {
+      display: block;
+    }
+  }
+
+  .sliderButtonPrev {
+    transform: translateY(-50%) rotate(-180deg);
+
+    @include md {
+      left: rem(-22);
+    }
+
+    @include xl {
+      left: rem(-44);
+    }
+  }
+
+  .sliderButtonNext {
+    @include md {
+      right: rem(-22);
+    }
+
+    @include xl {
+      right: rem(-44);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+}

@@ -1,0 +1,175 @@
+@import "./../../../assets/styles/main.scss";
+
+.accountPopupContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: rem(32) rem(28);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.isShowing{
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.underlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(getColorHex("black-dark"), 0.6);background: rgba(getColorHex("black-dark"), 0.6);
+}
+
+.popupContentsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: rem(28);
+  background: getColorHex("white");
+  width: 100%;
+  max-width: rem(600);
+  min-height: rem(350);
+  z-index: 1;
+  gap: rem(36);
+  -webkit-border-top-left-radius: rem(32);
+  -moz-border-radius-topleft: rem(32);
+  border-top-left-radius: rem(32);
+  position: relative;
+
+  @include md{
+    padding: rem(60);
+    border-radius: 0;
+    min-height: rem(600);
+  }
+}
+
+.closeButton{
+  position: absolute;
+  top: rem(28);
+  right: rem(28);
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+
+  @include md{
+    top: rem(60);
+    right: rem(60);
+  }
+
+  svg{
+    width: rem(24);
+    height: rem(24);
+
+    @include md{
+      width: rem(40);
+      height: rem(40);
+    }
+  }
+}
+
+.topContents{
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  svg{
+    width: rem(40);
+    height: rem(40);
+
+    @include md{
+      width: rem(60);
+      height: rem(60);
+    }
+  }
+
+  p{
+    @include body_regular;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+    color: getColorHex("black-dark");
+    margin: 0;
+    display: block;
+    text-align: center;
+
+    @include md{
+      font-size: rem(18);
+      line-height: rem(28);
+    }
+
+    &.allCaps{
+      @include heading_regular;
+      font-size: rem(18);
+      line-height: rem(26);
+      letter-spacing: rem(0.4);
+      color: getColorHex("green-dark");
+      text-transform: uppercase;
+
+      @include md{
+        font-size: rem(26);
+        line-height: rem(32);
+        letter-spacing: rem(0.6);
+      }
+    }
+  }
+}
+
+.bottomContents{
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  @include md{
+    gap: rem(24);
+  }
+
+  p{
+    @include body_regular;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+    color: getColorHex("black-dark");
+    margin: 0;
+    display: block;
+    text-align: center;
+
+    @include md{
+      font-size: rem(18);
+      line-height: rem(28);
+    }
+
+    &.allCaps{
+      @include heading_regular;
+      color: getColorHex("green-dark");
+      text-transform: uppercase;
+    }
+  }
+}
+
+.cancelButton{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  span{
+    margin: 0 auto;
+  }
+}

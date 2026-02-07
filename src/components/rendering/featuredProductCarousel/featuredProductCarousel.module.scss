@@ -1,0 +1,79 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  padding: rem(0 0);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+  align-items: center;
+
+  @include md {
+    padding: rem(0 60);
+    gap: rem(38);
+  }
+
+  [dir="rtl"] & {
+    align-items: center;
+  }
+}
+
+.productItem {
+  width: rem(348);
+}
+
+.containerSlider {
+  position: relative;
+  display: flex;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: rem(0 0 0 28);
+  
+  @include lg {
+    width: rem(1044);
+    padding: rem(0);
+  }
+  
+  @include breakpoint-max-width(rem(1200)) {
+    width: rem(696);
+  }
+  @include breakpoint-max-width(rem(768)) {
+    width: 100%;
+  }
+
+
+  
+
+  &::-webkit-scrollbar {
+    display: hidden;
+  }
+
+  .leftBtn,
+  .rightBtn {
+    width: rem(40);
+    height: rem(40);
+    border-radius: rem(12) 0 rem(12);
+    background: getColorHex("metallic");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2000;
+
+    .arrowLeft {
+      transform: rotate(180deg);
+    }
+  }
+
+  .leftBtn {
+    left: rem(-20);
+  }
+  .rightBtn {
+    right: rem(-20);
+  }
+}
+
+.lastSlide {
+  border-right: rem(1) solid getColorHex("grey-light-4", 0.4);
+} 

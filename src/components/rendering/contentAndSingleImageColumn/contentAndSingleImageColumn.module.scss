@@ -1,0 +1,34 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  padding: rem(0 28);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+  @include iphone12-fix {
+    gap: unset;
+
+    & > * {
+      margin-bottom: rem(32);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+
+  @include md {
+    gap: rem(48);
+    padding: rem(0 60);
+  }
+}
+
+.image {
+  border-radius: rem(16) rem(0);
+  width: 100%;
+  height: rem(448);
+  object-fit: cover;
+
+  @include md {
+    height: rem(660);
+  }
+}

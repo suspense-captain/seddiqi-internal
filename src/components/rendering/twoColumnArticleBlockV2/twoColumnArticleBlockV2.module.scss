@@ -1,0 +1,176 @@
+@import "./../../../assets/styles/main.scss";
+.container {
+  display: flex;
+  // margin: rem(60) 0 0 0;
+  // @include md {
+  //   margin: rem(120) 0 0 0;
+  // }
+  justify-content: center;
+
+  .containerColumns {
+    display: flex;
+    flex-direction: column;
+    gap: rem(49);
+    @include iphone12-fix {
+      gap: unset;
+      & > *:not(:last-child) {
+        margin-bottom: rem(49);
+      }
+    }
+    margin: rem(0 32);
+    width: 100%;
+
+    @include md {
+      flex-direction: row;
+    }
+    @include lg {
+      margin: rem(0 60);
+    }
+
+    &.singleColumn{
+
+      .gradient{
+        height: rem(448);
+
+        @include md{
+          height: rem(660);
+        }
+      }
+
+      .column{
+
+        .image{
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.gradient {
+  border-radius: rem(16) 0 rem(16) 0;
+}
+
+.column {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+  @include iphone12-fix {
+    gap: unset;
+    & > *:not(:last-child) {
+      margin-bottom: rem(40);
+    }
+  }
+  flex: 1;
+
+  .image {
+    border-radius: rem(16) 0 rem(16) 0;
+    object-fit: cover;
+    width: 100%;
+    // z-index: -1;
+    height: rem(336);
+    position: relative;
+
+    @include xl {
+      height: rem(407);
+      width: 100%;
+    }
+  }
+
+  .articleInfo {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    @include iphone12-fix {
+      gap: unset;
+      & > *:not(:last-child) {
+        margin-bottom: rem(16);
+      }
+    }
+    align-items: center;
+
+    [dir="rtl"] & {
+      align-items: center;
+    }
+
+    span.btn {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.label {
+  @include body_regular;
+  border-radius: rem(4) 0;
+  background-color: getColorHex("tint-grey");
+  padding: rem(6) rem(12);
+  color: getColorHex("black-dark");
+  font-size: rem(10);
+  line-height: rem(14);
+  letter-spacing: rem(0.2);
+  text-transform: uppercase;
+  margin-bottom: rem(8);
+}
+
+.headingPrimary {
+  @include heading_light;
+  color: getColorHex("opulent-bronze");
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  // margin-top: rem(8);
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  @include md {
+    font-size: rem(26);
+  }
+}
+
+.description {
+  @include body_regular;
+  color: getColorHex("black-dark");
+  //text-align: center;
+  font-size: rem(14);
+  line-height: rem(22);
+  margin-bottom: rem(8);
+
+  [dir="rtl"] & {
+    text-align: center;
+  }
+
+  @include md {
+    font-size: rem(16);
+    line-height: rem(26);
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+.wholeContainer {
+  .mainTitle {
+    @include heading_regular;
+    margin: rem(0 32);
+    color: getColorHex("opulent-bronze");
+    text-align: center;
+    margin-bottom: rem(40);
+
+    font-size: rem(28);
+    font-weight: 500;
+    line-height: rem(34);
+    letter-spacing: rem(0.4);
+    text-transform: uppercase;
+
+    @include lg {
+      font-size: rem(40);
+      line-height: rem(46);
+      margin: rem(0 60);
+      margin-bottom: rem(40);
+    }
+  }
+}

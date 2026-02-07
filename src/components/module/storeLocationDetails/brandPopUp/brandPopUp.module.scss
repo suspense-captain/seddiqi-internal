@@ -1,0 +1,39 @@
+@import "../../assets/styles/main.scss";
+
+.title {
+  margin-block-start: rem(0);
+  margin-block-end: rem(0);
+}
+
+.brandsWrapper {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center; 
+  align-items: flex-start;
+  margin-top: rem(12);
+  margin-bottom: rem(16);
+}
+
+.brandSeparator {
+  width: rem(1);
+  height: rem(20);
+  background-color: getColorHex("black-dark");
+  margin-left: rem(5);
+  margin-right: rem(5);
+}
+
+.brandsName {
+  font-size: rem(12);
+  font-weight: 400;
+  line-height: rem(20);
+  letter-spacing: rem(0.2);
+  white-space: nowrap;
+  margin: 0;
+}
+
+  .vline {
+    & > *:not(:first-child)::before {
+      content: "|";
+      margin: 0 rem(4);
+    }
+  }

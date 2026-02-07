@@ -1,0 +1,87 @@
+@import "rolex/configs/rolexBaseConfig";
+@import "rolex/partials/rolexBase";
+
+.rolex{
+    .error-page {
+    height: auto;
+    padding: 0 rem(80) rem(40);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: getColorHex("grey-tint");
+    color: getColorHex("midnight-brown");
+
+    @include md{
+        padding: 0 rem(80) rem(60);
+    }
+
+    .error-image{
+        display: flex;
+        object-fit: cover;
+        aspect-ratio: 4/3;
+        margin-bottom: rem(40);
+    }
+
+    h1 {
+        font-size: rem(18);
+        line-height: rem(26);
+        letter-spacing: rem(0.4);
+        @include rolex_regular;
+        margin: 0 0 rem(12);
+        color: getColorHex("brown-dark");
+        text-transform: uppercase;
+        font-weight: 500;
+
+        @include md{
+        font-size: rem(32);
+        line-height: rem(36);
+        letter-spacing: rem(0.6);
+        margin: 0 0 rem(28);
+        }
+    }
+
+    p {
+        @include rolex_regular;
+        font-size: rem(14);
+        line-height: rem(22);
+        letter-spacing: rem(0.2);
+        text-align: center;
+        margin-bottom: rem(24);
+
+        @include md{
+        font-size: rem(16);
+        line-height: rem(26);
+        margin-bottom: rem(28);
+        }
+    }
+    }
+
+    .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    .image_overlay {
+    height: 100%;
+    width: 100%;
+    background-color: getColorHex("black");
+    position: relative;
+    }
+
+    .bg-green {
+    background-color: getColorHex("rolex-green");
+    color: getColorHex("white");
+    }
+
+    .bg-white {
+    background-color: getColorHex("white");
+    color: getColorHex("black");
+    }
+
+    .bg-black {
+    background-color: getColorHex("black");
+    color: getColorHex("white");
+    }
+}

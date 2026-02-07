@@ -1,0 +1,237 @@
+@import "./../../../assets/styles/main.scss";
+
+.heritageContnetContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &.primaryBackground {
+    background-color: getColorHex("white");
+  }
+
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .innerContainer {
+    width: 100%;
+    max-width: rem(1440);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: rem(60) rem(28);
+    gap: rem(28);
+
+    @include lg {
+      gap: rem(80);
+      flex-direction: row;
+      padding: rem(120) rem(160);
+    }
+  }
+  .imagePosition {
+    @include lg {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.gradient {
+  border-radius: rem(16) rem(0) rem(16) rem(0);
+  z-index: 99;
+}
+
+.mediaContainer {
+  flex: 1;
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: rem(16) rem(0) rem(16) rem(0);
+    flex: 1;
+  }
+}
+
+.contentContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: rem(0);
+  // gap: rem(20);
+  text-align: center;
+
+  @include lg {
+    // gap: rem(12);
+    text-align: left;
+  }
+}
+
+.leftAlignment {
+  text-align: left;
+}
+
+.rightAlignment {
+  text-align: right;
+}
+
+.centerAlignment {
+  text-align: center;
+}
+
+.title {
+  @include heading_regular;
+  text-transform: uppercase;
+  margin-bottom: rem(12);
+  color: getColorHex("opulent-bronze");
+  width: 100%;
+  margin: 0;
+  font-size: rem(28);
+  line-height: rem(34);
+  letter-spacing: rem(0.4);
+  text-align: center;
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  margin-bottom: rem(8);
+  @include lg {
+    margin-bottom: rem(12);
+    line-height: rem(46);
+    font-size: rem(40);
+    text-align: left;
+
+  }
+}
+
+.discContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  @include lg {
+    gap: rem(24);
+  }
+}
+
+.featuredTitle {
+  @include heading_regular;
+  color: getColorHex("opulent-bronze");
+  width: 100%;
+  margin: 0;
+  font-size: rem(18);
+  line-height: rem(26);
+  font-weight: 500;
+  letter-spacing: rem(0.4);
+  text-align: center;
+
+  @include lg {
+    font-size: rem(26);
+    line-height: rem(36);
+    letter-spacing: rem(0.6);
+    text-align: left;
+  }
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+.labelCopy {
+  @include body_regular;
+  color: getColorHex("black-dark");
+  width: 100%;
+  font-size: rem(16);
+  line-height: rem(26);
+  text-align: center;
+  [dir="rtl"] & {
+    text-align: right;
+  }
+  @include lg {
+    font-size: rem(18);
+    line-height: rem(28);
+    letter-spacing: rem(0.2);
+    text-align: left;
+
+  }
+}
+
+.richTextContainer {
+  @include body_regular;
+  color: getColorHex("black-dark");
+  width: 100%;
+  font-size: rem(14);
+  line-height: rem(22);
+  font-weight: 300;
+ 
+  @include lg {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+ 
+  }
+
+  div {
+    text-align: center;
+
+    @include lg {
+      text-align: left;
+    }
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+}
+
+.leftRichAlignment {
+  div {
+    text-align: justify;
+    text-align-last: center;
+
+    @include lg {
+      text-align: left;
+      text-align-last: auto;
+    }
+  }
+
+  p{
+    margin: 0;
+
+     [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+}
+
+.rightRichAlignment {
+  div {
+    text-align: justify;
+    text-align-last: center;
+
+    @include lg {
+      text-align: right;
+      text-align-last: auto;
+    }
+  }
+}
+
+.centerRichAlignment {
+  div {
+    text-align: justify;
+    text-align-last: center;
+
+    @include lg {
+      text-align: center;
+      text-align-last: auto;
+    }
+  }
+}

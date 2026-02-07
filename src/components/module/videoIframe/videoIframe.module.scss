@@ -1,0 +1,29 @@
+@import "../../../assets/styles/main.scss";
+
+.videoIframeWrapper {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .playIcon {
+    width: rem(48);
+    height: rem(48);
+
+    @include md{
+      width: rem(60);
+      height: rem(60);
+  
+    }
+  }
+}

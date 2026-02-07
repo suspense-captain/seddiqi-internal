@@ -1,0 +1,640 @@
+@import "./../../../assets/styles/main.scss";
+
+.sideViewHotspotContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  flex-wrap: wrap;
+
+  @include md{
+    min-height: rem(1116);
+  }
+
+  @include lg{
+    margin-top: -13%;
+    min-height: auto;
+  }
+
+  @include xl{
+    margin-top: -19%;
+  }
+
+  .mainImage{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+
+    @include sm{
+      top: 51%;
+    }
+
+    @include md{
+      top: 50%;
+      position: relative;
+      top: auto;
+      transform: none;
+    }
+  }
+
+  .thumbnailsTop{
+    display: flex;
+    column-gap: rem(44);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    padding: 0 rem(24);
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+
+    @include md{
+      position: absolute;
+      height: 100%;
+      left: 0;
+      padding: 0;
+    }
+  }
+
+  .detailsLeft{
+    width: calc(50% - 22px);
+    //max-width: rem(150);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include md{
+      position: absolute;
+      width: 34.17%;
+      max-width: none;
+      left: 11.5%;
+      top: 57%;
+      transform: translateY(-100%);
+    }
+
+    @include lg{
+      top: 59%;
+    }
+
+    &.noImage{
+      
+      @include md{
+        //top: 10%;
+        width: 22.45%;
+        left: 20%;
+      }
+  
+      
+    }
+
+    &::after{
+      content: "";
+      width: rem(1);
+      min-height: rem(267);
+      background: getColorHex("midnight-brown");
+      position: relative;
+      margin: 0 auto;
+
+      @include md{
+        min-height: rem(320);
+        left: rem(80);
+        margin: 0;
+      }
+    }
+
+    .detailsContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+
+      @include md{
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .imageContainer{
+      display: flex;
+      min-width: rem(100);
+      min-height: rem(100);
+      margin: 0 0 rem(20);
+      width: auto;
+      height: auto;
+      align-self: flex-start;
+      position: relative;
+
+      @include md{
+        min-width: rem(160);
+        min-height: rem(160);
+        margin: 0 rem(32) 0 0;
+      }
+
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+    }
+
+    .textsContainer{
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+      width: 100%;
+
+      .subtitle, .description{
+        @include body_regular;
+        font-weight: 400;
+        font-size: rem(12);
+        line-height: rem(20);
+        letter-spacing: rem(0.2);
+        color: getColorHex("grey");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(14);
+          line-height: rem(22);
+          letter-spacing: rem(0.4);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+
+      .description{
+        text-transform: none;
+
+        &:last-child{
+          margin-bottom: rem(15);
+        }
+      }
+
+      .title{
+        @include heading_light;
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: rem(26);
+        letter-spacing: rem(0.4);
+        color: getColorHex("black-dark");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(26);
+          line-height: rem(32);
+          letter-spacing: rem(0.6);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .detailsRight{
+    width: calc(50% - 22px);
+    //max-width: rem(150);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 0 13%;
+
+    @include sm{
+
+    }
+
+    @include md{
+      position: absolute;
+      width: 34.17%;
+      max-width: none;
+      right: 8%;
+      top: 45.5%;
+      transform: translateY(-100%);
+      justify-content: flex-start;
+      margin: 0;
+    }
+
+    &.noImage{
+      
+      @include md{
+        //top: 10%;
+        width: 22.45%;
+        right: 20%;
+      }
+  
+      
+    }
+
+    &::after{
+      content: "";
+      width: rem(1);
+      min-height: rem(80);
+      background: getColorHex("midnight-brown");
+      position: relative;
+      margin: 0 auto;
+
+      @include sm{
+
+      }
+
+      @include md{
+        min-height: rem(240);
+        left: rem(80);
+        margin: 0;
+      }
+    }
+
+    .detailsContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+
+      @include md{
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .imageContainer{
+      display: flex;
+      min-width: rem(100);
+      min-height: rem(100);
+      margin: 0 0 rem(20);
+      width: auto;
+      height: auto;
+      align-self: flex-start;
+      position: relative;
+
+      @include md{
+        min-width: rem(160);
+        min-height: rem(160);
+        margin: 0 rem(32) 0 0;
+      }
+
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+    }
+
+    .textsContainer{
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+      width: 100%;
+
+      .subtitle, .description{
+        @include body_regular;
+        font-weight: 400;
+        font-size: rem(12);
+        line-height: rem(20);
+        letter-spacing: rem(0.2);
+        color: getColorHex("grey");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(14);
+          line-height: rem(22);
+          letter-spacing: rem(0.4);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+
+      .description{
+        text-transform: none;
+
+        &:last-child{
+          margin-bottom: rem(15);
+        }
+      }
+
+      .title{
+        @include heading_light;
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: rem(26);
+        letter-spacing: rem(0.4);
+        color: getColorHex("black-dark");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(26);
+          line-height: rem(32);
+          letter-spacing: rem(0.6);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .detailsBottom{
+    width: 40%;
+    //max-width: rem(150);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+
+    @include sm{
+      margin-left: 25%;
+    }
+
+    @include md{
+      position: absolute;
+      width: 50%;
+      max-width: none;
+      left: 40%;
+      top: auto;
+      bottom: 42%;
+      transform: translateY(100%);
+      margin: 0;
+    }
+
+    @include lg{
+      width: 40%;
+      left: 43%;
+      bottom: 38%;
+    }
+
+    @include xl{
+      width: 34.17%;
+      left: 44%;
+    }
+
+    &.noImage{
+      
+      @include md{
+        //top: 10%;
+        width: 22.45%;
+        left: 20%;
+      }
+  
+      
+    }
+
+    &::before{
+      content: "";
+      width: rem(1);
+      min-height: rem(120);
+      background: getColorHex("midnight-brown");
+      position: relative;
+      margin-left: rem(50);
+
+      @include md{
+        min-height: rem(160);
+        left: rem(80);
+        margin: 0;
+      }
+
+      @include xl{
+        min-height: rem(240);
+      }
+    }
+
+    .detailsContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+
+      @include md{
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .imageContainer{
+      display: flex;
+      min-width: rem(100);
+      min-height: rem(100);
+      margin: 0 0 rem(20);
+      width: auto;
+      height: auto;
+      align-self: flex-start;
+      position: relative;
+
+      @include md{
+        min-width: rem(160);
+        min-height: rem(160);
+        margin: 0 rem(32) 0 0;
+      }
+
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+    }
+
+    .textsContainer{
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+      width: 100%;
+
+      .subtitle, .description{
+        @include body_regular;
+        font-weight: 400;
+        font-size: rem(12);
+        line-height: rem(20);
+        letter-spacing: rem(0.2);
+        color: getColorHex("grey");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(14);
+          line-height: rem(22);
+          letter-spacing: rem(0.4);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+
+      .description{
+        text-transform: none;
+
+        &:last-child{
+          margin-bottom: rem(15);
+        }
+      }
+
+      .title{
+        @include heading_light;
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: rem(26);
+        letter-spacing: rem(0.4);
+        color: getColorHex("black-dark");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(26);
+          line-height: rem(32);
+          letter-spacing: rem(0.6);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  [dir="rtl"] & {
+
+    .detailsLeft{
+
+      @include md{
+        left: auto;
+        right: 11.5%;
+      }
+  
+      @include lg{
+        left: auto;
+      }
+
+      &.noImage{
+      
+        @include md{
+          right: 20%;
+          left: auto;
+        }
+    
+        
+      }
+  
+      &::after{
+  
+        @include md{
+          left: auto;
+          right: rem(80);
+        }
+      }
+
+      .imageContainer{
+  
+        @include md{
+          margin: 0 0 0 rem(32);
+        }
+      }
+    }
+
+    .detailsRight{
+      
+      @include md{
+        left: 8%;
+        right: auto;
+      }
+  
+      &.noImage{
+        
+        @include md{
+          left: 20%;
+          right: auto;
+        }
+    
+        
+      }
+  
+      &::after{
+        
+        @include md{
+          left: auto;
+          right: rem(80);
+        }
+      }
+  
+      .imageContainer{
+        
+        @include md{
+          margin: 0 0 0 rem(32);
+        }
+      }
+    }
+
+    .detailsBottom{
+      margin-right: 15%;
+      margin-left: 0;
+
+      @include sm{
+        margin-right: 25%;
+        margin-left: 0;
+      }
+  
+      @include md{
+        left: auto;
+        right: 40%;
+        margin: 0;
+      }
+  
+      @include lg{
+        left: auto;
+        right: 43%;
+      }
+  
+      @include xl{
+        left: auto;
+        right: 44%;
+      }
+  
+      &.noImage{
+        
+        @include md{
+          left: auto;
+          right: 20%;
+        }
+    
+        
+      }
+  
+      &::before{
+        margin-right: rem(50);
+  
+        @include md{
+          left: auto;
+          right: rem(80);
+          margin: 0;
+        }
+      }
+
+      .imageContainer{
+
+        @include md{
+          margin: 0 0 0 rem(32);
+        }
+      }
+    }
+  }
+}
+

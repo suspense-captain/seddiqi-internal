@@ -1,0 +1,68 @@
+@import "./../../assets/styles/main.scss";
+
+.results {
+  margin-top: rem(46);
+  margin-bottom: rem(32);
+  color: getColorHex("green-dark");
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding: 0 rem(24) rem(24);
+  /*max-width: rem(1440);*/
+  margin: auto;
+
+  .contentComponent {
+    display: grid;
+    grid-row-end: span 2;
+    grid-column-end: span 1;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    @include md {
+      grid-row-end: span 2;
+      grid-column-end: span 3;
+    }
+
+    @include lg {
+      grid-row-end: span 2;
+      grid-column-end: span 4;
+    }
+  }
+}
+
+.productInfo {
+  @include body_regular;
+  font-size: rem(14);
+  font-weight: 400;
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  text-align: center;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-bottom: rem(20);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+  align-items: center;
+  margin: rem(60 0);
+  [dir="rtl"] & {
+    align-items: center;
+  }
+}
+
+.loadMore {
+  background-color: getColorHex("green-dark");
+}

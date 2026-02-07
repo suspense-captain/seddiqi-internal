@@ -1,0 +1,95 @@
+@import "../../../assets/styles/main.scss";
+
+.searchWrapper {
+  width: 100%;
+  padding: rem(20);
+}
+
+.searchBarWrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: rem(1) solid getColorHex("grey-light");
+}
+
+.searchInput {
+  @include body_regular;
+  flex: 1;
+  padding: rem(10);
+  border: none;
+  outline: none;
+  width: 90%;
+  margin-left: rem(10);
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+  color: getColorHex("grey");
+  text-transform: capitalize;
+}
+
+.closeIcon:hover,
+.searchIcon:hover {
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: rem(1) solid getColorHex("grey-light");
+  margin-bottom: rem(10);
+}
+
+.tab {
+  padding: rem(0) rem(15);
+  cursor: pointer;
+  margin-right: rem(10);
+  color: getColorHex("grey-brown");
+}
+
+.tab:last-child {
+  margin-right: 0;
+}
+
+.active {
+  border-bottom: rem(1) solid getColorHex("chocolate-brown");
+  font-weight: bold;
+  color: getColorHex("black-dark");
+}
+
+.listsContainer {
+  margin-top: rem(36);
+}
+
+.listsContainer h3 {
+  margin: rem(10) 0;
+}
+
+.popularSearch,
+.popularBrands,
+.popularProducts {
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+  text-transform: uppercase;
+  color: getColorHex("grey");
+}
+
+.popularSearchListStyle,
+.popularBrandListStyle {
+  list-style-type: none;
+  padding: 0;
+  padding-bottom: rem(40);
+}
+
+.popularSearchListStyle li,
+.popularBrandListStyle li {
+  padding: rem(5) 0;
+  cursor: pointer;
+}
+
+.recommendedSearches {
+  margin-top: rem(20);
+}
+
+.recommendedSearches ul {
+  list-style-type: none;
+  padding: 0;
+}

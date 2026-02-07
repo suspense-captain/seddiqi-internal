@@ -1,0 +1,119 @@
+@import "./../../../assets/styles/main.scss";
+
+.newsletterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: rem(1) solid getColorHex("grey-light");
+  padding: rem(24);
+  width: 100%;
+  margin: 0;
+
+  @include md{
+    flex-direction: row;
+    padding: rem(24) rem(32)
+  }
+}
+
+.leftSection {
+  flex: 0.8;
+  width: 100%;
+}
+
+.title {
+  h2 {
+    color: getColorHex("brown-dark");
+    margin: 0;
+    font-size: rem(26);
+  }
+}
+
+.subtitle {
+  font-size: rem(14);
+  color: getColorHex("grey");
+  margin-top: rem(12);
+  margin-bottom: rem(16);
+  font-weight: 300;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup {
+  margin-bottom: rem(24);
+}
+
+.label {
+  font-size: rem(14);
+  color: #3d3d3d;
+}
+
+.input {
+  width: 100%;
+  padding: rem(5);
+  font-size: rem(16);
+  border: none;
+  border-bottom: rem(1) solid getColorHex("grey-light");
+  outline: none;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(24);
+}
+
+.toggle {
+  min-width: rem(40);
+  height: rem(24);
+  background-color: #ccc;
+  border-radius: rem(12);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: rem(12);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle.active {
+  background-color: #624a2e;
+}
+
+.toggleCircle {
+  width: rem(20);
+  height: rem(20);
+  background-color: getColorHex("white");
+  border-radius: 50%;
+  position: absolute;
+  left: rem(2);
+  transition: left 0.3s ease;
+}
+
+.toggle.active .toggleCircle {
+  left: calc(100% - 22px);
+}
+
+.toggleIcon {
+  font-size: rem(12);
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.toggleLabel {
+  font-size: rem(14);
+  font-weight: 300;
+  color: getColorHex("grey");
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}

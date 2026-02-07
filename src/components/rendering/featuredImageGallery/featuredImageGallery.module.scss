@@ -1,0 +1,560 @@
+@import "./../../../assets/styles/main.scss";
+
+.featuredImageGalleryWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: rem(60) rem(28) rem(60) rem(28);
+  background: getColorHex("midnight-brown");
+
+  @include md{
+    padding: rem(30);
+  }
+
+  @include lg{
+    padding: rem(60);
+  }
+
+  @include xl{
+    padding: rem(120)
+  }
+}
+
+.featuredImageGallery{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: rem(1440);
+  margin: 0 auto;
+  gap: rem(28);
+
+  @include md{
+    gap: rem(48);
+  }
+}
+
+.titleThumbsContainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(28);
+  flex-wrap: wrap;
+
+  @include md{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 1%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.textsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: rem(12);
+  align-items: center;
+  width: 100%;
+  padding-right: rem(28);
+
+  @include md{
+    align-items: normal;
+    flex-direction: column;
+    width: 29%;
+    padding-right: 0;
+  }
+
+  @include xl{
+    width: 39%;
+  }
+
+  [dir="rtl"] & {
+    padding-right: 0;
+    padding-left: rem(28);
+
+    @include md{
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  h3{
+    @include heading_regular;
+    font-size: rem(28);
+    line-height: rem(34);
+    font-weight: 500;
+    letter-spacing: rem(0.4);
+    color: getColorHex("white");
+    display: flex;
+    margin: 0;
+    text-transform: uppercase;
+
+    @include md{
+      font-size: rem(40);
+      line-height: rem(46);
+    }
+  }
+
+  p{
+    @include body_regular;
+    font-size: rem(16);
+    line-height: rem(26);
+    font-weight: 400;
+    letter-spacing: rem(0.2);
+    color: getColorHex("white");
+    display: flex;
+    margin: 0;
+  }
+}
+
+.thumbnailSwiperContainer{
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: rem(44);
+
+  @include md{
+    height: rem(54);
+    width: 70%;
+    overflow: hidden;
+  }
+
+  @include xl{
+    width: 59%;
+  }
+
+  & > div{
+    padding-right: rem(28);
+
+    @include md{
+      padding-right: 0;
+    }
+
+    [dir="rtl"] & {
+      padding-right: 0;
+      padding-left: rem(28);
+  
+      @include md{
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.thumbnailSwiper{
+
+  & > div{
+    overflow: visible;
+
+
+    @include md{
+      //overflow: hidden;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.thumbSlide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  gap: rem(4);
+  cursor: pointer;
+
+  @include md{
+    gap: rem(8);
+  }
+
+  &:last-child{
+    margin: 0 !important;
+  }
+
+  p{
+    @include heading_regular;
+    font-size: rem(14);
+    line-height: rem(20);
+    letter-spacing: rem(0.4);
+    color: getColorHex("metallic");
+    display: flex;
+    margin: 0;
+    transition: color 0.3s ease;
+
+    @include md{
+      font-size: rem(20);
+      line-height: rem(26);
+      letter-spacing: rem(0.6);
+    }
+  }
+
+  &::after{
+    content: "";
+    width: rem(1);
+    height: rem(10);
+    background-color: getColorHex("metallic");
+    position: relative;
+    transition: height 0.3s ease;
+
+    @include md{
+      height: rem(12);
+    }
+  }
+
+  &:global(.swiper-slide-thumb-active){
+    display: flex;
+
+    p{
+      color: getColorHex("white");
+    }
+
+    &::after{
+      height: rem(14);
+      background-color: getColorHex("white");
+
+      @include md{
+        height: rem(20);
+      }
+    }
+  }
+}
+
+.mainSwiper{
+  box-sizing: border-box;
+  padding-bottom: rem(52);
+  position: relative;
+  overflow: visible;
+  opacity: 0;
+
+  @include md{
+    padding-bottom: rem(84);
+  }
+
+  &.noPadding{
+    padding-bottom: 0;
+
+    @include md{
+      padding-bottom: 0;
+    }
+  }
+
+  &:global(.swiper-initialized) {
+    opacity: 1;
+  }
+}
+
+.mainSwiperSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: getColorHex("chocolate-brown");
+  width: 74%;
+  min-width: rem(270);
+  //min-width: rem(550);
+  //max-width: rem(250);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+
+  @include md{
+    width: 93.34%;
+    flex-direction: row;
+    min-width: auto;
+    max-width: rem(1120);
+  }
+
+  @include lg{
+    
+  }
+
+  &:global(.swiper-slide-active){
+    opacity: 1;
+  }
+
+  &:last-child{
+    //margin: 0 !important;
+  }
+}
+
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: getColorHex("chocolate-brown");
+  justify-content: space-between;
+
+  @include md{
+    width: 50%;
+  }
+
+  h2{
+    @include heading_regular;
+    font-size: rem(34);
+    line-height: rem(40);
+    font-weight: 500;
+    letter-spacing: rem(0.4);
+    color: getColorHex("white");
+    display: flex;
+    margin: 0;
+
+    @include md{
+      font-size: rem(48);
+      line-height: rem(54);
+    }
+  }
+
+  p{
+    @include body_regular;
+    font-size: rem(12);
+    line-height: rem(20);
+    font-weight: 400;
+    letter-spacing: rem(0.2);
+    color: getColorHex("white");
+    display: flex;
+    margin: 0;
+    text-align: left;
+    max-width: 100%; //84.6%;
+
+    @include md{
+      font-size: rem(16);
+      line-height: rem(26);
+      max-width: rem(400);
+    }
+
+    @include xl{
+      width: 80.7%;
+    }
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  &.slideContentTextsContainer{
+    //aspect-ratio: 1/1;
+    height: rem(230);
+    box-sizing: border-box;
+    padding: rem(32) rem(24) rem(24);
+    min-width: rem(250);
+    gap: rem(10);
+
+    @include md{
+      height: auto;
+      aspect-ratio: 1/1;
+      padding: rem(44) rem(32) rem(32);
+      min-width: auto;
+    }
+  }
+
+  .slideContentImageContainer{
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    & > div{
+      width: 100% !important;
+    }
+
+    .image{
+      display: flex;
+      aspect-ratio: 4/3;
+      width: 100%;
+      min-height: rem(202);
+      margin: 0;
+      object-fit: cover;
+      z-index: 99;
+
+      @include md{
+        width: auto;
+        min-height: auto;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    .imageTitle{
+      @include body_regular;
+      font-size: rem(12);
+      line-height: rem(20);
+      font-weight: 400;
+      letter-spacing: rem(0.2);
+      color: getColorHex("white");
+      display: flex;
+      position: absolute;
+      bottom: rem(20);
+      left: rem(24);
+      width: calc(100% - 48px);
+      z-index: 101;
+
+      @include md{
+        font-size: rem(14);
+        line-height: rem(22);
+        bottom: rem(28);
+        left: rem(32);
+        width: calc(100% - 64px);
+      }
+
+      [dir="rtl"] & {
+        left: auto;
+        right: rem(24);
+
+        @include md{
+          left: auto;
+          right: rem(32);
+        }
+      }
+    }
+  }
+}
+
+.slideContentTop {
+  justify-content: flex-start;
+}
+.slideContentBottom {
+  justify-content: flex-end;
+}
+.slideContentCenter {
+  justify-content: center;
+}
+.slideContentBetween {
+  justify-content: space-between;
+}
+
+
+.swiperArrow{
+  z-index: 20;
+  position: absolute;
+  bottom: 0;
+  width: rem(24);
+  height: rem(24);
+
+  @include md{
+    width: rem(36);
+    height: rem(36);
+  }
+
+  &::after{
+    content: "";
+    width: rem(24);
+    height: rem(24);
+    border-radius: rem(8) 0 rem(8);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg' class='articleListCarousel_arrowLeft__IiUa9'%3E%3Cmask id='path-1-inside-1_29_6412' fill='white'%3E%3Cpath d='M0 12L6 6L0 0'%3E%3C/path%3E%3C/mask%3E%3Cpath d='M6 6L6.70711 6.70711V5.29289L6 6ZM0.707107 12.7071L6.70711 6.70711L5.29289 5.29289L-0.707107 11.2929L0.707107 12.7071ZM6.70711 5.29289L0.707107 -0.707107L-0.707107 0.707107L5.29289 6.70711L6.70711 5.29289Z' fill='white' mask='url(%23path-1-inside-1_29_6412)'%3E%3C/path%3E%3C/svg%3E");
+    background-color: getColorHex("Khaki");
+
+    @include md{
+      width: rem(36);
+      height: rem(36);
+      border-radius: rem(12) 0 rem(12);
+    }    
+  }
+}
+
+.swiperPrev{
+  cursor: pointer;
+  transform: rotate(180deg);
+  right: rem(32);
+
+  @include md{
+    right: rem(48);
+  }
+
+  &:global(.swiper-button-disabled){
+    transform: rotate(180deg);
+    opacity: 0.3;
+  }
+
+  [dir="rtl"] & {
+    right: auto;
+    left: rem(32);
+    transform: rotate(0deg);
+
+    @include md{
+      right: auto;
+      left: rem(48);
+    }
+
+    &:global(.swiper-button-disabled){
+      transform: rotate(0);
+    }
+  }
+}
+
+.swiperNext{
+  cursor: pointer;
+  right: 0;
+
+  &:global(.swiper-button-disabled){
+    opacity: 0.3;
+  }
+
+  [dir="rtl"] & {
+    right: auto;
+    left: 0;
+    transform: rotate(180deg);
+
+    @include md{
+      right: auto;
+    }
+
+    &:global(.swiper-button-disabled){
+      transform: rotate(0deg);
+  
+      &::after{
+        background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 8C36 3.58172 32.4183 0 28 0H0V28C0 32.4183 3.58172 36 8 36H36V8Z' fill='white' fill-opacity='0.2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 22L16.7071 18.7071L16 18L16.7071 17.2929L20 14V15.4142L17.4142 18L20 20.5858V22Z' fill='white'/%3E%3C/svg%3E");
+      }
+    }
+  }
+}
+
+.featuredImageGalleryProgress{
+  position: absolute;
+  width: calc(100% - 76px) !important;
+  height: rem(24) !important;
+  background: none !important;
+  bottom: 0 !important; //rem(12.5) !important; 
+  left: 0;
+  top: auto !important;
+  cursor: pointer;
+
+  @include md{
+    width: calc(100% - 104px) !important;
+    //bottom: rem(17.5);
+    height: rem(36) !important;
+  }
+
+  [dir="rtl"] & {
+    left: auto;
+    right: 0;
+  }
+
+  span{
+    background: getColorHex("white") !important;
+    height: rem(2) !important;
+    top: 45.5% !important;
+
+    @include md{
+      top: 47.5% !important;
+    }
+  }
+
+  &::before{
+    content: "";
+    background: getColorHex("grey-mid");
+    background-position: center;
+    width: 100%;
+    height: rem(1);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

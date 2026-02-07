@@ -1,0 +1,24 @@
+@import "./../../../../assets/styles/main.scss";
+
+.dateSelector {
+  max-width: rem(800);
+  margin: auto;
+}
+
+.selectedData {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: rem(36);
+
+  button {
+    width: rem(320);
+  }
+}

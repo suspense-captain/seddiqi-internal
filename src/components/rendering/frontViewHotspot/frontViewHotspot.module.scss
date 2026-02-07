@@ -1,0 +1,474 @@
+@import "./../../../assets/styles/main.scss";
+
+.frontViewHotspotContainer{
+  display: flex;
+  justify-content: center;
+  max-width: rem(1160);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  transform: translateX(-50%);
+  transition: transform 0.1s ease-out;
+
+  @include sm{
+    transform: translateX(-22%);
+  }
+
+  @include md{
+    transform: none !important;
+    transition: none;
+  }
+
+  .mainImage{
+    display: flex;
+    width: 100%;
+    max-width: rem(601);
+    min-width: rem(601);
+    min-height: rem(948);
+    max-height: rem(948);
+  }
+
+  .detailsRight{
+    width: 82.63%;
+    max-width: rem(528);
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(50%);
+
+    @include sm{
+      width: 60%;
+      right: -17%;
+      transform: none;
+    }
+
+    @include md{
+      right: 0;
+      width: 45.52%;
+      top: 6%;
+    }
+
+    @include lg{
+      top: 15%;
+    }
+
+    &.noImage{
+      top: 7.5%;
+
+      @include md{
+        top: 10%;
+      }
+  
+      @include lg{
+        top: 21%;
+      }
+
+      &::before{
+       
+        @include md{
+          width: 55%;
+        }
+  
+        @include lg{
+          width: 35%;
+        }
+      }
+    }
+
+    &::before{
+      content: "";
+      width: 41%;
+      height: rem(1);
+      background: getColorHex("midnight-brown");
+      position: absolute;
+      left: 4%;
+      top: 64%;
+      transform: translateY(-50%);
+
+      @include sm{
+        width: 36%;
+        top: 64%;
+      }
+
+      @include md{
+        width: 60%;
+        top: 25%;
+        transform: none;
+      }
+
+      @include lg{
+        width: 40%;
+      }
+    }
+
+    .detailsContainer{
+      display: flex;
+      flex-direction: column;
+      width: 51.1%;
+      align-self: flex-end;
+      z-index: 1;
+
+      @include sm{
+        width: 57%;
+      }
+
+      @include md{
+        width: 37%;
+      }
+
+      @include lg{
+        max-width: rem(300);
+        width: 56.82%;
+      }
+    }
+
+    .imageContainer{
+      display: flex;
+      max-width: rem(100);
+      margin: 0 0 rem(20);
+
+      @include md{
+        max-width: rem(160);
+        margin: 0 0 rem(32);
+      }
+    }
+
+    .textsContainer{
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+      width: 100%;
+
+      .subtitle, .description{
+        @include body_regular;
+        font-weight: 400;
+        font-size: rem(12);
+        line-height: rem(20);
+        letter-spacing: rem(0.2);
+        color: getColorHex("grey");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(14);
+          line-height: rem(22);
+          letter-spacing: rem(0.4);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+
+      .description{
+        text-transform: none;
+      }
+
+      .title{
+        @include heading_light;
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: rem(26);
+        letter-spacing: rem(0.4);
+        color: getColorHex("black-dark");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(26);
+          line-height: rem(32);
+          letter-spacing: rem(0.6);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  .detailsLeft{
+    width: 79%;
+    //max-width: rem(528);
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 19%;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(50%);
+    align-items: flex-end;
+
+    @include sm{
+      width: 60%;
+      left: auto;
+      right: -17%;
+      bottom: 22%;
+      transform: none;
+    }
+
+    @include md{
+      left: 0;
+      right: auto;
+      width: 41.56%;
+      top: auto;
+      bottom: 20%;
+      align-items: flex-start;
+    }
+
+    @include lg{
+      left: 2%;
+      top: auto;
+      bottom: 22.5%;
+    }
+
+    &.noImage{
+      top: auto;
+      bottom: 33%;
+
+      @include sm{
+        bottom: 35%;
+      }
+
+      @include md{
+        bottom: 28%;
+      }
+  
+      @include lg{
+        bottom: 37%;
+      }
+
+      &::before{
+        width: 47%;
+        top: 17%;
+
+        @include sm{
+          width: 40%;
+        }
+       
+        @include md{
+          width: 60%;
+        }
+  
+        @include lg{
+          width: 67%;
+        }
+      }
+    }
+
+    &::before{
+      content: "";
+      width: 49%;
+      height: rem(1);
+      background: getColorHex("midnight-brown");
+      position: absolute;
+      left: 0;
+      top: 6%;
+      transform: translateY(-50%);
+
+      @include sm{
+        width: 43%;
+      }
+
+      @include md{
+        width: 60%;
+        left: auto;
+        right: 0;
+        top: 25%;
+        transform: none;
+      }
+
+      @include lg{
+        width: 67%;
+      }
+    }
+
+    .detailsContainer{
+      display: flex;
+      flex-direction: column;
+      width: 51.1%;
+      align-self: flex-end;
+      z-index: 1;
+
+      @include sm{
+        width: 57%;
+      }
+
+      @include md{
+        align-self: flex-start;
+        width: 37%;
+      }
+
+      @include lg{
+        max-width: rem(300);
+        width: 56.82%;
+      }
+    }
+
+    .imageContainer{
+      display: flex;
+      max-width: rem(100);
+      margin: 0 0 rem(20);
+
+      @include md{
+        max-width: rem(160);
+        margin: 0 0 rem(32);
+      }
+    }
+
+    .textsContainer{
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+      width: 100%;
+
+      .subtitle, .description{
+        @include body_regular;
+        font-weight: 400;
+        font-size: rem(12);
+        line-height: rem(20);
+        letter-spacing: rem(0.2);
+        color: getColorHex("grey");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(14);
+          line-height: rem(22);
+          letter-spacing: rem(0.4);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+
+      .description{
+        text-transform: none;
+      }
+
+      .title{
+        @include heading_light;
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: rem(26);
+        letter-spacing: rem(0.4);
+        color: getColorHex("black-dark");
+        margin: 0;
+        display: block;
+        text-transform: uppercase;
+
+        @include md{
+          font-size: rem(26);
+          line-height: rem(32);
+          letter-spacing: rem(0.6);
+        }
+
+        &:empty{
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  [dir="rtl"] & {
+    transform: translateX(50%);
+
+    @include sm{
+      transform: translateX(22%);
+    }
+  
+    @include md{
+      transform: none !important;
+      transition: none;
+    }
+
+    .detailsRight{
+      left: 0;
+      right: auto;
+      transform: translateX(-50%);
+
+      @include sm{
+        right: auto;
+        left: -17%;
+        transform: none;
+      }
+
+      @include md{
+        right: auto;
+        left: 0;
+      }
+
+      @include lg{
+        right: auto;
+      }
+      
+
+      &::before{
+        left: auto;
+        right: 4%;
+
+        @include sm{
+          left: auto;
+        }
+  
+        @include md{
+          left: auto;
+        }
+  
+        @include lg{
+          left: auto;
+        }
+      }
+    }
+
+    .detailsLeft{
+      left: 0;
+      right: auto;
+      transform: translateX(-50%);
+
+      @include sm{
+        right: auto;
+        left: -17%;
+        transform: none;
+      }
+  
+      @include md{
+        left: auto;
+        right: 0;
+      }
+  
+      @include lg{
+        left: auto;
+        right: 2%;
+      }
+
+      &::before{
+        left: auto;
+        right: 0;
+  
+        @include sm{
+          left: auto;
+        }
+  
+        @include md{
+          left: 0;
+          right: auto;
+        }
+  
+        @include lg{
+          right: auto;
+        }
+      }
+    }
+  }
+}
+

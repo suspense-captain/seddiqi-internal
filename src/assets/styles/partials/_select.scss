@@ -1,0 +1,90 @@
+@import "mixins";
+@import "typography";
+@import "variables";
+
+.select-container {
+  position: relative;
+  & .icon {
+    height: rem(18);
+    width: rem(20);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(8);
+  }
+}
+
+.select {
+  @include cta_regular;
+  padding: rem($mSelectPadding);
+  font-size: rem($mSelectSize);
+  line-height: rem($mSelectLineHeight);
+  @include transition-3s;
+  letter-spacing: rem($selectLetterSpacing);
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
+
+  &.transparent {
+    border: rem(1) solid transparent;
+
+    &.white {
+      color: getColorHex("white");
+      border-color: getColorHex("light-grey");
+    }
+
+    &.black {
+      color: getColorHex("black");
+      border-color: getColorHex("black");
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  @include md {
+    padding: rem($dSelectPadding);
+    font-size: rem($dSelectSize);
+    line-height: rem($dSelectLineHeight);
+  }
+}
+
+.dropdown {
+  @include cta_regular;
+  padding: rem($mDropdownPadding);
+  font-size: rem($mDropdownSize);
+  line-height: rem($mDropdownLineHeight);
+  @include transition-3s;
+  letter-spacing: rem($dropdownLetterSpacing);
+  background: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &.transparent {
+    border-width: rem(1);
+    border-style: solid;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    color: inherit;
+  }
+
+  &::placeholder {
+    @include cta_regular;
+    opacity: 0.75;
+  }
+
+  @include md {
+    padding: rem($dDropdownPadding);
+    font-size: rem($dDropdownSize);
+    line-height: rem($dDropdownLineHeight);
+  }
+}

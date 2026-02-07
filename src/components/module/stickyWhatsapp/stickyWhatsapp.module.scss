@@ -1,0 +1,16 @@
+@import './../../../assets/styles/main.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(48);
+  height: rem(48);
+  border-radius: 50%;
+  background-color: getColorHex("chocolate-brown");
+  position: fixed;
+  right: rem(40);
+  bottom: rem(126);
+  cursor: pointer;
+  z-index: 2000;
+}

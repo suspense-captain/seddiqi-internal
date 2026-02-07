@@ -1,0 +1,304 @@
+@import "./../../../../assets/styles/main.scss";
+
+.heroSlider {
+  width: 100%;
+  height: rem(652);
+  @include md {
+    height: rem(526);
+  }
+
+  position: relative;
+
+  .slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.smallHeroSlider {
+  @include md {
+    height: rem(375);
+  }
+}
+
+.smallBannerHeroSlider {
+  height: auto;
+  min-height: rem(240);
+  max-height: rem(520);
+  @include md {
+    height: rem(375);
+  }
+
+  picture {
+    display: flex;
+    height: 100%;
+
+    img {
+      height: 100%;
+    }
+
+    @include md {
+      display: block;
+    }
+  }
+}
+
+.cpoHeroSlider {
+  height: rem(600);
+}
+
+.textOverlay,
+.textOverlayCpo {
+  position: absolute;
+  text-align: left;
+  width: calc(100% - 56px); //100%;
+  bottom: rem(60);
+  left: rem(28);
+  z-index: 100;
+  @include md {
+    left: auto;
+    width: rem(540);
+    bottom: auto;
+    right: rem(80);
+  }
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  .brand {
+    color: getColorHex("white");
+    font-size: rem(14);
+    line-height: rem(22);
+    letter-spacing: rem(0.4);
+
+    @include md {
+      line-height: rem(26);
+      font-size: rem(16);
+    }
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  h2 {
+    color: getColorHex("white");
+    font-family: Helvetica;
+    font-size: rem(36);
+    font-weight: 700;
+    line-height: rem(40);
+    letter-spacing: rem(0.6);
+    margin: rem(4) 0 rem(16) 0;
+
+    @include md {
+      margin: rem(16) 0 rem(28) 0;
+      line-height: rem(58);
+      font-size: rem(58);
+    }
+  }
+
+  .discoverButton {
+    @include rolex_regular;
+    display: flex;
+    height: rem(48);
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(40);
+    background-color: getColorHex("green-Salem");
+    color: getColorHex("white");
+    text-align: center;
+    font-size: rem(12);
+    height: rem(40);
+    line-height: rem(16);
+    padding: rem(0 28);
+    width: max-content;
+    text-transform: capitalize;
+  }
+}
+
+.textOverlay {
+  h2 {
+    margin: 0;
+    margin-top: rem(4);
+    margin-bottom: rem(20);
+  }
+}
+
+.textOverlayCpo {
+  left: rem(28);
+  bottom: rem(28);
+  transform: translateY(0);
+  top: auto;
+  max-width: rem(300);
+
+  @include md {
+    max-width: rem(520);
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(80);
+    bottom: auto;
+  }
+
+  h2 {
+    font-size: rem(22);
+    line-height: rem(30);
+    margin: rem(12) 0 rem(16) 0;
+    //text-transform: uppercase;
+    letter-spacing: rem(0.6);
+
+    @include md {
+      letter-spacing: rem(0.4);
+      margin: rem(16) 0 rem(28) 0;
+      letter-spacing: rem(1);
+      line-height: rem(36);
+      font-size: rem(32);
+    }
+  }
+
+  &.black{
+    background: none;
+
+    .brand, h2{
+      color: getColorHex("black-dark");
+    }
+  }
+
+  .discoverButton {
+    text-transform: capitalize;
+    font-size: rem(12);
+    font-weight: 700;
+  }
+
+  &.centerCpo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.swiperSlide {
+  width: 100%;
+  position: relative;
+  height: auto;
+}
+
+.image,
+.video,
+.mobileIMage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image {
+}
+
+.smallBannerimage {
+  width: 100%;
+  height: rem(652);
+  object-fit: cover;
+}
+
+.swipeAuto {
+  height: auto;
+}
+
+.smallMobileBanner {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.mobileImage {
+  width: 100%;
+  height: rem(652);
+  object-fit: cover;
+}
+
+.smallBannerMobileImage {
+  min-height: rem(240);
+  height: auto;
+  height: 100%;
+}
+
+.video {
+  width: 100%;
+  height: rem(652);
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+}
+
+.gradientMobile {
+  width: 100%;
+}
+
+.smallGradientMobile {
+  width: 100%;
+  height: 100%;
+}
+
+.sliderRightBtn,
+.sliderLeftBtn {
+  position: absolute;
+  width: rem(32);
+  height: rem(32);
+  align-items: center;
+  justify-content: center;
+  border-radius: rem(32);
+  background-color: getColorHex("white-anti-flash");
+  border-radius: 32px;
+  background: getColorHex("white", 0.2);
+  cursor: pointer;
+  z-index: 100000;
+  display: none;
+
+  @include md {
+    display: flex;
+  }
+}
+
+.sliderLeftBtn {
+  left: rem(44);
+  transform: rotate(180deg);
+}
+
+.sliderRightBtn {
+  right: rem(44);
+}
+
+.carouselBtns {
+  width: 100%;
+  position: absolute;
+  bottom: rem(36);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerRolex{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+  }
+}

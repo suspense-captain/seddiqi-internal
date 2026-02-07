@@ -1,0 +1,59 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  // margin: rem(60) 0 0 0;
+  // @include md {
+  //   margin: rem(120) 0 0 0;
+  // }
+
+}
+
+.containerImgs {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  gap: rem(1);
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+  
+  .image {
+    height: rem(250);
+    width: 100%;
+    object-fit: cover;
+
+    @include md {
+        height: rem(720);
+        flex-wrap: nowrap;
+
+    }
+  }
+
+  .imgHeight {
+    height: rem(400);
+    @include md {
+      height: rem(720);
+    }
+  }
+}
+
+.titleColor {
+  color: getColorHex("opulent-bronze");
+}
+
+.subTitleColor {
+  color: getColorHex("black-dark");
+}
+.barColor {
+  background: getColorHex("opulent-bronze");
+}

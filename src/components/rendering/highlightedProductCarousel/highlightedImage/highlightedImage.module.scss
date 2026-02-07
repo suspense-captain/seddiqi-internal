@@ -1,0 +1,19 @@
+@import "./../../../../assets/styles/main.scss";
+
+.leftImage {
+  height: rem(448);
+  object-fit: cover;
+  gap: rem(10);
+  border-radius: rem(16) 0 rem(16) 0;
+  width: 100%;
+  
+  @include lg {
+    height: rem(759);
+    width: rem(569);
+  }
+}
+
+
+.imgContainer {
+  border-radius: rem(16) 0 rem(16) 0;
+}

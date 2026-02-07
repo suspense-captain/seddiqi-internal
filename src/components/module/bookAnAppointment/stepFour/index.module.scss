@@ -1,0 +1,325 @@
+@import "./../../../../assets/styles/main.scss";
+
+.nextButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(60);
+
+  button{
+    width: 100%;
+    max-width: rem(320);
+  }
+}
+
+.dateSelector {
+  max-width: rem(800);
+  margin: auto;
+}
+
+.selectedData {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: rem(32);
+
+  @include md {
+    margin-top: rem(60);
+  }
+}
+
+.h2 {
+  @include heading_light;
+  color: getColorHex("black");
+  text-align: center;
+  font-size: rem(18);
+  font-weight: 500;
+  line-height: rem(26);
+  letter-spacing: rem(0.4);
+  margin-bottom: rem(18);
+
+  @include md {
+    margin-bottom: rem(20);
+    line-height: rem(36);
+    letter-spacing: rem(0.6);
+    font-size: rem(26);
+  }
+}
+
+.monthNav {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(15);
+  text-transform: uppercase;
+
+  span {
+    font-size: rem(14);
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+    text-transform: uppercase;
+    text-align: center;
+
+    @include md {
+      line-height: rem(22);
+      font-size: rem(16);
+    }
+  }
+}
+
+.button {
+  background: none;
+  cursor: pointer;
+  min-width: rem(28);
+  height: rem(28);
+  padding: 0;
+}
+
+.arrowLeft {
+  transform: rotate(180deg);
+}
+
+.dateContainer {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.dates {
+  display: flex;
+}
+
+.dateItem,
+.timeItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: rem(2) solid getColorHex("grey-light");
+  cursor: pointer;
+  transition: 0.2s;
+  width: 100%;
+  max-width: rem(50);
+  height: rem(64);
+  padding: rem(12) rem(8);
+  color: getColorHex("black");
+  box-sizing: border-box;
+
+  @include md {
+    max-width: rem(96);
+    height: rem(104);
+  }
+
+  .day {
+    @include heading_light;
+    text-align: center;
+    font-size: rem(10);
+    line-height: rem(14);
+    letter-spacing: rem(0.2);
+    text-transform: uppercase;
+  }
+
+  .date {
+    @include heading_light;
+    text-align: center;
+    font-size: rem(18);
+    font-weight: 500;
+    line-height: rem(26);
+    letter-spacing: rem(0.4);
+    text-transform: uppercase;
+
+    @include md {
+      letter-spacing: rem(0.6);
+      font-size: rem(26);
+      line-height: rem(32);
+    }
+  }
+}
+.timeItem {
+  @include heading_light;
+  width: rem(50);
+  height: rem(44);
+  padding: rem(12) rem(8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: getColorHex("black");
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+
+  @include md {
+    font-size: rem(20);
+    line-height: rem(28);
+    letter-spacing: rem(0.6);
+    width: rem(96);
+    height: rem(50);
+  }
+}
+
+.dateItem:hover,
+.timeItem:hover {
+  border: rem(2) solid getColorHex("grey-light");
+  background-color: getColorHex("grey-tint");
+  color: getColorHex("grey-brown");
+}
+
+.selected,
+.selectedTime {
+  border: 0 solid getColorHex("noir");
+  background: getColorHex("chocolate-brown");
+  color: getColorHex("white");
+}
+
+.disabled {
+  opacity: 0.5;
+  //pointer-events: none;
+
+  &:hover{
+    border: rem(2) solid getColorHex("grey-light");
+    background: none;
+    color: getColorHex("black");
+  }
+}
+
+.timeContainer {
+  position: relative;
+  white-space: nowrap;
+  margin-top: rem(20);
+  height: rem(50);
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.times {
+  display: flex;
+}
+
+.noSlotsMessageContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    @include heading_light;
+    color: getColorHex("black");
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(20);
+    letter-spacing: rem(0.4);
+    text-transform: uppercase;
+
+    @include md {
+      font-size: rem(20);
+      line-height: rem(28);
+      letter-spacing: rem(0.6);
+    }
+  }
+}
+
+.preferenceContainer {
+  background-color: getColorHex("white");
+  margin-top: rem(32);
+  margin-bottom: rem(32);
+  
+  @include md {
+    margin-top: rem(60);
+    margin-bottom: rem(60);
+  }
+}
+
+.heading {
+  @include heading_light;
+  font-size: rem(26);
+  font-weight: 500;
+  line-height: rem(36);
+  letter-spacing: rem(0.6);
+  margin-bottom: rem(24);
+  color: getColorHex("black");
+}
+
+.options {
+  display: flex;
+  gap: rem(15);
+
+  flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+  }
+}
+
+.customRadio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  input {
+    display: none;
+  }
+
+  .radioCircle {
+    width: rem(20);
+    height: rem(20);
+    border-radius: 50%;
+    border: rem(1) solid getColorHex("noir");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: rem(8);
+    position: relative;
+    background-color: getColorHex("white");
+    transition: background-color 0.2s, border 0.2s;
+
+    &::after {
+      content: "";
+      width: rem(6);
+      height: rem(6);
+      border-radius: 50%;
+      background: getColorHex("midnight-brown");
+      position: absolute;
+      transform: scale(0);
+      transition: transform 0.2s;
+    }
+  }
+
+  input:checked + .radioCircle::after {
+    transform: scale(1);
+  }
+}
+
+.selected {
+  border-color: getColorHex("black");
+}
+
+.notSelected {
+  border-color: getColorHex("grey-mid");
+}
+
+.selectedText {
+  color: getColorHex("black");
+  text-align: center;
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.2);
+}
+
+.notSelectedText {
+  color: getColorHex("grey-mid");
+  text-align: center;
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.2);
+}
+
+.tabNavigation {
+  width: 100%;
+  //margin-top: rem(60);
+}

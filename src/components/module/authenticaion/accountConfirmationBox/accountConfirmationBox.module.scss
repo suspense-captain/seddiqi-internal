@@ -1,0 +1,68 @@
+@import "./../../../../assets/styles/main.scss";
+
+.container {
+  width: rem(458);
+  height: rem(572);
+  padding: rem(100) 0;
+  text-align: center;
+  background-color: getColorHex("white");
+  display: flex;
+  flex-direction: column;
+  gap: rem(36);
+  margin: rem(20);
+
+  @include md {
+    margin: 0;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: rem(40);
+    height: rem(40);
+
+    @include md {
+      width: rem(60);
+      height: rem(60);
+    }
+  }
+}
+
+.title {
+  @include heading_light;
+  color: getColorHex("black-dark");
+  text-align: center;
+  font-size: rem(22);
+  font-weight: 500;
+  line-height: rem(30);
+  letter-spacing: rem(0.6);
+  margin: 0;
+
+  @include md {
+    letter-spacing: rem(0.5);
+    line-height: rem(36);
+    font-size: rem(26);
+  }
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(-16);
+}
+
+.p {
+  @include body_regular;
+  color: getColorHex("grey");
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+}
+
+.btnContainer {
+  margin-top: rem(0);
+}

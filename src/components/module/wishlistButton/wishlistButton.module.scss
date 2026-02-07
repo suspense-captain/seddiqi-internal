@@ -1,0 +1,19 @@
+@import "../../../assets/styles/main.scss";
+
+.wishlistButtonWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(14);
+}
+
+.heartButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+}

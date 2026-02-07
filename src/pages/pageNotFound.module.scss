@@ -1,0 +1,19 @@
+@import "../../assets/styles/main.scss";
+
+.pageNotFoundStyle {
+  @include heading_regular;
+  color: getColorHex("metallic");
+  text-align: center;
+  font-size: rem(140);
+  font-weight: 500;
+  line-height: rem(140);
+  text-transform: uppercase;
+  padding-top: rem(60);
+  padding-bottom: rem(20);
+
+  @include md {
+    padding-top: rem(120);
+    font-size: rem(300);
+    line-height: rem(300);
+  }
+}

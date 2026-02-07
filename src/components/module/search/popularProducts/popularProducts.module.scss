@@ -1,0 +1,137 @@
+@import "../../assets/styles/main.scss";
+.tabContainer {
+  display: flex;
+  width: 100%;
+  margin-top: rem(45);
+  flex-direction: row; 
+}
+
+.listsContainer {
+  flex: 0 0 30%;
+  padding-right: rem(20);
+
+  .hiddenScrollbar {
+    max-height: 25vh;
+  }
+}
+
+.popularSearch,
+.popularBrands,
+.popularProducts {
+  margin-bottom: rem(20);
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+  text-transform: uppercase;
+  color: getColorHex("grey");
+}
+
+.popularSearchListStyle,
+.popularBrandListStyle {
+  list-style-type: none;
+  padding: 0;
+  margin-top: rem(20);
+  margin-bottom: rem(20);
+  cursor: pointer;
+  li {
+    text-transform: capitalize;
+    margin-block-end: rem(20);
+    margin-block-start: rem(20);
+  }
+}
+
+.popularProductCard {
+  flex: 0 0 auto;
+  padding: rem(5);
+  border: rem(1) solid getColorHex("grey-light");
+  margin-bottom: rem(10);
+  width: rem(216); 
+  height: rem(412);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productImageContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 133.33%;
+  overflow: hidden;
+  margin-bottom: rem(10);
+}
+
+.productImageContainer img, .productImageContainer picture {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.productInfo {
+  padding: rem(10);
+  text-align: center;
+}
+
+.productInfo p {
+  margin: 0;
+  font-size: rem(14);
+  color: getColorHex("black");
+  text-transform: capitalize;
+}
+
+.productInfo p:first-child {
+  font-weight: bold;
+  margin-bottom: rem(5);
+}
+
+.productList {
+  display: flex;
+  gap: rem(20);
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto; 
+  padding-bottom: rem(10);
+}
+
+
+@include md-max {
+  .tabContainer {
+    flex-direction: column; 
+  }
+
+  .listsContainer {
+    width: 100%; 
+    padding-right: 0; 
+  }
+
+  .productList {
+    display: flex;
+    gap: rem(10);
+    flex-wrap: nowrap; 
+    justify-content: flex-start;
+    overflow-x: scroll; 
+  }
+
+  .productInfo {
+    font-size: rem(12);
+  }
+
+  .popularProductCard {
+    width: rem(180); 
+    height: rem(320); 
+  }
+}
+
+.hiddenScrollbar {
+  max-height: unset;
+  margin-bottom: rem(80);
+}
+
+.hiddenScrollbar {
+  @include sm {
+    max-height: 60vh;
+  }
+}

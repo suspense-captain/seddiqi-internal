@@ -1,0 +1,105 @@
+@import "../../../assets/styles/main.scss";
+
+.selection {
+  display: flex;
+  flex-direction: column;
+
+  @include md-max {
+    margin-top: rem(10);
+  }
+
+  .label {
+    @include heading_light;
+    font-size: rem(14);
+    color: getColorHex("black-dark");
+
+    @include md {
+      font-size: rem(16);
+    }
+  }
+
+  .dropdowns {
+    display: flex;
+    flex-direction: row;
+    gap: rem(20);
+    align-items: center;
+
+    @include md {
+      gap: rem(30);
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    width: rem(160);
+    border-bottom: rem(1) solid getColorHex("noir");
+
+    .customSelect {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: transparent;
+
+      select {
+        appearance: none;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        @include body_light;
+        color: getColorHex("green-metallic");
+        font-size: rem(12);
+
+        [dir="rtl"] & {
+          position: relative;
+          right: rem(20);
+        }
+
+        @include md {
+          font-size: rem(14);
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        right: rem(0);
+        pointer-events: none;
+
+        [dir="rtl"] & {
+          right: auto;
+          left: rem(0);
+        }
+      }
+
+      @include lg-max {
+        svg {
+          width: rem(10);
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+
+  .countryDropdown,
+  .languageDropdown {
+    border-bottom: rem(1) solid getColorHex("noir");
+    width: 100%;
+    margin-top: rem(8);
+    // margin-bottom: rem(48);
+    padding: rem(12 0);
+
+    @include sm {
+      width: rem(160);
+    }
+  }
+
+  .countryDropdown {
+    border-bottom: rem(1) solid getColorHex("grey-brown");
+  }
+}

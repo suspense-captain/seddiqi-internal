@@ -1,0 +1,30 @@
+@import "./../../../../assets/styles/main.scss";
+
+.rolexVideoIframeWrapper {
+  position: relative;
+  .rolexVideoIframeContainer {
+    width: 100%;
+    // max-width: rem(1220);
+
+    padding: 0 rem(120) 0 rem(120);
+    margin: 0 auto;
+
+    iframe {
+      width: 100%;
+      height: rem(680);
+      display: block;
+      border: none;
+      margin: 0 auto;
+    }
+  }
+  @include md-max {
+    .rolexVideoIframeContainer {
+      // max-width: rem(336);
+      padding: 0 rem(35) 0 rem(35); 
+      iframe {
+        width: 100%;
+        height: rem(190);
+      }
+    }
+  }
+}

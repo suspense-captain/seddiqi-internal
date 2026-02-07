@@ -1,0 +1,96 @@
+@import "./../../../../assets/styles/main.scss";
+
+.displayCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-bottom: rem(22);
+    }
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  cursor: pointer;
+
+  @include md {
+    width: rem(226);
+  }
+
+  .imgContainer {
+    position: relative;
+    height: rem(224);
+
+    @include md {
+      width: 100%;
+      height: rem(301);
+    }
+  }
+
+  .storyImg {
+    border-radius: rem(16 0 16 0);
+    object-fit: cover;
+    height: rem(224);
+    width: 100%;
+
+    @include md {
+      height: rem(301);
+    }
+  }
+
+  .displayCardInfo {
+    //display: flex;
+    display: block;
+    flex-direction: column;
+    gap: rem(8);
+    line-height: rem(22);
+
+    .title {
+      color: getColorHex("black");
+      letter-spacing: rem(0.4);
+      text-transform: uppercase;
+      font-size: rem(14);
+      margin: rem(0);
+
+      @include body_regular;
+      @include ellipses;
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+    }
+
+    .subTitle {
+      color: getColorHex("black-dark");
+      font-size: rem(16);
+      @include body_regular;
+      @include ellipses;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: rem(1);
+        background-color: getColorHex("black-dark");
+        transition: width 0.3s ease;
+      }
+
+      &:hover{
+        color: getColorHex("opulent-bronze");
+
+        &::after {
+          width: 100% !important;
+          background-color: getColorHex("opulent-bronze");
+        }
+      }
+    }
+  }
+}

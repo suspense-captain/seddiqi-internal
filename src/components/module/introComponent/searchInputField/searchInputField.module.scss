@@ -1,0 +1,100 @@
+@import "./../../../../assets/styles/main.scss";
+
+.searchContainer {
+  position: absolute;
+  bottom: rem(154);
+  z-index: 9999;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  width: rem(780);
+  height: rem(76);
+  padding: 0 rem(28);
+  align-items: center;
+  gap: rem(20);
+
+  border-radius: rem(16) 0;
+  border: rem(1) solid getColorHex("grey-light");
+  background: getColorHex("white");
+  box-shadow: 0 0 rem(30) 0 rgba(0, 0, 0, 0.15);
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @include breakpoint-min-width(rem(930)) {
+    min-width: rem(800);
+  }
+}
+
+.searchContainer {
+  display: flex;
+  width: 100%;
+  height: rem(60);
+  padding: 0px rem(28);
+  align-items: center;
+  gap: rem(20);
+
+  border-radius: rem(16) 0;
+  border: rem(1) solid getColorHex("grey-light");
+  background: getColorHex("white");
+  box-shadow: 0 0 rem(30) 0 rgba(0, 0, 0, 0.15);
+
+  @include breakpoint-min-width(rem(930)) {
+    height: rem(76);
+    width: rem(800);
+  }
+}
+
+.input {
+  height: 100%;
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: rem(16);
+  color: #333;
+  padding: 0;
+  margin-right: rem(8);
+}
+
+.input::placeholder {
+  @include heading_regular;
+  color: getColorHex("midnight-brown");
+
+  font-size: rem(20);
+  font-style: normal;
+  font-weight: 500;
+  line-height: rem(30);
+  letter-spacing: rem(0.6);
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: rem(20);
+  height: rem(20);
+  background: url("/path-to-your-icon.png") no-repeat center center;
+  background-size: contain;
+}
+
+.seddiqiLogo {
+  border-radius: rem(40);
+  background: getColorHex("desert-storm");
+  display: flex;
+  width: rem(44);
+  height: rem(44);
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  flex-shrink: 0;
+}

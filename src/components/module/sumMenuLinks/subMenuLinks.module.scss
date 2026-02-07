@@ -1,0 +1,44 @@
+@import "./../../../assets/styles/main.scss";
+
+.menuLeft {
+  display: flex;
+  gap: rem(60);
+
+  @include breakpoint-min-width(rem(1270)) {
+    gap: rem(120);
+  }
+  @include breakpoint-max-width(rem(1150)) {
+    gap: rem(120);
+  }
+}
+
+.menuLink {
+  @include body_regular;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // width: rem(217);
+  margin-bottom: rem(28);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  color: getColorHex("black-dark");
+  cursor: pointer;
+
+  &:hover{
+    color: getColorHex("opulent-bronze");
+  }
+}
+
+.label {
+  color:getColorHex("black-dark");
+  @include body_bold;
+  font-size: rem(14);
+  font-style: normal;
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  margin-bottom: rem(28);
+}

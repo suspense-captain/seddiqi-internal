@@ -1,0 +1,144 @@
+@import "./../../../../assets/styles/main.scss";
+
+.inputGroup,
+.selectGroup {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  height: rem(46);
+  width: 100%;
+
+  input,
+  select {
+    // 
+
+    border: none;
+    border-bottom: rem(1) solid getColorHex("grey-light");
+    font-size: rem(14);
+    width: 100%;
+    transition: border-color 0.3s;
+    background-color: transparent;
+    height: 100%;
+
+    @include md {
+      font-size: rem(16);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: getColorHex("black");
+    }
+  }
+
+  select {
+    margin-left: rem(-3);
+    // appearance: none;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // 
+
+    background: transparent;
+    border: none;
+    border-bottom: rem(1) solid getColorHex("grey-light");
+    font-size: rem(16);
+    color: getColorHex("grey");
+    height: 100%;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    width: auto; //100%;
+    padding-right: rem(10);
+
+    @include md {
+      //width: rem(61);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: getColorHex("black");
+    }
+
+    select::-ms-expand {
+      display: none;
+    }
+  }
+
+  label {
+    
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: rem(14);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform-origin: left bottom;
+    transform: translateY(0);
+    top: 50%;
+    transform: translateY(-50%);
+    color: getColorHex("grey");
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+
+    [dir="rtl"] & {
+      right: 0;
+    }
+
+    @include md {
+      font-size: rem(16);
+    }
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    transform: translateY(-180%) scale(0.8);
+    color: getColorHex("black");
+
+    [dir="rtl"] & {
+      transform:none;
+      transform: translateY(rem(-40));
+    }
+  }
+
+  .inputError {
+    border-bottom-color: getColorHex("dark-red");
+  }
+}
+
+.selectGroup {
+  width: rem(61);
+  label {
+    transform: translateY(rem(-40)) scale(0.8);
+  }
+
+  option {
+    color: getColorHex("grey");
+  }
+}
+
+.selectGroupFull {
+  width: 100%;
+
+  select {
+    width: 100%;
+  }
+}
+
+.errorMessage {
+//   
+
+  color: getColorHex("dark-red");
+  margin-top: rem(8);
+  font-size: rem(10);
+  line-height: rem(14);
+  letter-spacing: rem(0.2);
+}
+
+
+.dropdownLabel {
+  [dir="rtl"] & {
+    transform:none;
+    transform: translateY(rem(-40));
+  }
+
+}

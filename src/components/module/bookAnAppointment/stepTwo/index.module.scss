@@ -1,0 +1,145 @@
+@import "./../../../../assets/styles/main.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: rem(120);
+}
+
+.content {
+  max-width: rem(800);
+  display: flex;
+  flex-direction: column;
+  gap: rem(60);
+  width: 100%;
+}
+
+.seriveCard {
+  max-width: rem(800);
+  width: 100%;
+  border: rem(1) solid getColorHex("grey-mid");
+}
+
+.tabNavigation {
+  width: 100%;
+  display: none;   //Note: To be remove later once we have values for other tabs other than watches
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+  }
+
+  .checkbox {
+    width: rem(20);
+    height: rem(20);
+    cursor: pointer;
+    border: rem(2) solid getColorHex("grey-brown");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: rem(1) solid getColorHex("grey-brown");
+  }
+
+  .tick {
+    display: none;
+  }
+
+  .inputCheckbox {
+    display: none;
+  }
+
+  .inputCheckbox:checked + .checkbox {
+    .tick {
+      display: block;
+    }
+  }
+  .brandName {
+    color: getColorHex("grey-mid");
+    cursor: pointer;
+
+    font-size: rem(16);
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+  }
+}
+
+.serviceCard {
+  background: getColorHex("white");
+  display: flex;
+  align-items: center;
+  padding: rem(16);
+  gap: rem(24);
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  border: rem(1) solid getColorHex("grey-mid");
+
+  @include md {
+    padding: rem(28);
+  }
+
+  .serviceImage {
+    display: flex;
+    min-width: rem(32);
+    width: rem(32);
+    height: rem(43);
+    object-fit: cover;
+
+    @include md {
+      min-width: rem(113);
+      height: rem(151);
+    }
+  }
+
+  .serviceInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(12);
+    .serviceTitle {
+      @include heading_light;
+      color: getColorHex("black-dark");
+      font-size: rem(18);
+      font-weight: 500;
+      line-height: rem(26);
+      letter-spacing: rem(0.4);
+
+      @include md {
+        font-size: rem(26);
+        line-height: rem(36);
+        letter-spacing: rem(0.6);
+      }
+    }
+
+    .serviceDesc {
+      color: getColorHex("green-metallic");
+      font-size: rem(12);
+      line-height: rem(20);
+      letter-spacing: rem(0.2);
+      display: none;
+
+      @include md {
+        display: block;
+        font-size: rem(14);
+        line-height: rem(22);
+      }
+    }
+  }
+}
+
+.closeIcon {
+  position: absolute;
+  right: rem(29);
+  top: rem(29);
+  width: rem(12.73);
+  height: rem(12.73);
+}

@@ -1,0 +1,26 @@
+@import "./../../../../assets/styles/main.scss";
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: getColorHex("white");
+  width: 100%;
+  border: rem(1) solid getColorHex("grey-light");
+  padding: rem(24);
+
+  h4 {
+    margin: 0;
+    margin-bottom: rem(8);
+  }
+
+  .contactInfo {
+    color: getColorHex("grey");
+    font-size: rem(16);
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+  }
+
+  @include md {
+    max-width: rem(800);
+  }
+}

@@ -1,0 +1,158 @@
+@import "./../../../assets/styles/main.scss";
+
+.needMoreHelpContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: rem(60) rem(28);
+  border-bottom: rem(1) solid getColorHex("grey-light-4");
+
+  @include md {
+    padding: rem(90) rem(28);
+    max-width: calc(100% - 30px);
+    border-bottom: rem(1) solid getColorHex("grey-brown");
+  }
+
+  @include lg {
+    max-width: calc(100% - 60px);
+    padding: rem(120) rem(28);
+  }
+
+  &.withMarginTop {
+    margin: rem(60) 0 0;
+
+    @include lg {
+      margin: rem(120) 0 0;
+    }
+  }
+
+  .content {
+    width: 100%;
+    max-width: rem(1440);
+
+    @include md {
+      padding: rem(0 60 0 60);
+    }
+  }
+
+  h3 {
+    @include heading_regular;
+    font-size: rem(28);
+    //font-weight: 500;
+    line-height: rem(34);
+    letter-spacing: rem(0.4);
+    color: getColorHex("black-dark");
+    margin: 0;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+
+    @include md {
+      font-size: rem(32);
+      line-height: rem(44);
+      letter-spacing: rem(0.6);
+      text-transform: none;
+      text-align: center;
+    }
+
+    [dir="rtl"] & {
+      text-align: center;
+    }
+  }
+
+  .paragraphsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+    width: 100%;
+    margin: rem(12) 0 0;
+    list-style: none;
+    padding: 0;
+
+    @include md {
+      margin: rem(16) 0 0;
+      gap: rem(16);
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      p {
+        @include body_light;
+        font-size: rem(14);
+        line-height: rem(22);
+        letter-spacing: rem(0.2);
+        font-weight: 300;
+        color: getColorHex("black-dark");
+        display: block;
+        text-align: left;
+
+        [dir="rtl"] & {
+          text-align: center;
+        }
+
+        @include md {
+          @include body_regular;
+          font-size: rem(16);
+          line-height: rem(26);
+          letter-spacing: rem(0.4);
+          font-weight: 400;
+          text-align: center;
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .contactIcons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: rem(12);
+    margin: rem(32) 0 0;
+    align-self: flex-start;
+    width: 100%;
+    justify-content: center;
+
+    [dir="rtl"] & {
+      justify-content: center;
+    }
+
+    @include md {
+      margin: rem(36) 0 0;
+      gap: rem(24);
+      align-self: center;
+    }
+
+    svg {
+      width: rem(32);
+
+      @include md {
+        width: rem(40);
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(40);
+      height: rem(40);
+
+      picture {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@import "../../../assets/styles/main.scss";
+
+.switchContainer{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: rem(12);
+}
+
+.toggleLabel{
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  color: getColorHex("grey-mid");
+  display: flex;
+  text-transform: uppercase;
+
+  &:empty{
+    display: none;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: rem(48);
+  height: rem(26);
+  //padding: rem(2);
+
+  input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: getColorHex("grey-light-4");
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: rem(22);
+    width: rem(22);
+    left: rem(2);
+    bottom: rem(2);
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='22' height='22' rx='11' fill='white'/%3E%3Cpath d='M6.12955 6.59101C6.12955 5.08824 7.73688 4.48077 9.044 4.48077L9.05026 4.17544L8.59057 4.1007C7.07862 3.84945 5.85437 4.07049 5.04758 4.73998C4.35649 5.31246 4.06098 6.02966 4.06098 6.82318C4.06098 8.25121 5.28054 10.212 6.15926 11.7895C6.71275 12.7675 7.31941 13.8282 7.31941 15.0685C7.31941 16.5697 5.86687 17.4905 4.03283 17.4905L4 17.799C5.89815 18.3015 9.47398 18.0948 9.47398 14.4134C9.47398 13.1062 8.70784 11.7354 7.86821 10.3233C7.00826 8.78712 6.12955 7.54356 6.12955 6.59101Z' fill='%23CCCBC7'/%3E%3Cpath d='M17.9672 17.4921C16.1331 17.4921 14.6806 16.5713 14.6806 15.0701C14.6806 13.8298 15.2872 12.7691 15.8407 11.7911C16.7195 10.2136 17.939 8.2528 17.939 6.82477C17.939 6.02966 17.6435 5.31405 16.9524 4.74157C16.1456 4.07208 14.9214 3.85104 13.4094 4.10229L12.9497 4.17703L12.956 4.48236C14.2631 4.48236 15.8705 5.08824 15.8705 6.59101C15.8705 7.54356 14.9917 8.78712 14.1318 10.3233C13.2922 11.7354 12.526 13.1062 12.526 14.4134C12.526 18.0948 16.1019 18.2999 18 17.799L17.9672 17.4905V17.4921Z' fill='%23CCCBC7'/%3E%3C/svg%3E");
+    -webkit-transition: .4s;
+    transition: .4s;
+
+    [dir="rtl"] & {
+      left: auto;
+      right: rem(2);
+    }
+  }
+  
+  input:checked + .slider {
+    background-color: getColorHex("noir");
+  }
+  
+  input:focus + .slider {
+    box-shadow: none;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='22' height='22' rx='11' fill='white'/%3E%3Cpath d='M6.12955 6.59101C6.12955 5.08824 7.73688 4.48077 9.044 4.48077L9.05026 4.17544L8.59057 4.1007C7.07862 3.84945 5.85437 4.07049 5.04758 4.73998C4.35649 5.31246 4.06098 6.02966 4.06098 6.82318C4.06098 8.25121 5.28054 10.212 6.15926 11.7895C6.71275 12.7675 7.31941 13.8282 7.31941 15.0685C7.31941 16.5697 5.86687 17.4905 4.03283 17.4905L4 17.799C5.89815 18.3015 9.47398 18.0948 9.47398 14.4134C9.47398 13.1062 8.70784 11.7354 7.86821 10.3233C7.00826 8.78712 6.12955 7.54356 6.12955 6.59101Z' fill='%23271610'/%3E%3Cpath d='M17.9672 17.4921C16.1331 17.4921 14.6806 16.5713 14.6806 15.0701C14.6806 13.8298 15.2872 12.7691 15.8407 11.7911C16.7195 10.2136 17.939 8.2528 17.939 6.82477C17.939 6.02966 17.6435 5.31405 16.9524 4.74157C16.1456 4.07208 14.9214 3.85104 13.4094 4.10229L12.9497 4.17703L12.956 4.48236C14.2631 4.48236 15.8705 5.08824 15.8705 6.59101C15.8705 7.54356 14.9917 8.78712 14.1318 10.3233C13.2922 11.7354 12.526 13.1062 12.526 14.4134C12.526 18.0948 16.1019 18.2999 18 17.799L17.9672 17.4905V17.4921Z' fill='%23271610'/%3E%3C/svg%3E");
+  
+    [dir="rtl"] & {
+      -webkit-transform: translateX(-22px);
+      -ms-transform: translateX(-22px);
+      transform: translateX(-22px);
+    }
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}

@@ -1,0 +1,113 @@
+@import "../../../assets/styles/main.scss";
+
+.title {
+  @include heading_light;
+  font-size: rem(18);
+  line-height: rem(26);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  margin-bottom: rem(24);
+  color:  getColorHex("black-dark");
+
+  @include md {
+    font-size: rem(26);
+    line-height: rem(32);
+    letter-spacing: rem(0.6);
+    margin-bottom: rem(20);
+  }
+}
+
+.description {
+  @include body_regular;
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  margin-bottom: rem(24);
+
+  @include md {
+    font-size: rem(16);
+    line-height: rem(26);
+    margin-bottom: rem(24);
+  }
+}
+.sizeTabWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: rem(32);
+  margin-bottom: rem(32);
+}
+
+.sizeTab {
+  @include body_regular;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(80);
+  height: rem(36);
+  border: rem(1) solid;
+  border-color: getColorHex("grey-light");
+  padding: rem(8) rem(12);
+  background: getColorHex("white");
+  color: getColorHex("green-metallic");
+  font-size: rem(12);
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  margin-right: rem(16);
+  margin-bottom: rem(16);
+
+  @include md {
+    font-size: rem(14);
+    line-height: rem(22);
+  }
+}
+
+.sizeTab:hover {
+  background-color:getColorHex("desert-storm");
+  color: getColorHex("chocolate-brown");
+  border: rem(1) solid getColorHex("chocolate-brown");
+}
+
+.sizeInfoWrapper {
+  margin-bottom: rem(32);
+  .sizeGuideBtn {
+    @include body_regular;
+    color: getColorHex("black-dark");
+    font-size: rem(14);
+    font-style: normal;
+    line-height: rem(18);
+    letter-spacing: rem(1);
+    text-transform: capitalize;
+  }
+
+  .findMySizeBtnWrapper {
+    margin-right: rem(32);
+
+    .findMySizeBtn {
+      @include body_regular;
+      color: getColorHex("black-dark");
+      font-size: rem(14);
+      font-style: normal;
+      line-height: rem(18);
+      letter-spacing: rem(1);
+      text-transform: capitalize;
+    }
+  }
+}
+
+.sizeSelectorDivider {
+  border-top: rem(1) solid getColorHex("bronze-grey");
+}
+
+.sizeGuideBtnWrapper {
+  button {
+    margin-right: rem(32);
+  }
+}
+
+.longDescription {
+font-size: rem(16);
+line-height: rem(26);
+letter-spacing: rem(0.4);
+color: getColorHex("green-metallic");
+}

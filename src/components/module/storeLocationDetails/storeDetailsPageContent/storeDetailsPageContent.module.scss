@@ -1,0 +1,733 @@
+@import "../../../../assets/styles/main.scss";
+
+.mainWrapper {
+
+  .mapViewBtnLabel,
+  .contactLabel,
+  .storeOpenDay,
+  .storeOpenTiming,
+  .storeServiceInfo,
+  .storeBrandsInfo,
+  .availableBrandsTitle,
+  .brandsName {
+    font-size: rem(12);
+    font-weight: 400;
+    line-height: rem(20);
+    letter-spacing: rem(0.2);
+  }
+
+  .contactLabel,
+  .storeOpenDay,
+  .storeServiceInfo,
+  .brandsName {
+    color: getColorHex("grey");
+  }
+
+  .availableBrandsTitle {
+    color: getColorHex("grey-mid");
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  .storeOpenTiming {
+    color: getColorHex("black-dark");
+  }
+
+
+  .mapViewBtnLabel,
+  .availableBrandsTitle {
+    text-transform: uppercase;
+  }
+
+  .addressWrapper {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    .storeAddress {
+      display: inline-flex;
+      align-items: flex-start;
+
+      @include md {
+         align-items: center;
+      }
+    }
+  }
+
+  .vline {
+    & > *:not(:first-child)::before {
+      content: "|";
+      margin: 0 rem(4);
+    }
+  }
+
+  .storeImg {
+    border-radius: rem(16 0 16 0);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .storeContactWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: rem(20);
+  }
+
+  .contactLabelWrapper {
+    flex: 0 1 auto;
+  }
+
+  .contactWrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .vDivider {
+    background-color: getColorHex("grey-light");
+    width: rem(1);
+    height: rem(16);
+    margin: 0 rem(16);
+  }
+
+  .storeTimingWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timingRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: rem(12);
+    width: 100%;
+  }
+
+  .serviceList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+    
+  }
+
+  .serviceList li {
+    margin-bottom: rem(8);
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  .brandsWrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-left: rem(32);
+    margin-top: rem(12);
+    margin-bottom: rem(16);
+    flex-wrap: wrap;
+
+    [dir="rtl"] & {
+      margin-right: rem(32);
+      margin-left: rem(0);
+    }
+  }
+
+  .brandSeparator {
+    width: rem(1);
+    height: rem(20);
+    background-color: getColorHex("green-dark");
+    margin: 0 rem(4);
+  }
+
+  .divider {
+    border-top: rem(1) solid getColorHex("grey-light");
+    margin-top: rem(20);
+    margin-bottom: rem(32);
+  }
+
+  .mapViewBtnLabel {
+    color: getColorHex("grey-mid");
+  }
+
+  .mapViewBtn {
+    margin-top: rem(20);
+    margin-bottom: rem(12);
+  }
+
+  .mapIcon {
+    margin-right: rem(5);
+    height: rem(16);
+    width: rem(16);
+    flex: 1 0 5%;
+
+    [dir="rtl"] & {
+      margin-left: rem(5);
+    }
+
+    @include sm {
+      flex: none;
+    }
+  }
+
+  .WhatsappIcon {
+    margin-right: rem(12);
+    color: getColorHex("green-dark");
+    height: rem(20);
+    width: rem(20);
+
+    [dir="rtl"] & {
+      margin-left: rem(12);
+    }
+  }
+
+  .locationInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: getColorHex("grey");
+    margin-bottom: rem(12);
+    margin-top: rem(12);
+    gap: rem(6);
+  }
+
+  .leftSection {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+
+    @include md {
+      align-items: center;
+    }
+  }
+
+  .iconWrapper {
+    margin-right: rem(12);
+
+    [dir="rtl"] & {
+     margin-left: rem(12);
+     margin-right: rem(0);
+    }
+  }
+
+  .timeIcon,
+  .serviceIcon,
+  .brandsIcon {
+    height: rem(20);
+    width: rem(20);
+  }
+
+  .timingItems {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .timingDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .storeOpenDay {
+    margin-right: rem(12);
+
+    [dir="rtl"] & {
+      margin-left: rem(12);
+    }
+  }
+
+  .storeOpenTiming {
+    text-align: right;
+
+    [dir="rtl"] & {
+      text-align: left;
+    }
+  }
+
+  .serviceWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .storeServiceInfo {
+    flex: 1;
+  }
+
+  .appointmentBtn,
+  .viewAllBrandsBtn,
+  .getDirectionBtn {
+    text-transform: none;
+  }
+
+  .whatsappBtn,
+  .contactBtn {
+    text-transform: capitalize;
+  }
+
+  .storeBrandsInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .iconSection {
+    display: flex;
+    align-items: flex-start;
+    margin-right: rem(12);
+
+    [dir="rtl"] & {
+      margin-left: rem(12);
+    }
+  }
+
+  .availableBrandsLabel {
+    flex: 1;
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(20);
+  }
+
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(0) rem(100);
+
+    @include md {
+      padding: rem(0) rem(100) rem(60) rem(100);
+    }
+  }
+
+  @include md-max {
+    .backBtn {
+      margin-left: rem(20) !important;
+      justify-content: flex-start;
+
+      [dir="rtl"] & {
+        margin-right: rem(20) !important;
+      }
+    }
+
+    .mapViewWrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 !important;
+      padding: rem(10) rem(20);
+      box-sizing: border-box;
+    }
+
+    .mapViewBtnLabel {
+      margin-right: rem(10);
+
+      [dir="rtl"] & {
+        margin-right: rem(0);
+        margin-left: rem(10);
+      }
+    }
+
+    .contentWrapper {
+      padding: rem(0) rem(20);
+
+      @include md {
+        padding: rem(0) rem(20) rem(20);
+      }
+    }
+
+    .imageContainer {
+      width: 100%;
+      margin-bottom: rem(20);
+    }
+
+    .contentWrapper {
+      flex-direction: column;
+      padding: rem(0) rem(20);
+
+      @include md {
+        padding: rem(0) rem(20) rem(20);
+      }
+    }
+
+    .twoColumnLayout {
+      flex-direction: column;
+    }
+
+    .storeImageWrapper {
+      order: 1;
+    }
+
+    .infoTwoColumn {
+      order: 2;
+      margin-right: 0;
+
+      [dir="rtl"] & {
+        margin-left: rem(0);
+        margin-right: auto;
+      }
+    }
+
+    .locationInfo {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: rem(12);
+    }
+
+    .leftSection {
+      display: flex;
+      flex-grow: 1;
+      flex-wrap: nowrap;
+
+      @include md {
+        flex-wrap: wrap;
+      }
+    }
+
+    .addressWrapper {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      margin-right: rem(5);
+      text-align: left;
+
+      [dir="rtl"] & {
+        margin-right: 0;
+        margin-left: rem(5);
+        text-align: right;
+      }
+
+      @include md {
+         align-items: center;
+      }
+    }
+
+    .directionBtnWrapper {
+      width: 100%;
+      text-align: left;
+      margin-top: rem(10);
+    }
+  }
+
+  .infoTwoColumn {
+    flex: 1;
+    margin-right: rem(60);
+
+    [dir="rtl"] & {
+      margin-left: rem(60);
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .mapColumn {
+    flex: 1;
+  }
+
+  .storeImageWrapper {
+    position: relative;
+    width: rem(100%);
+
+    @include md {
+      margin-bottom: rem(28);
+    }
+  }
+
+  .title {
+    color: getColorHex("black-dark");
+    letter-spacing: rem(0.6);
+    margin-block-end: rem(42);
+    margin-block-start: rem(24);
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    @include md {
+      margin-block-start: rem(60);
+    }
+  }
+
+  .mapViewWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: rem(16);
+    margin-right: rem(100);
+
+    [dir="rtl"] & {
+      margin-left: rem(100);
+      margin-right: 0;
+    }
+  }
+
+  .backBtn {
+    display: flex;
+    align-items: center;
+    margin-left: rem(60);
+    margin-top: rem(20);
+    cursor: pointer;
+
+    [dir="rtl"] & {
+      margin-right: rem(100);
+    }
+  }
+
+  .arrowLeftWrapper {
+    margin-right: rem(8);
+    display: flex;
+    align-items: center;
+
+    [dir="rtl"] & {
+      margin-left: rem(8);
+      margin-right: 0;
+    }
+  }
+
+  .arrowLeft {
+    transform: rotate(180deg);
+
+    [dir="rtl"] & {
+      transform: none;
+    }
+  }
+
+  .backButtonContent {
+    position: relative;
+  }
+
+  .backButtonText {
+    font-size: rem(14);
+    font-weight: normal;
+    line-height: rem(18);
+    letter-spacing: rem(0.6);
+    display: inline-block;
+    color: getColorHex("black-dark");
+  }
+
+  .underline {
+    height: rem(1);
+    background-color: getColorHex("black-dark");
+    margin-top: rem(2);
+    width: 100%;
+  }
+
+  .mainWrapper {
+    position: relative;
+  }
+
+  .twoColumnLayout {
+    display: flex;
+  }
+
+  .imageContainer {
+    flex: 1;
+  }
+
+  .storeImageWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    @include md {
+      margin-bottom: rem(28);
+    }
+  }
+
+  .mapContainer {
+    width: 100%;
+    height: auto;
+
+    @include md {
+      height: rem(860);
+    }
+  }
+
+  .infoOverlay {
+    position: absolute;
+    width: rem(580);
+    height: rem(650);
+    left: rem(40);
+    padding-left: rem(0);
+    padding-top: rem(20);
+    background: getColorHex("white");
+    z-index: 10;
+    border-radius: rem(16) 0;
+
+    [dir="rtl"] & {
+      left: 0;
+      right: rem(40);
+    }
+
+    @include md {
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: rem(20);
+      padding-bottom: rem(20);
+
+      [dir="rtl"] & {
+        padding-left: 0;
+        padding-right: rem(20);
+      }
+
+    }
+
+    p {
+      margin: 0;
+    }
+
+  }
+
+  .mapOuterContainer {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .mapContainer {
+    flex: 1;
+    position: relative;
+  }
+
+  .mainWrapper {
+    position: relative;
+    margin-top: rem(20);
+  }
+
+  .infoColumn {
+    flex: 1;
+    margin-right: rem(20);
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: rem(20);
+    }
+  }
+
+  .imageContainer {
+    flex: 1;
+  }
+
+  .twoColumnLayout {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fullWidthMap {
+    height: rem(300);
+    width: 100%;
+
+    @include md {
+      height: 100%;
+    }
+  }
+
+  @include md-max {
+    .mapOuterContainer {
+      position: relative;
+    }
+
+    .mapContainer {
+
+      @include md {
+        margin-bottom: rem(20);
+      }
+
+      .infoOverlay {
+        position: relative;
+        width: 100%;
+
+        margin-top: rem(0);
+        left: rem(0) !important;
+        border-radius: rem(0) 0 rem(0) 0;
+        overflow: auto;
+
+        [dir="rtl"] & {
+          right: rem(0) !important;
+          left: auto;
+        }
+
+        @include md {
+          margin-top: rem(180);
+        }
+
+        .infoWrapper {
+          position: relative;
+          padding-right: rem(20);
+
+          [dir="rtl"] & {
+            padding-right: 0;
+            padding-left: rem(20);
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.storeMapListSwiper {
+  position: relative;
+  height: 100%;
+  border-radius: rem(16);
+
+  &>div:last-of-type {
+    right: rem(20);
+    background: none;
+    width: rem(6);
+
+    [dir="rtl"] & {
+      right: auto;
+      left: rem(20);
+    }
+
+    &>div {
+      background: getColorHex("dark-brown");
+    }
+  }
+}
+
+.infoWrapper {
+  position: relative;
+  padding-right: rem(40);
+
+  [dir="rtl"] & {
+    padding-right: 0;
+    padding-left: rem(40);
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.noSlideContainer {
+  padding-right: rem(10);
+  padding-left: rem(10);
+}

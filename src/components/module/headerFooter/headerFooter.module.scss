@@ -1,0 +1,20 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: rem(32);
+  text-transform: uppercase;
+  border-top: rem(1) solid getColorHex("grey-light");
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.footerNavigation {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  color: getColorHex("black-dark");
+}

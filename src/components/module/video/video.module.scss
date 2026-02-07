@@ -1,0 +1,47 @@
+@import "./../../../assets/styles/main.scss";
+
+.videoPlayerWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative; 
+}
+
+.skeleton {
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s;
+}
+
+.actionButtonContainer {
+  position: absolute;
+  right: rem(28);
+  bottom: rem(28);
+  display: flex;
+  z-index: 1000;
+
+  @include md {
+    right: rem(36);
+    bottom: rem(36);
+  }
+
+  .actionButtonAlignment {
+    cursor: pointer;
+    height: rem(28);
+    width: rem(28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: rem(6);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

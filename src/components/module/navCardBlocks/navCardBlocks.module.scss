@@ -1,0 +1,45 @@
+@import "./../../../assets/styles/main.scss";
+
+.rightSideContainer {
+  display: flex;
+  gap: rem(40);
+
+  @include breakpoint-max-width(rem(1612)) {
+    flex-direction: column;
+  }
+
+  .column1,
+  .column2 {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+  }
+
+  .column1 .storyCardContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: rem(22);
+  }
+}
+
+.displayCardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+}
+
+.displayCards {
+  display: flex;
+  gap: rem(24);
+}
+
+.displayCardsTitle {
+  @include heading_light;
+  font-size: rem(16);
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  color: getColorHex("black-dark");
+  text-transform: uppercase;
+}

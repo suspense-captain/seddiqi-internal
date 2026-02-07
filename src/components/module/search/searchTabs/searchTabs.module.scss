@@ -1,0 +1,41 @@
+@import "../../assets/styles/main.scss";
+
+.tabsContainer {
+  margin-bottom: rem(48);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: rem(1) solid getColorHex("grey-light");
+}
+
+.tab {
+  padding: rem(0) rem(15);
+  cursor: pointer;
+  margin-right: rem(10);
+  color: getColorHex("grey-brown");
+}
+
+.tab:last-child {
+  margin-right: 0;
+}
+
+.active {
+  border-bottom: rem(1) solid getColorHex("chocolate-brown");
+  font-weight: bold;
+  color: getColorHex("black-dark");
+}
+
+h5.watchesTab,
+h5.jewelleryTab,
+h5.storiesTab {
+  color: getColorHex("black-dark");
+  font-size: rem(14);
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  @include md {
+    margin-block-start: rem(40);
+    margin-block-end: rem(10);
+  }
+}

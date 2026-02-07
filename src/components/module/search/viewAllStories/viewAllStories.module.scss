@@ -1,0 +1,126 @@
+@import "../../assets/styles/main.scss";
+.searchStoryTitle {
+  margin-bottom: rem(30);
+  font-size: rem(16);
+  line-height: rem(44);
+  letter-spacing: rem(0.6);
+  text-transform: capitalize;
+  color: getColorHex("black-dark");
+  margin-top: rem(0);
+}
+.storiesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  :global(.customStoryCardStyle) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    img {
+      @include md {
+        width: rem(407);
+        height: rem(407);
+      }
+    }
+    .content {
+      align-items: center !important;
+    }
+  }
+  .storyCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center !important;
+    text-align: center !important;
+
+    .buttonContainer {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-top: rem(12);
+    }
+  }
+
+  .storyCardStyles {
+    flex: 1 1 100%;
+    margin-bottom: rem(20);
+    @include md {
+      flex: 0 1 calc(33.33% - 20px);
+      box-sizing: border-box;
+      .storyCardContainer {
+        display: flex;
+        gap: rem(20);
+        cursor: pointer;
+
+        width: 100%;
+        height: 100%;
+
+        @include md {
+          height: rem(109);
+        }
+
+        flex-direction: column;
+        @include sm {
+          flex-direction: column !important;
+        }
+
+        .imgContainer {
+          position: relative;
+          width: rem(407);
+          height: rem(407);
+        }
+
+        .image {
+          border-radius: rem(16 0 16 0);
+          object-fit: cover;
+          @include sm {
+            width: rem(160);
+            height: rem(109);
+          }
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: rem(12);
+
+          width: 100%;
+
+          @include sm {
+            width: rem(220);
+          }
+
+          .title {
+            @include heading_light;
+
+            font-size: rem(14);
+            line-height: rem(20);
+            letter-spacing: rem(0.4);
+            margin: rem(0);
+
+            @include ellipses;
+
+            @include md {
+              font-size: rem(16);
+            }
+          }
+
+          .subtitle {
+            @include body_light;
+            color: getColorHex("black-dark");
+            font-size: rem(12);
+            line-height: rem(22);
+            @include ellipses;
+
+            @include md {
+              font-size: rem(14);
+            }
+          }
+        }
+      }
+    }
+  }
+}

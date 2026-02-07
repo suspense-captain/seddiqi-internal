@@ -1,0 +1,53 @@
+@import "./../../../assets/styles/main.scss";
+
+.megaMenuContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: rem(152);
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  background-color: getColorHex("white");
+  transition: all 0.3s;
+  height: calc(100vh - 152px);
+  overflow-y: scroll;
+  justify-content: space-between;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+
+  @include breakpoint-max-width(rem(1150)) {
+    padding: rem(30 60);
+  }
+
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: rem(60);
+    gap: rem(71);
+
+    @include breakpoint-min-width(rem(1270)) {
+      padding: rem(60 120);
+    }
+    
+    
+    @include breakpoint-max-width(rem(1150)) {
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+}
+
+.headerFooter {
+  padding: rem(60 120);
+}
+
+.imgContainer {
+  position: relative;
+  width: rem(226);
+  height: rem(301);
+}

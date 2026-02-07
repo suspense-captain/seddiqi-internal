@@ -1,0 +1,224 @@
+@import "./../../../assets/styles/main.scss";
+
+.brandSectionContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: rem(1200);
+  width: 100%;
+
+  @include lg{
+    padding: 0 rem(28);
+  }
+
+  @include xl{
+    padding: 0;
+  }
+
+  // @include lg {
+  //   margin: rem(0 120);
+  // }
+
+  &:global(.simplebar-scrollbar) {
+    background-color: red;
+    &::before{
+      background-color: red;
+    }
+  };
+}
+
+.simpleScrollbar{
+  opacity: 1;
+  visibility: visible;
+
+  & > div:last-child{
+    background-color: transparent;
+    right: rem(10);
+
+    @include lg{
+      right: 0;
+    }
+
+    & > div{
+
+      &::before{
+        background: getColorHex("brown-dark");
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.alphabetNav {
+  display: flex;
+  justify-content: space-between;
+  margin: rem(40 0);
+  overflow-x: auto;
+  gap: rem(36);
+  margin-left: rem(28);
+
+  @include lg {
+    margin-left: rem(0);
+  }
+
+  &::-webkit-scrollbar {
+    height: rem(5);
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: getColorHex("grey-mid");
+    border-radius: rem(2);
+
+    &:hover {
+      background-color: getColorHex("grey-mid");
+    }
+  }
+
+  .alphabetLetter {
+    @include heading_light;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: getColorHex("black-dark");
+    font-size: rem(16);
+    line-height: rem(20);
+    letter-spacing: rem(0.4);
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    &.enabled {
+      color: getColorHex("black-dark");
+    }
+
+    &.disabled {
+      color: getColorHex("grey-light-5");
+      pointer-events: none;
+    }
+  }
+}
+
+// .brandListHeight {
+//   max-height: rem(400);
+// }
+
+.brandList {
+  // overflow-y: auto;
+  margin: 0 rem(28);
+  display: grid;
+  gap: rem(20);
+  grid-template-columns: repeat(auto-fit, minmax(rem(150), 1fr));
+  
+
+  @include md {
+    grid-template-columns: repeat(2, minmax(rem(250), 1fr));
+  }
+
+  @include lg {
+    margin: 0;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &::-webkit-scrollbar {
+    width: rem(5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: getColorHex("grey-light-4");
+    border-radius: rem(2);
+
+    &:hover {
+      background-color: getColorHex("grey-light-4");
+    }
+  }
+
+  .brandGroup {
+    margin-bottom: rem(30);
+
+    h4 {
+      @include heading_light;
+      font-size: rem(26);
+      font-weight: 500;
+      line-height: rem(36);
+      letter-spacing: rem(0.6);
+      color: getColorHex("metallic");
+      margin-bottom: rem(20);
+      text-transform: uppercase;
+      text-align: left;
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+    }
+
+    .brandColumn {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+      text-align: left;
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+
+      .brandName {
+        color: getColorHex("grey-mid");
+        font-size: rem(16);
+        line-height: rem(26);
+        margin-bottom: rem(10);
+
+        &:hover {
+          color: getColorHex("opulent-bronze");
+        }
+
+        .disabled {
+          color: getColorHex("grey-light-5");
+          pointer-events: none;
+        }
+
+        .highlightedLetters{
+          @include body_bold;
+        }
+      }
+    }
+  }
+
+  &.brandListSwiperContainer{
+    display: flex;
+  }
+}
+
+.btnContainer {
+  margin: 0 auto;
+  margin-top: rem(60);
+}
+
+.searchInputContainer{
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  height: rem(48);
+  width: calc(100% - 56px);
+  border-bottom: rem(1) solid getColorHex("grey-light");
+  padding: rem(5) rem(10) rem(5) 0;
+  margin: rem(30) auto;
+
+  @include lg{
+    width: 100%;
+    margin: rem(60) 0;
+  }
+}
+
+.searchInput{
+  @include body_regular;
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+  color: getColorHex("grey");
+  display: flex;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}

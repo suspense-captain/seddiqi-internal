@@ -1,0 +1,727 @@
+@import "./../../assets/styles/main.scss";
+
+.navBarContainer{
+
+  & > div > nav > div:last-child > span:nth-child(2){
+    display: none;
+  }
+}
+
+.mainWrapper {
+  margin-top: rem(142);
+
+  .mapViewBtnLabel,
+  .contactLabel,
+  .storeOpenDay,
+  .storeOpenTiming,
+  .storeServiceInfo,
+  .storeBrandsInfo,
+  .availableBrandsTitle,
+  .brandsName {
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: rem(24);
+    letter-spacing: rem(0.2);
+  }
+
+  .contactLabel,
+  .storeOpenDay,
+  .storeServiceInfo,
+  .brandsName {
+    color: getColorHex("grey");
+  }
+
+  .availableBrandsTitle {
+    color: getColorHex("grey-mid");
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  .storeOpenTiming {
+    color: getColorHex("black-dark");
+  }
+
+
+  .mapViewBtnLabel,
+  .availableBrandsTitle {
+    text-transform: uppercase;
+  }
+
+  .addressWrapper {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: column;
+    gap: rem(5);
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    .storeAddress {
+      display: inline-flex;
+      align-items: flex-start;
+
+      @include md {
+         align-items: center;
+      }
+    }
+  }
+
+  // .vline {
+  //   & > *:not(:first-child)::before {
+  //     content: "|";
+  //     margin: 0 rem(4);
+  //   }
+  // }
+
+  .storeImg {
+    border-radius: rem(16 0 16 0);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .storeContactWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: rem(20);
+  }
+
+  .contactLabelWrapper {
+    flex: 0 1 auto;
+  }
+
+  .contactWrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .vDivider {
+    background-color: getColorHex("grey-light");
+    width: rem(1);
+    height: rem(16);
+    margin: 0 rem(16);
+  }
+
+  .storeTimingWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timingRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: rem(12);
+    width: auto; //100%;
+    position: relative;
+  }
+
+  .serviceList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+    
+  }
+
+  .serviceList li {
+    margin-bottom: rem(8);
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  .brandsWrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-left: rem(32);
+    margin-top: rem(12);
+    margin-bottom: rem(16);
+    flex-wrap: wrap;
+
+    [dir="rtl"] & {
+      margin-right: rem(32);
+      margin-left: rem(0);
+    }
+  }
+
+  .brandSeparator {
+    width: rem(1);
+    height: rem(20);
+    background-color: getColorHex("green-dark");
+    margin: 0 rem(4);
+  }
+
+  .divider {
+    border-top: rem(1) solid getColorHex("grey-light");
+    margin-top: rem(20);
+    margin-bottom: rem(32);
+  }
+
+  .mapViewBtnLabel {
+    color: getColorHex("grey-mid");
+  }
+
+  .mapViewBtn {
+    margin-top: rem(20);
+    margin-bottom: rem(12);
+  }
+
+  .mapIcon {
+    margin-right: rem(5);
+    height: rem(16);
+    width: rem(16);
+    flex: 1 0 5%;
+
+    [dir="rtl"] & {
+      margin-left: rem(5);
+    }
+
+    @include sm {
+      flex: none;
+    }
+  }
+
+  .WhatsappIcon {
+    margin-right: rem(12);
+    color: getColorHex("green-dark");
+    height: rem(20);
+    width: rem(20);
+
+    [dir="rtl"] & {
+      margin-left: rem(12);
+    }
+  }
+
+  .locationInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: getColorHex("grey");
+    gap: rem(6);
+    margin: 0 0 rem(20);
+
+    @include md{
+      margin: 0 0 rem(30);
+    }
+  }
+
+  .leftSection {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+
+    @include md {
+      align-items: center;
+    }
+  }
+
+  .iconWrapper {
+    margin-right: rem(12);
+
+    [dir="rtl"] & {
+     margin-left: rem(12);
+     margin-right: rem(0);
+    }
+  }
+
+  .timeIcon,
+  .serviceIcon,
+  .brandsIcon {
+    height: rem(20);
+    width: rem(20);
+  }
+
+  .timingItems {
+    display: flex;
+    flex-direction: column;
+    //flex: 1;
+  }
+
+  .timingDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(20);
+  }
+
+  .storeOpenDay {
+    margin-right: rem(12);
+
+    [dir="rtl"] & {
+      margin-left: rem(12);
+    }
+
+    p strong{
+      @include body_bold;
+    }
+  }
+
+  .storeOpenTiming {
+    text-align: right;
+
+    [dir="rtl"] & {
+      text-align: left;
+    }
+  }
+
+  .serviceWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .storeServiceInfo {
+    flex: 1;
+  }
+
+  .appointmentBtn,
+  .viewAllBrandsBtn,
+  .getDirectionBtn {
+    text-transform: none;
+  }
+
+  .whatsappBtn,
+  .contactBtn {
+    text-transform: capitalize;
+  }
+
+  .storeBrandsInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .iconSection {
+    display: flex;
+    align-items: flex-start;
+    margin-right: rem(12);
+
+    [dir="rtl"] & {
+      margin-left: rem(12);
+    }
+  }
+
+  .availableBrandsLabel {
+    flex: 1;
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(20);
+  }
+
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(0) rem(32);
+
+    @include md {
+      padding: 0 rem(60);
+    }
+
+    @include xxl {
+      padding: 0 rem(100);
+    }
+  }
+
+
+  .infoTwoColumn {
+    flex: 1;
+    margin-right: rem(60);
+
+    [dir="rtl"] & {
+      margin-left: rem(60);
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .mapColumn {
+    flex: 1;
+  }
+
+  .storeImageWrapper {
+    position: relative;
+
+    @include md {
+      margin-bottom: rem(28);
+    }
+  }
+
+  .title {
+    color: getColorHex("black-dark");
+    letter-spacing: rem(0.6);
+    margin: 0 0 rem(20);
+    text-align: left;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    @include md {
+      margin: 0 0 rem(30);
+    }
+  }
+
+  .mapViewWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: rem(16);
+    margin-right: rem(100);
+
+    [dir="rtl"] & {
+      margin-left: rem(100);
+      margin-right: 0;
+    }
+  }
+
+  .backBtn {
+    display: flex;
+    align-items: center;
+    padding: 0 rem(32);
+    margin: 0 0 rem(20);
+    cursor: pointer;
+
+    @include md{
+      margin: 0 0 rem(30);
+      padding: 0 rem(60);
+    }
+
+    @include xxl{
+      padding: 0 rem(100);
+    }
+
+  }
+
+  .arrowLeftWrapper {
+    margin-right: rem(8);
+    display: flex;
+    align-items: center;
+
+    [dir="rtl"] & {
+      margin-left: rem(8);
+      margin-right: 0;
+    }
+  }
+
+  .arrowLeft {
+    transform: rotate(180deg);
+
+    [dir="rtl"] & {
+      transform: none;
+    }
+  }
+
+  .backButtonContent {
+    position: relative;
+  }
+
+  .backButtonText {
+    font-size: rem(14);
+    font-weight: normal;
+    line-height: rem(18);
+    letter-spacing: rem(0.6);
+    display: inline-block;
+    color: getColorHex("black-dark");
+  }
+
+  .underline {
+    height: rem(1);
+    background-color: getColorHex("black-dark");
+    margin-top: rem(2);
+    width: 100%;
+  }
+
+  .mainWrapper {
+    position: relative;
+  }
+
+  .twoColumnLayout {
+    display: flex;
+  }
+
+  .imageContainer {
+    flex: 1;
+  }
+
+  .storeImageWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    @include md {
+      margin-bottom: rem(28);
+    }
+  }
+
+  .mapContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: auto;
+
+    @include md{
+      flex-direction: row;
+      gap: 3%;
+    }
+  }
+
+  .infoOverlay {
+    display: flex;
+    position: relative;
+    width: auto;
+    padding: 0;
+    background: getColorHex("white");
+    z-index: 10;
+
+    p {
+      margin: 0;
+    }
+
+  }
+
+  .mapOuterContainer {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .mainWrapper {
+    position: relative;
+    margin-top: rem(20);
+  }
+
+  .infoColumn {
+    flex: 1;
+    margin-right: rem(20);
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: rem(20);
+    }
+  }
+
+  .imageContainer {
+    flex: 1;
+  }
+
+  .twoColumnLayout {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fullWidthMap {
+    //height: rem(300);
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    @include md {
+      aspect-ratio: auto;
+      min-height: rem(700);
+      width: 85%;
+    }
+
+    @include xl {
+      width: 70%;
+    }
+  }
+}
+
+.storeMapListSwiper {
+  position: relative;
+  height: 100%;
+  border-radius: rem(16);
+
+  &>div:last-of-type {
+    right: rem(20);
+    background: none;
+    width: rem(6);
+
+    [dir="rtl"] & {
+      right: auto;
+      left: rem(20);
+    }
+
+    &>div {
+      background: getColorHex("dark-brown");
+    }
+  }
+}
+
+.infoWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+
+  @include md{
+    justify-content: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.noSlideContainer {
+  width: 100%;
+}
+
+.timingItems {
+  position: relative;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+
+  & > .timingDetail{
+
+    & > .storeOpenTiming {
+      display: flex;
+      gap: rem(8);
+      align-items: center;
+
+      p{
+        color: getColorHex("rolex-green");
+      }
+
+      &::after{
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(90 6 6)'%3E%3Cmask id='path-1-inside-1_29_6412' fill='white'%3E%3Cpath d='M0 12L6 6L0 0'/%3E%3C/mask%3E%3Cpath d='M6 6L6.70711 6.70711V5.29289L6 6ZM0.707107 12.7071L6.70711 6.70711L5.29289 5.29289L-0.707107 11.2929L0.707107 12.7071ZM6.70711 5.29289L0.707107 -0.707107L-0.707107 0.707107L5.29289 6.70711L6.70711 5.29289Z' fill='%23000000' mask='url(%23path-1-inside-1_29_6412)'/%3E%3C/g%3E%3C/svg%3E");
+        position: relative;
+        display: flex;
+        width: rem(12);
+        height: rem(6);
+        transition: transform 0.3s ease;
+      }
+
+      &.isShowing{
+
+        &::after{
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(90 6 6)'%3E%3Cmask id='path-1-inside-1_29_6412' fill='white'%3E%3Cpath d='M0 12L6 6L0 0'/%3E%3C/mask%3E%3Cpath d='M6 6L6.70711 6.70711V5.29289L6 6ZM0.707107 12.7071L6.70711 6.70711L5.29289 5.29289L-0.707107 11.2929L0.707107 12.7071ZM6.70711 5.29289L0.707107 -0.707107L-0.707107 0.707107L5.29289 6.70711L6.70711 5.29289Z' fill='%23000000' mask='url(%23path-1-inside-1_29_6412)'/%3E%3C/g%3E%3C/svg%3E");
+          position: relative;
+          display: flex;
+          width: rem(12);
+          height: rem(6);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.fullTimings{
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: auto;
+  width: auto;
+  background: getColorHex("brown-light");
+  z-index: 10;
+  padding: rem(8) rem(10);
+  display: none;
+  border-radius: rem(10);
+
+  &.isShowing{
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+  }
+}
+
+.cardIcons {
+  display: flex;
+  gap: rem(16);
+  flex-direction: row;
+  margin: rem(10) 0 rem(30);
+  justify-content: center;
+
+  @include md{
+    margin: rem(10) 0 0;
+    flex-direction: column;
+    gap: rem(16);
+    justify-content: flex-start;
+  }
+}
+
+.cardIconContainer{
+  display: flex;
+  flex-direction: row;
+  gap: rem(15);
+  align-items: center;
+}
+
+.cardIcon {
+  width: rem(36);
+  height: rem(36);
+  border-radius: 50%;
+  background: getColorHex("brown-light");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconTextContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+
+  @include md{
+    gap: rem(15);
+  }
+
+  &:hover {
+    svg,
+    svg * {
+      fill: getColorHex("rolex-green");
+      stroke: getColorHex("rolex-green");
+    }
+
+    p{
+      color: getColorHex("rolex-green");
+    }
+  }
+
+  &.strokeOnly{
+    &:hover {
+      svg,
+      svg * {
+        fill: none;
+        stroke: getColorHex("rolex-green");
+      }
+    }
+  }
+
+  p{
+    display: none;
+
+    @include md{
+      display: block;
+    }
+  }
+}

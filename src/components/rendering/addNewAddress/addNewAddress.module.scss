@@ -1,0 +1,502 @@
+@import "./../../../assets/styles/main.scss";
+
+.addNewAddressContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 100%;
+  min-height: 0; //rem(614);
+  gap: rem(24);
+
+  @include md{
+    min-height: auto;
+    gap: rem(32);
+  }
+
+  &.isShowing{
+    max-height: 100%;
+  }
+}
+
+.breadcrumbs{
+  display: none;
+  flex-direction: row;
+  gap: rem(8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include md{
+    display: flex;
+  }
+
+  li{
+    @include body_regular;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: rem(18);
+    letter-spacing: rem(1);
+    color: getColorHex("grey-brown");
+    display: inline-flex;
+    align-items: center;
+    gap: rem(8);
+    pointer-events: cursor;
+
+    &.active{
+      font-weight: 500;
+      pointer-events: none;
+      color: getColorHex("green-dark");
+    }
+
+    &::after{
+      content: "|";
+    }
+
+    &:last-child{
+
+      &::after{
+        content: none;
+      }
+    }
+
+    &:hover{
+      color: getColorHex("green-dark");
+    }
+  }
+}
+
+.backButton{
+  @include body_regular;
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: rem(18);
+  letter-spacing: rem(0.6);
+  color: getColorHex("green-dark");
+  display: flex;
+  background: none;
+  border: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+
+  @include md{
+    display: none;
+  }
+
+  &::before{
+    content: "";
+    display: flex;
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='path-1-inside-1_12210_150031' fill='white'%3E%3Cpath d='M15.6001 4.80001L8.4001 12L15.6001 19.2'/%3E%3C/mask%3E%3Cpath d='M8.4001 12L7.69299 11.2929L7.69299 12.7071L8.4001 12ZM14.893 4.0929L7.69299 11.2929L9.1072 12.7071L16.3072 5.50712L14.893 4.0929ZM7.69299 12.7071L14.893 19.9071L16.3072 18.4929L9.1072 11.2929L7.69299 12.7071Z' fill='%23282828' mask='url(%23path-1-inside-1_12210_150031)'/%3E%3C/svg%3E%0A");
+    width: rem(24);
+    height: rem(24);
+  }
+
+  span{
+    padding-bottom: rem(2);
+    border-bottom: rem(1) solid getColorHex("green-dark");
+  }
+}
+
+.mainTitle{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  
+  h2{
+    @include heading_regular;
+    font-weight: 500;
+    font-size: rem(28);
+    line-height: rem(34);
+    letter-spacing: rem(0.6);
+    color: getColorHex("green-dark");
+    text-transform: uppercase;
+    margin: 0;
+    display: block;
+
+    @include md{
+      font-size: rem(32);
+      line-height: rem(36);
+    }
+  }
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: rem(1) solid getColorHex("grey-light");
+  padding: rem(20);
+  width: 100%;
+  gap: rem(20);
+
+  @include lg{
+    gap: rem(24);
+    padding: rem(32);
+  }
+
+  &.noAddress{
+    justify-content: center;
+    gap: rem(20);
+
+    @include md{
+      gap: rem(24);
+    }
+
+    p{
+      @include body_light;
+      font-size: rem(14);
+      line-height: rem(22);
+      font-weight: 400;
+      color: getColorHex("grey");
+      text-align: center;
+  
+      @include md{
+        font-size: rem(16);
+        line-height: rem(26);
+      }
+  
+      &:empty{
+        display: none;
+      }
+    }
+
+    button{
+      margin: 0 auto;
+    }
+  }
+
+  .detailsWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    padding: 0 0 rem(8);
+    border-bottom: rem(1) solid getColorHex("grey-light");
+
+    @include md{
+      gap: rem(12);
+      padding: 0 0 rem(24);
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+  
+    p{
+      @include body_light;
+      font-size: rem(14);
+      line-height: rem(22);
+      font-weight: 400;
+      color: getColorHex("grey");
+      text-align: left;
+  
+      @include md{
+        font-size: rem(16);
+        line-height: rem(26);
+      }
+  
+      &:empty{
+        display: none;
+      }
+    }
+  }
+}
+
+.detailsTitleEditContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(10);
+}
+
+.detailsTitle {
+
+  h2 {
+    @include heading_regular;
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: rem(26);
+    letter-spacing: rem(0.6);
+    color: getColorHex("brown-dark");
+    margin: 0;
+
+    @include md{
+      font-size: rem(26);
+      line-height: rem(36);
+    }
+  }
+}
+
+.editButton{
+  border: none;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  width: rem(20);
+  height: rem(20);
+
+  @include md{
+    width: rem(24);
+    height: rem(24);
+  }
+
+  svg{
+    width: rem(20);
+    height: rem(20);
+
+    @include md{
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+}
+
+.inputsWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  @include md{
+    ap: rem(32);
+  }
+}
+
+.inputsContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: rem(20);
+
+  @include md{
+    gap: rem(24);
+  }
+
+  .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+    width: 100%;
+    position: relative;
+    justify-content: flex-end;
+
+    @include md{
+      width: calc(50% - 12px);
+    }
+
+    &.phoneInputs{
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: rem(24);
+
+      & > div:first-child{
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        max-width: rem(64);
+
+        & > div:first-child{
+          position: absolute;
+          height: 100%;
+          opacity: 0;
+          margin: 0;
+          justify-content: space-between;
+          gap: rem(3);
+
+          & > div{
+            display: none;
+          }
+
+          & > select{
+            height: 100%;
+          }
+        }
+
+        &::after{
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='path-1-inside-1_22218_4411' fill='white'%3E%3Cpath d='M4.5 7L10.5 13L16.5 7'/%3E%3C/mask%3E%3Cpath d='M10.5 13L9.79289 13.7071L11.2071 13.7071L10.5 13ZM3.79289 7.70711L9.79289 13.7071L11.2071 12.2929L5.20711 6.29289L3.79289 7.70711ZM11.2071 13.7071L17.2071 7.70711L15.7929 6.29289L9.79289 12.2929L11.2071 13.7071Z' fill='%23271610' mask='url(%23path-1-inside-1_22218_4411)'/%3E%3C/svg%3E%0A");
+          background-repeat: no-repeat;
+          width: rem(20);
+          height: rem(20);
+          pointer-events: none;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      input[type=tel], input[type=number]{
+        height: 100%;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    label{
+      @include body_regular;
+      font-weight: 400;
+      font-size: rem(10);
+      line-height: rem(14);
+      letter-spacing: rem(0.2);
+      display: block;
+      margin: 0;
+      width: 100%;
+      text-align: left;
+    }
+
+    input[type=text], input[type=email], input[type=password], input[type=tel], input[type=number], select {
+      @include body_light;
+      font-weight: 300;
+      font-size: rem(14);
+      line-height: rem(22);
+      letter-spacing: rem(0.2);
+      display: flex;
+      align-items: center;
+      border: none;
+      border-bottom: rem(1) solid getColorHex("grey-mid");
+      appearance: none; 
+      -webkit-appearance: none; 
+      -moz-appearance: none;
+      padding-bottom: rem(3.5);
+      height: rem(26);
+
+      @include md{
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: rem(26);
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    .selectContainer{
+      display: flex;
+      align-items: center;
+      padding: 0;
+      width: 100%;
+      position: relative;
+
+      &::after{
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='path-1-inside-1_22218_4411' fill='white'%3E%3Cpath d='M4.5 7L10.5 13L16.5 7'/%3E%3C/mask%3E%3Cpath d='M10.5 13L9.79289 13.7071L11.2071 13.7071L10.5 13ZM3.79289 7.70711L9.79289 13.7071L11.2071 12.2929L5.20711 6.29289L3.79289 7.70711ZM11.2071 13.7071L17.2071 7.70711L15.7929 6.29289L9.79289 12.2929L11.2071 13.7071Z' fill='%23271610' mask='url(%23path-1-inside-1_22218_4411)'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        width: rem(20);
+        height: rem(20);
+        position: absolute;
+        right: 0;
+        top: -30%;
+        pointer-events: none;
+      }
+    }
+
+    select{
+      display: flex;
+      align-items: center;
+      padding: 0;
+      text-transform: none;
+      position: relative;
+      width: 100%;
+
+      &::-ms-expand {
+        display: none;
+      }
+    }
+
+  }
+}
+
+.defaultAddressEditContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(10);
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: rem(12);
+  row-gap: rem(8);
+  justify-content: space-between;
+
+  @include md{
+    column-gap: rem(32);
+    row-gap: rem(16);
+    justify-content: flex-start;
+  }
+
+  label {
+    @include body_regular;
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: rem(20);
+    letter-spacing: rem(0.2);
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    cursor: pointer;
+    width: auto;
+
+    @include md{
+      font-size: rem(14);
+      line-height: rem(22);
+      gap: rem(12);
+    }
+  }
+
+  input[type=checkbox], input[type=radio] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: rem(20);
+    height: rem(20);
+    border: rem(1) solid getColorHex("grey-brown");
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  input[type=checkbox]:checked, input[type=radio]:checked {
+    border: rem(1) solid getColorHex("black-dark");
+  }
+
+  input[type=checkbox]:checked::after, input[type=radio]:checked::after {
+    content: "";
+    position: absolute;
+    top: rem(4);
+    left: rem(3);
+    width: rem(12);
+    height: rem(10);
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L3.40682 8.59319L1 6.18637' stroke='%23A98E76' stroke-width='1.28273'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+  }
+}
+
+.deleteButton{
+  border: none;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  width: rem(24);
+  height: rem(24);
+
+  svg{
+    width: rem(24);
+    height: rem(24);
+  }
+}
+
+.addAddressButton{
+  width: 100%;
+  max-width: rem(200);
+  margin: 0 auto;
+
+  @include md{
+    margin: 0;
+  }
+}

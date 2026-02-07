@@ -1,0 +1,242 @@
+@import "./../../../../assets/styles/rolex/rolexMain.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(48);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-bottom: rem(48);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+  padding: 0 rem(28);
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: getColorHex("white");
+
+  @include md {
+    padding: 0 rem(60);
+    gap: rem(72);
+  }
+
+  .imageTextsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: rem(32);
+    @include iphone12-fix {
+      gap: unset;
+      & > *:first-child {
+        padding-bottom: rem(32);
+      }
+    }
+    @include xl {
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      // column-gap: rem(44);
+    }
+
+    &:nth-child(even) {
+      flex-direction: column;
+
+      @include xl {
+        flex-direction: row-reverse;
+      }
+    }
+
+    & > div {
+      width: 100%;
+      flex: 1;
+
+      @include xl {
+        width: calc(50% - 22px);
+        min-width: calc(50% - 22px);
+      }
+    }
+  }
+
+  .image {
+    display: flex;
+    outline: none;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .textsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    flex: 1;
+
+    .textsContainerInner {
+      // display: block;
+
+      @include xl {
+        width: rem(440);
+        // margin-left: rem(96);
+        // margin-right: rem(140);
+        // width: rem(410);
+        flex-direction: column;
+      }
+    }
+
+    @include md {
+    }
+  }
+
+  .logoContainer {
+    max-width: 120px;
+    min-height: 60px;
+    display: flex;
+    margin-bottom: rem(8);
+  }
+
+  .logo {
+    width: 120px;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  .subtitle {
+    @include rolex_bold;
+    font-size: rem(12);
+    letter-spacing: rem(0.4);
+    line-height: rem(18);
+    color: getColorHex("dark-black");
+    display: block;
+    margin: 0;
+    text-align: left;
+    margin-bottom: rem(16);
+
+    @include md {
+      font-size: rem(16);
+      line-height: rem(20);
+      margin-bottom: rem(24);
+      text-align: left;
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  a {
+    @include md {
+      margin: 0;
+    }
+  }
+
+  .title {
+    @include rolex_regular;
+    font-size: rem(18);
+    line-height: rem(26);
+    letter-spacing: rem(0.4);
+    color: getColorHex("black-dark");
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: rem(12);
+    margin-top: 0;
+
+    @include md {
+      font-size: rem(24);
+      line-height: rem(28);
+      letter-spacing: rem(2);
+      text-align: left;
+      margin-bottom: rem(8);
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .description {
+    @include rolex_regular;
+    font-size: rem(14);
+    line-height: rem(22);
+    color: getColorHex("grey-dark");
+    display: block;
+    margin-bottom: rem(20);
+
+    text-align: left;
+
+    @include md {
+      font-size: rem(14);
+      line-height: rem(22);
+      letter-spacing: rem(-0.2);
+      text-align: left;
+      margin-bottom: rem(24);
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .link {
+    align-self: flex-start;
+    margin: 0;
+    width: auto;
+
+    [dir="rtl"] & {
+      align-self: flex-end;
+    }
+
+    &::after {
+      content: "";
+      display: flex;
+      width: 100%;
+      height: rem(1);
+      background: getColorHex("rolex-green");
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    @include md {
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+.linkText {
+  color: getColorHex("white");
+  text-align: center;
+
+  line-height: rem(16);
+  font-size: rem(12);
+  border-radius: 40px;
+  background: #147749;
+  padding: rem(12) rem(28);
+  display: inline-block;
+}

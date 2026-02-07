@@ -1,0 +1,148 @@
+@import "./../../../assets/styles/main.scss";
+
+// PROUDCTS AND EXPLORE
+.tabContent {
+  // padding: rem(16 28);
+  width: 100%;
+}
+
+.label {
+  color: getColorHex("black-dark");
+  @include body_bold;
+  font-size: rem(14);
+  font-style: normal;
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  // padding-top: rem(24);
+}
+
+.mobileMenuLinks {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  @include iphone12-fix {
+    gap: unset; 
+    & > * {
+      margin-bottom: rem(22);
+    }
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .mobileMenuNavigationContainer {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+}
+
+.subMenuContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(22);
+  transition: all 0.3s;
+  height: 0;
+  overflow: hidden;
+}
+
+.gap {
+  gap: rem(40);
+}
+
+.subMenu {
+  display: flex;
+  flex-direction: column;
+  gap: rem(28);
+  padding-top: rem(20);
+  @include iphone12-fix {
+    gap: unset; 
+
+    & > * {
+      margin-bottom: rem(28);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  @include body_regular;
+  cursor: pointer;
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  color: getColorHex("black-dark");
+
+  &:hover,
+  &:focus {
+    color: getColorHex("opulent-bronze");
+  }
+
+  &.childAccordionLink {
+    font-size: rem(12);
+    padding-left: rem(12);
+  }
+}
+
+.customContainer {
+  height: 100%;
+  gap: rem(16);
+}
+
+.displayCardsTitle {
+  font-size: rem(14);
+  @include heading_light;
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  margin-bottom: rem(-10);
+  color: getColorHex("black-dark");
+  text-transform: uppercase;
+}
+
+.padZero {
+  padding: 0;
+}
+
+.column1,
+.cardStyle {
+  display: flex;
+  flex-direction: column;
+}
+.column1 {
+  gap: rem(20);
+  padding: rem(24 28 0);
+  @include iphone12-fix {
+    gap: unset;
+
+    & > * {
+      margin-bottom: rem(10);
+    }
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.cardStyle {
+  gap: rem(12);
+}
+
+.exploreContainer {
+  margin-bottom: rem(20);
+  padding: rem(0 28);
+}
+
+.exploreSubMenuMobile {
+  // background: getColorHex("grey-light", 0.15);
+  padding: rem(24 28);
+
+  &:last-of-type {
+    padding-bottom: rem(24);
+  }
+}

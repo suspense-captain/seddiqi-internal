@@ -1,0 +1,106 @@
+@import "./../../../../assets/styles/main.scss";
+
+.breadcrumbs {
+  position: absolute;
+  bottom: rem(-37);
+  width: 100%;
+  left: 0;
+  font-size: rem(12);
+  font-weight: 400;
+  color: getColorHex("white");
+  padding: rem(12) rem(17);
+  padding-top: rem(9);
+  display: flex;
+  gap: rem(12);
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    getColorHex("green-racing") 0%,
+    getColorHex("green-spring") 100%
+  );
+
+  @include md {
+    padding: rem(12) calc(8vw);
+  }
+
+   @include breakpoint-min-width(rem(1500)) {
+    padding: rem(12) rem(110);
+  }
+
+  @include breakpoint-max-width(rem(1320)) {
+    padding: rem(12) rem(60);
+  }
+  @include breakpoint-max-width(rem(768)) {
+    padding: rem(12) rem(17);
+  }
+
+  a {
+    color: getColorHex("white");
+    text-transform: capitalize;
+    text-decoration: none;
+
+    font-size: rem(12);
+    line-height: rem(16);
+    letter-spacing: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.active {
+      color: getColorHex("green-Salem");
+      font-weight: 600;
+    }
+  }
+}
+
+.breadcrumbsGreen {
+  background: linear-gradient(
+    90deg,
+    getColorHex("green-racing") 0%,
+    getColorHex("green-spring") 100%
+  );
+
+  a {
+    color: getColorHex("white");
+
+    &.active {
+      color: getColorHex("green-Salem");
+    }
+  }
+}
+
+.breadcrumbsWhite {
+  background: getColorHex("white");
+
+  a {
+    color: getColorHex("black-dark");
+
+    &.active {
+      color: getColorHex("green-spring"); 
+    }
+  }
+}
+
+
+.breadcrumbsBlack {
+  background: getColorHex("black-dark");
+
+  a {
+    color: getColorHex("white");
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: getColorHex("green-spring");
+    }
+  }
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+}

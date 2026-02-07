@@ -1,0 +1,241 @@
+@import "./../../../../assets/styles/main.scss";
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background-color: getColorHex("white");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(33);
+  padding: rem(20);
+  justify-content: center;
+
+  @include md {
+    padding: rem(20);
+    justify-content: none;
+  }
+
+  .mySwiper {
+    height: 70vh;
+    max-height: rem(550);
+    
+    @include md{
+      height: 55vh;
+      max-height: none;
+    }
+    
+    @include xl{
+      height: 70vh;
+      max-height: none;
+    }
+  }
+  
+  .swiperHeight {
+    max-height: 50%;
+
+    .image {
+      object-fit: cover !important;
+    }
+  }
+
+  .swiperSlide {
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+
+    .image {
+      width: 100%;
+      height: 100%;
+      // height: 70vh;
+      object-fit: contain;
+      
+    }
+  }
+
+  .thumbnails {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    .thumbnail {
+      width: rem(78);
+      height: rem(78);
+      cursor: pointer;
+      overflow: hidden;
+      border: rem(1) solid getColorHex("grey-mid", 0);
+      position: relative;
+
+      @include md {
+        width: rem(90);
+        height: rem(90);
+      }
+
+      .image {
+        width: rem(78);
+        height: rem(78);
+        object-fit: cover;
+
+        @include md {
+          width: rem(90);
+          height: rem(90);
+        }
+      }
+    }
+
+    .activeImage {
+      border: rem(1) solid getColorHex("grey-mid", 1);
+      opacity: 0.4;
+    }
+  }
+}
+
+.closeIcon {
+  position: absolute;
+  right: rem(20);
+  top: rem(10);
+  cursor: pointer;
+  z-index: 1000;
+
+  @include md {
+    right: rem(40);
+    top: rem(40);
+  }
+
+  svg{
+    width: rem(36);
+    height: rem(36);
+
+    @include md {
+      width: rem(40);
+      height: rem(40);
+    }
+  }
+}
+
+.plus {
+  display: flex;
+  width: rem(28);
+  height: rem(28);
+  justify-content: center;
+  align-items: center;
+  border-radius: rem(40);
+  background: getColorHex("metallic-grey");
+  position: absolute;
+  left: rem(20);
+  z-index: 100;
+  cursor: pointer;
+  bottom: rem(45);
+
+  @include lg {
+    width: rem(40);
+    height: rem(40);
+    bottom: rem(75);
+    left: rem(40);
+  }
+}
+
+
+.leftBtn,
+.rightBtn {
+  width: rem(40);
+  height: rem(40);
+  border-radius: rem(12) 0 rem(12);
+  border-radius: rem(40);
+  background: rgba(197, 181, 163, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2000;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .arrowLeft {
+    transform: rotate(180deg);
+  }
+}
+.leftBtn {
+  left: rem(50);
+}
+.rightBtn {
+  right: rem(50);
+}
+
+.slideBtns {
+  display: flex;
+  gap: rem(4);
+
+  .slideItem {
+    width: rem(28);
+    height: rem(2);
+    background: getColorHex("grey-light-5");
+    cursor: pointer;
+  }
+
+  .slideActive {
+    background: getColorHex("metallic");
+  }
+}
+
+.zoomControls {
+  display: flex;
+  gap: rem(20);
+
+  .plus,
+  .minus,
+  .reset {
+    font-size: rem(26);
+    cursor: pointer;
+    color: getColorHex("black"); // Normal color
+    transition: color 0.3s ease;
+
+    &.disabled {
+      color: getColorHex("grey-mid", 0.5); // Light grey when disabled
+      // pointer-events: none; // Disable click events
+    }
+  }
+}
+
+.amplienceImage{
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  width: auto !important;
+}
+
+
+.sliderMobileBtns {
+  display: flex;
+  gap: rem(4);
+
+  .slideItem {
+    width: rem(28);
+    height: rem(2);
+    background: getColorHex("grey-light-5");
+    cursor: pointer;
+  }
+
+  .slideActive {
+    background: getColorHex("metallic");
+  }
+
+  .leftBtn {
+  left: rem(12);
+  background: rgba(197, 181, 163);
+}
+.rightBtn {
+  right: rem(12);
+  background: rgba(197, 181, 163);
+}
+
+}

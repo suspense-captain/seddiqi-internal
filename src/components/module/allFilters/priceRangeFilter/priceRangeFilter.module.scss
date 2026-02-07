@@ -1,0 +1,45 @@
+@import "../../../../assets/styles/main.scss";
+.container {
+  width: 100%;
+  //   max-width: 374px;
+  margin: auto;
+  padding: rem(24) rem(16); 
+}
+
+.heading {
+  @include body_regular;
+  color: getColorHex("grey");
+  font-size: rem(14);
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(12);
+  font-size: rem(14); 
+  .labels {
+    @include body_light;
+    font-size: rem(10);
+    margin-bottom: rem(10);
+    text-transform: uppercase;
+    color: getColorHex("grey-mid");
+  }
+  .price {
+    @include body_regular;
+    font-size: rem(12);
+    color: getColorHex("grey");
+  }
+  .rightAligned {
+    text-align: right;
+  }
+}
+
+.rangeSlider {
+  .renderThumb {
+    height: rem(15);
+    width: rem(15);
+    border-radius: 50%;
+    background-color: getColorHex("black");
+    box-shadow: 0 rem(2) rem(6) rgba(0, 0, 0, 0.3);
+  }
+}

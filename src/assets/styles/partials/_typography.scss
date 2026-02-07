@@ -1,0 +1,347 @@
+@mixin heading_bold {
+  font-family: "Haboro_Contrast_Bold", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin heading_bold_italic {
+  font-family: "Haboro_Contrast_Bold_Italic", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+// @mixin heading_regular {
+//   font-family: "Haboro_Contrast_Regular", sans-serif;
+//   font-style: normal;
+//   font-variant-numeric: lining-nums proportional-nums;
+// }
+
+@mixin heading_regular {
+  font-family: "haboro-contrast-normal", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+
+  [dir="rtl"] & {
+    font-family: "LaureenproArabic-Regular", sans-serif;
+  }
+}
+@mixin heading_medium {
+  font-family: "Haboro_Contrast_Medium", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+
+  [dir="rtl"] & {
+    font-family: "LaureenproArabic-Regular", sans-serif;
+  }
+
+}
+
+@mixin heading_regular_italic {
+  font-family: "Haboro_Contrast_Italic", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+// @mixin heading_light {
+//   font-family: "Haboro_Contrast_Light", sans-serif;
+//   font-style: normal;
+//   font-variant-numeric: lining-nums proportional-nums;
+// }
+
+@mixin heading_light {
+  font-family: "haboro-contrast-normal", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+
+  [dir="rtl"] & {
+    font-family: "LaureenproArabic-Regular", sans-serif;
+  }
+}
+
+@mixin heading_light_italic {
+  font-family: "Haboro_Contrast_Light_Italic", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin body_thin {
+  font-family: "TheSansArabic_ExtraLight", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+@mixin body_thin_italic {
+  font-family: "TheSansArabic_ExtraLight", sans-serif;
+  font-style: italic;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+@mixin body_regular {
+  font-family: "TheSansArabic_Light", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin body_light {
+  font-family: "TheSansArabic_Light", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+@mixin body_extra_light {
+  font-family: "TheSansArabic_ExtraLight", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+@mixin body_light_italic {
+  font-family: "TheSansArabic_Light", sans-serif;
+  font-style: italic;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+@mixin body_italic {
+  font-family: "TheSansArabic_Light", sans-serif;
+  font-style: italic;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin body_bold {
+  font-family: "TheSansArabic_Bold", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin cta_regular {
+  font-family: "TheSansArabic_Light", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin cta_bold {
+  font-family: "TheSansArabic_SemiBold", sans-serif;
+  font-style: normal;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.seddiqi-theme {
+  @include body_regular;
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include heading_light();
+    font-weight: normal;
+
+    em {
+      @include heading_light_italic();
+    }
+  }
+  .h1,
+  .h2,
+  .h3,
+  h1,
+  h2,
+  h3 {
+    letter-spacing: rem(0.4);
+  }
+
+  .h4,
+  .h5,
+  .h6,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: rem(0.6);
+  }
+
+  .h1,
+  h1 {
+    font-size: rem(34);
+    line-height: rem(40);
+    @include md {
+      font-size: rem(48);
+      line-height: rem(54);
+    }
+  }
+  .h2,
+  h2 {
+    font-size: rem(28);
+    line-height: rem(34);
+    @include md {
+      font-size: rem(40);
+      line-height: rem(46);
+    }
+  }
+  .h3,
+  h3 {
+    font-size: rem(22);
+    line-height: rem(30);
+    @include md {
+      font-size: rem(32);
+      line-height: rem(38);
+    }
+  }
+  .h4,
+  h4 {
+    font-size: rem(18);
+    line-height: rem(26);
+    @include md {
+      font-size: rem(26);
+      line-height: rem(32);
+    }
+  }
+  .h5,
+  h5 {
+    font-size: rem(14);
+    line-height: rem(20);
+    @include md {
+      font-size: rem(20);
+      line-height: rem(26);
+    }
+  }
+  .h6,
+  h6 {
+    font-size: rem(16);
+    line-height: rem(20);
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+    min-height: 100%;
+    overflow-y: visible;
+
+    th, td{
+      border: rem(1) solid getColorHex("midnight-brown");
+      padding: rem(16);
+      min-width: rem(200);
+      vertical-align: top;
+      text-align: left;
+
+      @include md{
+        min-width: rem(263);
+        padding: rem(20)
+      }
+    }
+
+    th{
+      background-color: getColorHex("grey-light-7");
+      vertical-align: middle;
+    }
+  }
+
+  .rich-text,
+  .rich-text p,
+  .rich-text span {
+    @include body_regular();
+    font-size: rem(16);
+    letter-spacing: rem(0.4);
+    line-height: rem(26);
+
+    @include md {
+      font-size: rem(20);
+      line-height: rem(28);
+    }
+  }
+
+  .rich-text strong {
+    @include body_bold();
+  }
+
+  .rich-text a {
+    text-decoration: underline;
+  }
+
+  .rich-text ul,
+  .rich-text ol {
+    padding-left: rem(0);
+    list-style-position: inside;
+
+    p {
+      display: inline-block;
+    }
+  }
+
+  .rich-text iframe {
+    width: 100%;
+    height: 100%;
+    min-height: rem(350);
+
+    @include md {
+      min-height: rem(500);
+    }
+  }
+
+  .rich-text h1,
+  .rich-text h2,
+  .rich-text h3,
+  .rich-text h4,
+  .rich-text h5,
+  .rich-text h6 {
+    margin-top: rem(12);
+    margin-bottom: rem(8);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  transition: padding 0.3s ease;
+  padding-top: rem(80);
+
+  @include breakpoint-min-width(rem(1299)) {
+    padding-top: rem(152);
+  }
+
+  &.scrolledPadding {
+    @include md {
+      padding-top: rem(78);
+    }
+  }
+
+  &:has(.error-500) {
+    padding-top: 0;
+  }
+}
+
+.amp-dc-text {
+  a {
+    color: inherit;
+    position: relative; 
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;        
+      left: 0;            
+      width: 0;
+      height: rem(1);    
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    &:hover{
+      color: getColorHex("opulent-bronze");
+
+      &::after {
+        width: 100%;
+        background-color: getColorHex("opulent-bronze");
+      }
+    }
+  }
+
+  p{
+    @include body_regular;
+
+    strong{
+      @include body_bold;
+    }
+  }
+}

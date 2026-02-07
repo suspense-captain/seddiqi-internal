@@ -1,0 +1,85 @@
+@import "./../../../assets/styles/main.scss";
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    transition: height 0.5s ease-in-out;
+    height: auto;
+    overflow: hidden;
+  }
+
+  &Link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(0 28);
+  }
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.activeArrow {
+  transition: transform 0.3s;
+  transform: rotate(180deg);
+}
+
+.headerLink {
+  padding: rem(7 0);
+  cursor: pointer;
+  color: getColorHex("black-dark");
+  border-bottom: rem(2) solid getColorHex("black-dark", 0);
+  @include heading_light;
+  transition: all 0.3s;
+  font-size: rem(14);
+  text-transform: uppercase;
+
+  @include md {
+    font-size: rem(16);
+  }
+}
+
+.contentParent {
+  overflow: hidden;
+  // transition: height 40ms ease-in;
+  padding: rem(0 28);
+}
+
+.contentShow {
+  overflow: hidden;
+  transition: height 200ms ease-out;
+
+  // &:has(.containerChild) {
+  //   height: auto !important;
+  // }
+    .containerChild {
+    height: auto !important;
+  }
+}
+
+.headerLinkChild {
+  font-size: rem(12);
+  padding: 0;
+}
+
+.containerChild {
+  padding: rem(0 28);
+}
+
+.accordionChild {
+  // background: getColorHex("grey-light", 0.15);
+
+  &:last-of-type {
+    padding-bottom: rem(24);
+  }
+}
+
+.accordionLinkChild {
+  padding: rem(24 28 0);
+}

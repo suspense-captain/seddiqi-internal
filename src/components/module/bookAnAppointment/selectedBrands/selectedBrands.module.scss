@@ -1,0 +1,33 @@
+@import "./../../../../assets/styles/main.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: getColorHex("white");
+  width: 100%;
+  border: rem(1) solid getColorHex("grey-light");
+  padding: rem(11 28);
+
+  .selectedBrands {
+    display: flex;
+    align-items: center;
+
+    .brand {
+      @include body_regular;
+      color: getColorHex("grey");
+      font-size: rem(16);
+      line-height: rem(26);
+      letter-spacing: rem(0.2);
+      text-transform: capitalize;
+    }
+  }
+
+  @include md {
+    max-width: rem(800);
+  }
+}
+
+.closeIcon {
+  cursor: pointer;
+}

@@ -1,0 +1,59 @@
+@import "./../../../../assets/styles/rolex/rolexMain.scss";
+
+.footerBackToTopContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: rem(32) rem(40);
+  background: rgb(25, 111, 72);
+  background: linear-gradient(270deg, rgba(25, 111, 72, 1) 0%, rgba(13, 72, 45, 1) 100%);
+  height: rem(190);
+
+  & > div {
+    margin: 0 auto;
+  }
+}
+
+.rolexIcon {
+  display: inline-flex;
+  align-self: center;
+  margin: 0 0 rem(20);
+  height: rem(35);
+  width: rem(32);
+}
+
+.backToTop {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: rem(0.5) solid getColorHex("white2");
+  padding-top: rem(12);
+}
+
+.backToTopButton {
+  @include rolex_regular;
+  font-size: rem(16);
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  color: getColorHex("white");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+//   text-transform: uppercase;
+  cursor: pointer;
+
+  @include md {
+    text-transform: none;
+  }
+}
+
+.arrowIcon {
+  display: inline-flex;
+  align-self: center;
+  padding: rem(10);
+}

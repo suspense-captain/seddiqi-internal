@@ -1,0 +1,188 @@
+@import "../../../assets/styles/main.scss";
+
+.drawerWrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  &.isOpen {
+    pointer-events: all;
+
+    .underlay {
+      opacity: 0.3;
+    }
+  }
+}
+
+.underlay {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: getColorHex("black");
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: getColorHex("white");
+  box-shadow: rem(1) 0 rem(18) rgba(0, 0, 0, 0.09);
+  transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  padding: rem(40 16 16);
+  left: -100%; //rem(-600);
+
+  [dir="rtl"] & {
+    left: auto;
+    right: -100%;
+  }
+
+  @include lg {
+    padding: rem(60 28 28);
+    width: rem(600);
+  }
+
+  &.right {
+    left: auto;
+    right: -100%; //rem(-600);
+
+    [dir="rtl"] & {
+      right: auto;
+      left: -100%;
+    }
+  }
+}
+
+.open {
+  left: 0;
+  [dir="rtl"] & {
+    left: auto;
+    right: 0;
+  }
+
+  &.right {
+    right: 0;
+    left: auto;
+
+    [dir="rtl"] & {
+      right: auto;
+      left: 0;
+    }
+  }
+}
+.content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(16) 0;
+  gap: rem(12);
+  @include iphone12-fix {
+    gap: unset;
+
+    & > * {
+      margin-right: rem(12);
+    }
+    & > *:last-child {
+      margin-right: rem(0);
+    }
+  }
+  button {
+    width: 100%;
+  }
+  @include md {
+    button:nth-child(1) {
+      width: rem(125);
+    }
+
+    button:nth-child(2) {
+      width: rem(415);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: rem(24);
+  @include md {
+    margin-bottom: rem(32);
+  }
+  h5 {
+    font-size: rem(16);
+    margin: 0;
+    text-transform: uppercase;
+    @include md {
+      font-size: rem(20);
+    }
+  }
+}
+
+.closeButton {
+  cursor: pointer;
+  svg {
+    width: rem(36);
+    height: rem(36);
+    @include md {
+      width: rem(40);
+      height: rem(40);
+    }
+  }
+}
+
+.backButtonText {
+  @include body_regular;
+  font-size: rem(10);
+  font-weight: normal;
+  line-height: rem(14);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.arrowLeft {
+  transform: rotate(180deg);
+  height: rem(8);
+
+  [dir="rtl"] & { 
+    transform: none;
+  }
+}
+
+.arrowLeftWrapper {
+  margin-right: rem(8);
+
+  [dir="rtl"] & { 
+    margin-left: rem(8);
+    margin-right: rem(0);
+  }
+}

@@ -1,0 +1,113 @@
+@import "../../../assets/styles/main.scss";
+
+.newsletter {
+  text-align: left;
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+.newsletterTitle {
+  @include heading_light;
+  font-size: rem(14);
+  color: getColorHex("black-dark");
+  h6 {
+    margin: 0;
+  }
+  @include md {
+    font-size: rem(16);
+  }
+}
+
+.newsletterContent {
+  width: 100%;
+
+  @include sm {
+    width: rem(350);
+  }
+}
+
+.newsletterInputContainer {
+  position: relative;
+  width: 100%;
+  margin-top: rem(8);
+  border-bottom: rem(1) solid getColorHex("noir");
+}
+
+.newsletterInput {
+  @include body_light;
+  width: 100%;
+  border: none;
+  padding: rem(10 0 10 0);
+  font-size: rem(12);
+  color: getColorHex("green-metallic");
+
+  @include md {
+    font-size: rem(14);
+  }
+}
+
+.newsletterButton {
+  @include body_light;
+  position: absolute;
+  right: rem(0);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: getColorHex("black-dark");
+  cursor: pointer;
+  font-size: rem(12);
+  padding: 0;
+
+  [dir="rtl"] & {
+    left: rem(0);
+    right: auto;
+  }
+
+  @include md {
+    font-size: rem(14);
+  }
+}
+
+.newsletterCheckboxContainer {
+  display: flex;
+  align-items: flex-start;
+  margin-top: rem(8);
+  font-size: rem(12);
+  color: getColorHex("dark-gray");
+
+  input {
+    margin: 0;
+  }
+  label {
+    @include body_regular;
+    margin-left: rem(8);
+    font-size: rem(10);
+    color: getColorHex("grey-mid");
+    [dir="rtl"] & {
+      margin-right: rem(8);
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  @include md {
+    font-size: rem(14);
+  }
+}
+
+.statusMessage {
+  font-size: rem(12);
+  margin-top: rem(12);
+}
+
+.success {
+  color: getColorHex("success"); 
+}
+
+.error {
+  color: getColorHex("red-dark");
+}

@@ -1,0 +1,333 @@
+@import "./../../../assets/styles/main.scss";
+
+.backButton{
+  @include body_regular;
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: rem(18);
+  letter-spacing: rem(0.6);
+  color: getColorHex("green-dark");
+  display: flex;
+  background: none;
+  border: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  margin-bottom: rem(8);
+
+  @include md{
+    display: none;
+    margin: 0;
+  }
+
+  &::before{
+    content: "";
+    display: flex;
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='path-1-inside-1_12210_150031' fill='white'%3E%3Cpath d='M15.6001 4.80001L8.4001 12L15.6001 19.2'/%3E%3C/mask%3E%3Cpath d='M8.4001 12L7.69299 11.2929L7.69299 12.7071L8.4001 12ZM14.893 4.0929L7.69299 11.2929L9.1072 12.7071L16.3072 5.50712L14.893 4.0929ZM7.69299 12.7071L14.893 19.9071L16.3072 18.4929L9.1072 11.2929L7.69299 12.7071Z' fill='%23282828' mask='url(%23path-1-inside-1_12210_150031)'/%3E%3C/svg%3E%0A");
+    width: rem(24);
+    height: rem(24);
+  }
+
+  span{
+    padding-bottom: rem(2);
+    border-bottom: rem(1) solid getColorHex("green-dark");
+  }
+}
+
+.accountDetailsContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  //gap: rem(10);
+
+  & > div{
+    transition: transform 0.3s ease-in-out;
+    align-self: flex-start;
+    max-height: 0;
+    //transform: translateX(-100%); //remove this line once styling is done
+
+    @include md{
+
+      &:first-child{
+        max-height: 100%;
+      }
+    }
+  }
+
+  &.haveSecondLevel{
+
+    & > div{
+      transform: translateX(-100%);
+    }
+
+    &.haveThirdLevel{
+      
+      & > div{
+        transform: translateX(-200%);
+      }
+    }
+  }
+}
+
+.myProfileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 100%;
+  min-width: 100%;
+  row-gap: rem(24);
+  justify-content: space-between;
+  align-self: flex-start;
+  height: 0;
+
+  @include md{
+    row-gap: rem(32);
+  }
+
+  & > div:last-child{
+    order: 4;
+  }
+
+  &.isShowing{
+    max-height: 100%;
+    height: auto;
+  }
+
+  &.profileSectionShowing{
+    height: auto;
+  }
+}
+
+.profileTitle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  h2 {
+    @include heading_regular;
+    font-weight: 500;
+    font-size: rem(28);
+    line-height: rem(34);
+    letter-spacing: rem(0.6);
+    color: getColorHex("green-dark");
+    text-transform: uppercase;
+    margin: 0;
+    display: block;
+
+    @include md{
+      font-size: rem(32);
+      line-height: rem(36);
+    }
+  }
+}
+
+.detailsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 3.917%;
+  width: 100%;
+}
+
+.personalDetails,
+.contactPreferences,
+.addressBook {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: rem(1) solid getColorHex("grey-light");
+  padding: rem(20);
+  gap: rem(8);
+
+  @include lg{
+    width: calc(50% - 16px);
+    padding: rem(32);
+    gap: rem(16);
+  }
+}
+
+.personalDetails{
+  order: 1;
+
+  @include md{
+    order: 1;
+  }
+}
+
+.contactPreferences{
+  order: 3;
+
+  @include md{
+    order: 2;
+  }
+}
+
+.addressBook{
+  width: 100%;
+  order: 2;
+
+  @include md{
+    order: 3;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  outline: none !important;
+  padding: 0;
+}
+
+.sectionTitle {
+
+  h2 {
+    @include heading_regular;
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: rem(26);
+    letter-spacing: rem(0.6);
+    color: getColorHex("brown-dark");
+    margin: 0;
+
+    @include md{
+      font-size: rem(26);
+      line-height: rem(36);
+    }
+  }
+}
+
+.arrowIcon {
+  width: rem(20);
+  height: rem(20);
+  fill: getColorHex("grey");
+
+  @include md{
+    width: rem(33);
+    height: rem(32);
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+
+  p{
+    @include body_light;
+    font-size: rem(14);
+    line-height: rem(22);
+    font-weight: 400;
+    color: getColorHex("grey");
+    margin: 0;
+
+    @include md{
+      font-size: rem(16);
+      line-height: rem(26);
+    }
+
+    &:empty{
+      display: none;
+    }
+  }
+
+  &.addressDetails{
+
+    p:first-child{
+      text-transform: uppercase;
+    }
+  }
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  label {
+    @include body_regular;
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: rem(20);
+    letter-spacing: rem(0.2);
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    cursor: pointer;
+
+    @include md{
+      font-size: rem(14);
+      line-height: rem(22);
+      gap: rem(12);
+    }
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: rem(20);
+    height: rem(20);
+    border: rem(1) solid getColorHex("grey-brown");
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  input[type="checkbox"]:checked {
+    border: rem(1) solid getColorHex("black-dark");
+  }
+
+  input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: rem(4);
+    left: rem(3);
+    width: rem(12);
+    height: rem(10);
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L3.40682 8.59319L1 6.18637' stroke='%23A98E76' stroke-width='1.28273'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+  }
+
+  /*input[type="checkbox"]:hover {
+    border: rem(1) solid getColorHex("black-dark");
+
+    &::after{
+      content: "";
+      position: absolute;
+      top: rem(4);
+      left: rem(3);
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L3.40682 8.59319L1 6.18637' stroke='%23A98E76' stroke-width='1.28273'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      width: rem(12);
+      height: rem(10);
+    }
+  }*/
+}
+
+.addressContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: rem(1) solid #e9e8e3;
+  padding: rem(32);
+}
+
+.addressTitle {
+  h2 {
+    color: getColorHex("brown-dark");
+    margin: 0;
+    font-size: rem(26);
+  }
+}
+
+
+.logoutButton{
+  order: 5;
+  width: 100%;
+
+  @include md{
+    display: none;
+  }
+}

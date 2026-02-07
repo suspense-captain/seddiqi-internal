@@ -1,0 +1,237 @@
+@import "./../../../../assets/styles/main.scss";
+
+.banner,
+.bannerCpo {
+  display: flex;
+  align-items: center;
+  padding: 0 rem(28);
+  justify-content: center;
+
+  .leftText {
+    .title {
+      margin: 0;
+      color: getColorHex("black-dark");
+      font-weight: 400;
+    }
+  }
+
+  &.withPadding{
+    padding: rem(104) rem(28) rem(34);
+    background: getColorHex("white");
+
+    @include md{
+      padding: rem(124) rem(28) rem(34);
+    }
+
+    @include lg{
+      padding: rem(128) rem(128) rem(60);
+    }
+
+    h1, h2, h3, h4, h5, h6, div, p, span{
+      @include rolex_regular;
+    }
+
+    &.withPadding{
+    padding-top: rem(104 + 80);
+
+    @include md{
+      padding-top: rem(124 + 80)
+    }
+
+    @include lg{
+      padding-top: rem(128 + 128);
+
+      &.scrolled{
+        padding-top: rem(128 + 78);
+      }
+    }
+  }
+
+  }
+
+  &.withPaddingV2{
+    padding: rem(34) rem(28);
+    background: getColorHex("white");
+
+    @include lg{
+      padding: rem(60) rem(128);
+    }
+
+    h1, h2, h3, h4, h5, h6, div, p, span{
+      @include rolex_regular;
+    }
+  }
+}
+
+.bannerContainer {
+  max-width: rem(1220);
+  display: flex;
+  gap: rem(28);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-bottom: rem(28);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+  flex-direction: column;
+
+  @include lg {
+    flex-direction: row;
+    gap: rem(80);
+  }
+}
+.bannerContainerCpo {
+  max-width: rem(1220);
+  background-color: getColorHex("white");
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+  gap: rem(12);
+  @include iphone12-fix {
+    gap: unset;
+    & > *:first-child {
+      padding-bottom: rem(12);
+    }
+  }
+  display: flex;
+  width: 100%;
+  max-width: rem(540);
+  margin: 0 auto;
+
+  @include lg {
+    // padding: 0 rem(120);
+  }
+}
+
+.banner {
+  background-color: getColorHex("grey-pampas");
+  align-items: flex-start;
+  flex-direction: column;
+  gap: rem(28);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-top: rem(28);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+  @include lg {
+    padding: 0 rem(120);
+    flex-direction: row;
+    gap: rem(80);
+  }
+
+  div {
+    flex: 1;
+  }
+
+  .leftText {
+    .title {
+      font-size: rem(28);
+      line-height: rem(34);
+      // letter-spacing: rem(0.4);
+      // text-transform: uppercase;
+      color: getColorHex("rolex-brown");
+      font-weight: 700;
+
+      @include lg {
+        line-height: rem(46);
+        font-size: rem(40);
+      }
+    }
+  }
+
+  .rightText {
+    color: getColorHex("black-dark");
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: rem(22);
+    letter-spacing: rem(0.4);
+
+    h4, h5 {
+      margin-top: 0;
+    }
+
+    @include lg {
+      line-height: rem(26);
+      font-size: rem(16);
+    }
+  }
+}
+
+.bannerCpo {
+  background-color: getColorHex("white");
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+  gap: rem(20);
+  width: 100%;
+  align-items: center;
+
+  @include lg {
+    padding: 0 rem(120);
+  }
+
+  .label {
+    width: 100%;
+    color: getColorHex("dark-black");
+    text-align: center;
+    font-size: rem(16);
+    line-height: rem(20);
+    // letter-spacing: rem(0.4);
+    font-weight: 700;
+    // text-transform: uppercase;
+    max-width: rem(440);
+    margin: 0 auto;
+
+    [dir="rtl"] & {
+      text-align: right;
+      margin: 0;
+    }
+  }
+  .leftText {
+    width: 100%;
+    margin-bottom: rem(4);
+    .title {
+      margin: 0 auto;
+      font-size: rem(28);
+      line-height: rem(34);
+      letter-spacing: rem(0.4);
+      text-transform: uppercase;
+      color: getColorHex("black-dark");
+      max-width: rem(440);
+
+      [dir="rtl"] & {
+        text-align: right;
+        margin: 0;
+      }
+
+      @include lg {
+        line-height: rem(36);
+        font-size: rem(32);
+        letter-spacing: rem(3);
+      }
+    }
+  }
+
+  .rightText {
+    max-width: rem(540);
+    margin: 0 auto;
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: rem(22);
+    text-align: center;
+    color: getColorHex("black-dark");
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+}

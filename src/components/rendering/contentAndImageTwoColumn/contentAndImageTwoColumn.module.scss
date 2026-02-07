@@ -1,0 +1,232 @@
+@import "./../../../assets/styles/main.scss";
+.contentAndImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: rem(20) rem(20);
+
+  @include md {
+    margin-left: rem(120);
+    margin-right: rem(120);
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: rem(1200);
+
+  @include md-max {
+    flex-direction: column;
+  }
+
+  @include lg {
+    flex-direction: row;
+  }
+}
+.squareImageLayout {
+  .contentWrapper {
+    @include md {
+      flex-direction: row;
+      .leftContent {
+        margin-left: rem(80);
+      }
+    }
+  }
+}
+
+.title {
+  width: 100%;
+}
+
+h2.title {
+  color: getColorHex("opulent-bronze");
+  text-align: left;
+  text-transform: uppercase;
+  margin-block-end: rem(0);
+  margin-block-start: rem(0);
+  font-weight: 500;
+  @include body_regular;
+  @include md {
+    letter-spacing: rem(0.4);
+  }
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+h2.title.sansArabicTitle {
+  @include body_regular;
+}
+
+.description {
+  letter-spacing: rem(0.2);
+  color: getColorHex("black-dark");
+  margin-top: rem(12);
+  margin-bottom: rem(20);
+  font-weight: rem(400);
+  font-size: rem(16);
+  line-height: rem(26);
+
+  h4 {
+    [dir="rtl"] & {
+      line-height: 1.6;
+    }
+  }
+
+  @include md {
+    margin-top: rem(12);
+    margin-bottom: rem(0);
+  }
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+.leftContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include md {
+    width: 100%;
+    // height: rem(690);
+    margin-right: rem(120);
+
+    [dir="rtl"] & {
+      margin-left: rem(120);
+      align-items: center;
+      margin-right: 0;
+    }
+  }
+
+  &.square {
+    width: 100%;
+    height: auto;
+
+    @include md {
+      width: rem(520);
+      height: auto;
+    }
+
+    .description {
+      margin-bottom: rem(0);
+      @include md {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+}
+
+.rightContent {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  height: rem(448);
+
+  @include md {
+    flex-direction: row;
+    flex: 0 0 rem(520);
+    width: rem(520);
+    height: rem(693);
+  }
+
+  &.square {
+    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
+    @include md {
+      flex-direction: row;
+      flex: 0 0 rem(520);
+      width: rem(520);
+      height: rem(520);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: rem(16) rem(0);
+
+      @include md {
+        width: rem(520);
+        height: rem(520);
+      }
+    }
+  }
+}
+
+.rightContent img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem(448);
+  object-fit: cover;
+  border-radius: rem(16) rem(0);
+
+  @include md {
+    width: rem(520);
+    height: rem(690);
+  }
+}
+
+.squareImage {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: rem(16);
+}
+
+.reversed.contentAndImageTwoColumn {
+  @include md {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .contentWrapper {
+    flex-direction: row-reverse;
+  }
+}
+
+.reversed .leftContent {
+  order: 2;
+  margin-top: rem(28);
+  @include md {
+    justify-content: flex-start;
+    padding-left: rem(0);
+    margin: 0 0 0 rem(120);
+
+    [dir="rtl"] & {
+      margin: 0 rem(120) 0 0;
+    }
+  }
+}
+
+.reversed .rightContent {
+  order: 1; 
+  @include md {
+    padding-right: rem(0);
+    justify-content: flex-end;
+  }
+}
+
+.ctaContainer {
+  margin-bottom: rem(28);
+
+  [dir="rtl"] & {
+    width: 100%;
+    text-align: center;
+    margin-top: rem(28);
+  }
+
+  @include md {
+    margin-top: rem(28);
+    margin-bottom: rem(0);
+  }
+}

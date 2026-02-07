@@ -1,0 +1,156 @@
+@import "../../assets/styles/main.scss";
+.tabContainer {
+  display: flex;
+  width: 100%;
+
+  @include md-max {
+    flex-direction: column;
+  }
+}
+
+.listsContainer {
+  flex: 0 0 30%;
+  padding-right: rem(20);
+}
+
+.popularSearch,
+.popularBrands,
+.popularProducts {
+  margin-bottom: rem(20);
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.2);
+  text-transform: uppercase;
+  color: getColorHex("grey");
+}
+
+.popularSearchListStyle,
+.popularBrandListStyle {
+  list-style-type: none;
+  padding: 0;
+  margin-top: rem(20);
+  margin-bottom: rem(20);
+  li {
+    text-transform: capitalize;
+    margin-block-end: rem(20);
+    margin-block-start: rem(20);
+  }
+}
+
+.popularProductCard {
+  flex: 0 0 auto;
+  padding: rem(5);
+  border: rem(1) solid getColorHex("grey-light");
+  margin-bottom: rem(10);
+}
+.productsContainer {
+  font-size: rem(24);
+  line-height: rem(30);
+  text-transform: uppercase;
+  color: getColorHex("black");
+  display: block;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: rem(40); 
+  margin-bottom: rem(20); 
+
+  @include md-max {
+    grid-template-columns: 1fr; 
+    gap: rem(20);
+  }
+}
+.productCardContainer {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  width: 100%;
+  height: auto; 
+  @include md{
+    flex-direction: row;
+  }
+  
+
+  .imgContainer {
+    position: relative;
+    width: 100%; 
+    height: auto;
+  }
+
+  .image {
+    border-radius: rem(16 0 16 0);
+    object-fit: cover;
+    width: rem(100);
+    // height: rem(100);
+    // width: 100%; 
+    height: auto;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+    width: 100%;
+    justify-content: center;
+
+    .title {
+      @include heading_light;
+      font-size: rem(14);
+      line-height: rem(20);
+      letter-spacing: rem(0.4);
+      margin: rem(0);
+      @include ellipses;
+
+      @include md {
+        font-size: rem(16);
+      }
+    }
+
+    .subtitle {
+      @include body_light;
+      color: getColorHex("black-dark");
+      font-size: rem(12);
+      line-height: rem(22);
+      @include ellipses;
+
+      @include md {
+        font-size: rem(14);
+      }
+    }
+  }
+}
+
+.highlighted {
+  font-weight: bold;
+}
+.currency {
+  padding-right: rem(8);
+}
+
+.viewAllBtnContainer {
+  display: flex;
+  justify-content: flex-start;  
+  
+  @include md-max {
+    width: 100%;  
+    margin-top: rem(20);  
+    justify-content: flex-start;  
+  }
+}
+
+.searchResultContainer {
+  position: relative;
+  min-height: rem(160);
+}
+
+.hiddenScrollbar {
+  max-height: 50vh;
+}
+
+.hiddenScrollbar {
+  @mixin sm {
+    max-height: unset;
+  }
+}

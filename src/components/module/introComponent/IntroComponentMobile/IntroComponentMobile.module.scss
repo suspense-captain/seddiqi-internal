@@ -1,0 +1,205 @@
+@import "./../../../../assets/styles/main.scss";
+
+.introContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  max-height: rem(816);
+  will-change: transform;
+  flex-wrap: wrap;
+  gap: rem(33);
+  min-width: rem(465);
+  transition: transform 0.9s ease;  
+  will-change: transform;
+  transform: translateX(rem(-29));
+}
+
+.titleSection {
+  margin-bottom: 2rem;
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  h1 {
+    @include heading_light;
+    color: getColorHex("midnight-brown");
+    text-align: center;
+    font-size: rem(48);
+    font-weight: 500;
+    line-height: rem(54); 
+    letter-spacing: rem(0.4);
+    text-transform: uppercase;
+    max-width: rem(580);
+  }
+
+  p {
+    @include body_regular;
+    color: getColorHex("grey");
+    text-align: center;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: rem(26);
+    letter-spacing: rem(0.2);
+  }
+}
+
+.imageGrid {
+  width: 100%;
+  height: 100%;
+
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: rem(8);
+    object-fit: cover;
+  }
+}
+
+.searchBox {
+  width: 100%;
+  padding: rem(0 36);
+  position: absolute;
+  bottom: rem(125);
+  z-index: 9999;
+}
+
+.searchContainer {
+  display: flex;
+  height: rem(60);
+  padding: 0 rem(28);
+  align-items: center;
+  gap: rem(20);
+
+  border-radius: rem(16) 0;
+  border: rem(1) solid getColorHex("grey-light");
+  background: getColorHex("white");
+  box-shadow: 0 0 rem(30) 0 rgba(0, 0, 0, 0.15);
+}
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: rem(16);
+  color: #333;
+  padding: 0;
+  margin-right: rem(8);
+}
+
+.input::placeholder {
+  @include heading_regular;
+  color: getColorHex("midnight-brown");
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background: url("/path-to-your-icon.png") no-repeat center center;
+  background-size: contain;
+}
+
+.seddiqiLogo {
+  border-radius: rem(40);
+  background: getColorHex("desert-storm");
+  display: flex;
+  width: rem(44);
+  height: rem(44);
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  flex-shrink: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: rem(16) 0;
+}
+
+.image1,
+.image3,
+.image4,
+.image6 {
+  width: rem(180) !important;
+  height: rem(254) !important;
+  align-items: flex-start;
+  border-radius: rem(16) 0;
+  object-fit: cover;
+}
+
+.image3{
+  transform: translateX(rem(20));
+}
+
+.image2,
+.image5 {
+  width: rem(252);
+  height: rem(170);
+  justify-content: center;
+  align-items: center;
+  border-radius: rem(16) 0;
+}
+
+.toggleBtn {
+  @include heading_regular;
+  position: absolute;
+  display: inline-flex;
+  height: rem(36);
+  padding: 0 rem(12);
+  align-items: center;
+  gap: rem(20);
+  flex-shrink: 0;
+  border-radius: rem(8) 0;
+  background: getColorHex("white");
+  box-shadow: 0 0 rem(10) 0 rgba(0, 0, 0, 0.2);
+  color: getColorHex("midnight-brown");
+  cursor: pointer;
+  font-size: rem(12);
+  font-weight: 500;
+  line-height: rem(14);
+
+  bottom: rem(66);
+  right: rem(28);
+  z-index: 999;
+}
+
+.image2 {
+  transform: translateY(rem(19));
+}
+
+.image4 {
+  transform: translate(rem(20), rem(-64));
+}
+
+.image6 {
+  transform: translateY(rem(-64));
+}

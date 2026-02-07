@@ -1,0 +1,191 @@
+@import "../../../assets/styles/main.scss";
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(12);
+  cursor: pointer;
+
+  .title {
+    font-size: rem(12);
+    color: getColorHex("grey");
+
+    @include md {
+      font-size: rem(14);
+    }
+  }
+}
+
+.radioInput {
+  display: none;
+}
+
+.customRadio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(20);
+  height: rem(20);
+  margin-right: rem(8);
+
+  [dir="rtl"] & {
+    margin-left: rem(8);
+  }
+}
+
+.radioEllipse {
+  width: 100%;
+  height: 100%;
+  fill: getColorHex("midnight-brown");
+}
+
+.radioDot {
+  position: absolute;
+  width: rem(6);
+  height: rem(6);
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.radioInput:checked+.customRadio .radioDot {
+  background-color: getColorHex("noir");
+}
+
+.radioLabel>.radioEllipse+p {
+  margin: 0;
+}
+
+
+.customSelect {
+  position: relative;
+  width: rem(300);
+  max-width: 100%;
+  font-size: rem(14);
+  color: getColorHex("black");
+
+
+  .selectButton {
+    width: 100%;
+    font-size: rem(14);
+    background-color: transparent;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(12);
+
+    .arrow {
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .radioList {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    background-color: getColorHex("white");
+    border: rem(1) solid getColorHex("grey-tint");
+    border-radius: rem(4);
+    padding: rem(10);
+    margin-top: rem(6);
+    max-height: rem(220);
+    overflow-y: auto;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 101;
+    right: rem(-70);
+    transition: 0.5s ease;
+    
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scaleY(1);
+    }
+
+    li {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      .radioLabel  {
+        width: 100%;
+        padding:rem(8 10);
+        cursor: pointer;
+      }
+    }
+
+  }
+}
+
+
+.container {
+  position: relative;
+  width: rem(80);
+  padding: 0;
+
+  .customSelect {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+
+    select {
+      appearance: none;
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      @include body_light;
+      color: getColorHex("black");
+      font-size: rem(12);
+
+      [dir="rtl"] & {
+        position: relative;
+        right: rem(20);
+      }
+
+      @include md {
+        font-size: rem(14);
+      }
+
+      option {
+        &:first-child>* {
+          text-transform: uppercase;
+        }
+
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      right: rem(0);
+      pointer-events: none;
+    }
+
+    @include lg-max {
+      svg {
+        width: rem(10);
+        opacity: 0.4;
+      }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+/// Mixin to manage responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints-min
+/// @require $breakpoints-max
+
+$breakpoints-min: (
+  "xs-min": 320px,
+  "sm-min": 320px,
+  "md-min": 768px,
+  "lg-min": 1024px,
+  "xl-min": 1280px,
+) !default;
+
+$breakpoints-max: (
+  "xs-max": 319px,
+  "sm-max": 767px,
+  "md-max": 1023px,
+  "lg-max": 1279px,
+  "xl-max": 1390px,
+) !default;
+
+// Small devices
+
+// Breakpoints
+$screen-xs-max: 350px;
+$screen-xs-min: 351px;
+$screen-sm-max: 575px;
+$screen-sm-min: 576px;
+$screen-md-max: 767px;
+$screen-md-min: 768px;
+$screen-lg-max: 991px;
+$screen-lg-min: 992px;
+$screen-xl-max: 1279px;
+$screen-xl-min: 1280px;
+$screen-xxl-max: 1590px;
+$screen-xxl-min: 1440px;
+
+// HD Desktop Breakpoint (Kerzner spec)
+$screen-hd-desktop-min: 1024px;
+$screen-hd-desktop-max: 1023px;
+
+@mixin xs {
+  @media (min-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+@mixin xs-max {
+  @media (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  // min-width: 576px
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+@mixin sm-max {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+@mixin tablet-size-only {
+  //for tab only from 768px to 576px
+  @media (max-width: #{$screen-md-min}) and (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+// Medium devices
+@mixin md {
+  // min-width: 768px
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+// Standard Desktop devices
+@mixin sd {
+  // min-width: 1024px
+  @media (min-width: #{$screen-hd-desktop-min}) {
+    @content;
+  }
+}
+@mixin md-max {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+// Large devices
+@mixin lg {
+  // min-width: 992px
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+@mixin lg-max {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+// Extra large devices
+@mixin xl {
+  // min-width: 1280px
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+@mixin xl-max {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+
+// Extra Extra large devices
+@mixin xxl {
+  // min-width: 1280px
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints-max, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints-max, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @if map-has-key($breakpoints-min, $breakpoint) {
+      // Prints a media query based on the value
+      @media (min-width: map-get($breakpoints-min, $breakpoint)) {
+        @content;
+      }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+      +"Available breakpoints are: #{map-keys($breakpoints-min),map-keys($breakpoints-max)}.";
+    }
+  }
+}
+
+@mixin breakpoint-max-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin breakpoint-min-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin vertical_align_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin pointer {
+  cursor: pointer;
+}
+
+@mixin svg {
+  width: rem(28);
+  height: rem(28);
+  background: getColorHex("transparent-grey");
+  border-radius: 50%;
+}
+
+@mixin cut-corners(
+  $left-top,
+  $right-top: 0,
+  $right-bottom: 0,
+  $left-bottom: 0
+) {
+  $factor: 1px;
+
+  clip-path: polygon(
+    $left-top * $factor 0%,
+    calc(100% - #{$right-top * $factor}) 0%,
+    100% $right-top * $factor,
+    100% calc(100% - #{$right-bottom * $factor}),
+    calc(100% - #{$right-bottom * $factor}) 100%,
+    $left-bottom * $factor 100%,
+    0% calc(100% - #{$left-bottom * $factor}),
+    0% $left-top * $factor
+  );
+}
+
+@mixin select($parts...) {
+  @each $part in $parts {
+    :global(.select__#{$part}) {
+      @content;
+    }
+  }
+}
+
+@mixin ellipses {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@mixin iphone12-fix {
+@supports (-webkit-touch-callout: none) {
+@media screen 
+and (device-width: 390px) 
+and (device-height: 844px) 
+and (-webkit-device-pixel-ratio: 3) {
+@content;
+    }
+  }
+}

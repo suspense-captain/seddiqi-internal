@@ -1,0 +1,162 @@
+@import "./../../../../assets/styles/main.scss";
+
+.productContainer {
+  // min-width: rem(348);
+  height: rem(368);
+  background-color: getColorHex("white");
+  padding: rem(16);
+  padding-top: rem(0);
+  // border: rem(1) solid getColorHex("grey-light-4", 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: rem(40);
+  position: relative;
+  transition: background-color 0.3s ease;
+  
+  @include md{
+    height: rem(594);
+  }
+
+  &:hover {
+    background-color: getColorHex("green-greyish");
+
+    .newContainer {
+      background-color: getColorHex("white");
+    }
+  }
+
+  .productTop {
+    display: none; //flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    // padding: rem(16);
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    svg {
+      margin: rem(16);
+    }
+  }
+
+  .newContainer {
+    padding: rem(6 12);
+    background-color: getColorHex("green-greyish");
+    display: inline-block;
+    gap: rem(10);
+    border-radius: rem(4);
+    cursor: pointer;
+    margin: rem(16);
+
+    .new {
+      font-size: rem(10);
+      font-weight: 400;
+      line-height: rem(14);
+      letter-spacing: rem(0.4);
+      text-align: left;
+      color: getColorHex("black-dark");
+      text-transform: uppercase;
+    }
+  }
+
+  .productBottom {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+          @include iphone12-fix {
+      gap: unset; 
+      & > * {
+        margin-bottom: rem(18);
+      }
+      & > *:last-child {
+              margin-bottom: rem(0);
+      }
+    }
+    align-items: center;
+    flex: auto;
+    margin-top: rem(12);
+
+    [dir="rtl"] & { 
+      align-items: center;
+    }
+
+    
+    @include md{
+      margin-top: rem(0);
+    }
+
+    .title,
+    .price {
+      @include heading_light; 
+      text-transform: uppercase;
+      [dir="rtl"] & { 
+       text-align: right;
+      }
+    }
+
+    .type {
+      font-size: rem(14);
+      line-height: rem(18);
+      letter-spacing: rem(0.4);
+      text-align: center;
+      color: getColorHex("green-metallic");
+      @include body_regular; 
+      @include md{
+        font-size: rem(16);
+        line-height: rem(28);
+      }
+    }
+
+    p{
+      margin: 0;
+    }
+  }
+
+  .imgContainer {
+    position: relative;
+    max-width: rem(275);
+    width: 100%;
+    height: rem(216);
+    margin: 0 auto;
+    z-index: 10;
+    @include md{
+      height: rem(464);
+
+    }
+
+    & > :hover {
+      cursor: grab;
+    }
+  }
+
+
+  .carouselBtnsContainer {
+
+    * {
+      color: getColorHex("grey-light-5");
+      fill: getColorHex("grey-light-5");
+    }
+
+    .carouselBtns_carouselBtn {
+      background-color: getColorHex("grey-light-5");
+    }
+    .carouselBtns_activeCarouselBtn {
+      border: 0.0625rem solid getColorHex("metallic");
+    }
+
+  }
+
+  .productBadgeContainer{
+    display: flex;
+    width: 100%;
+    padding-left: rem(10);
+    margin: rem(10) 0;
+    @include lg{
+      padding-left: rem(20);
+      margin: rem(20) 0;
+    }
+  }
+}

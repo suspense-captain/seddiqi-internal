@@ -1,0 +1,53 @@
+@import "../../../../assets/styles/main.scss";
+
+.colorGroup {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.colorLabel {
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.colorInput {
+  display: none;
+}
+
+.colorContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(36);   
+
+  svg{
+    position:absolute;
+    width: rem(30);
+    height: rem(30);
+  }
+}
+
+.customColor {
+  width: rem(16);  
+  height: rem(16);
+  border-radius: 50%; 
+}
+
+.title{
+  font-size: rem(14);
+  color: getColorHex("grey");
+}
+
+.colorEllipse {
+  position: absolute;
+  width: rem(36);  
+  height: rem(36); 
+}
+
+
+.colorLabel > .colorEllipse + p {
+  margin: 0;
+}

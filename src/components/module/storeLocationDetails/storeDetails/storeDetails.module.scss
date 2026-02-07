@@ -1,0 +1,332 @@
+@import "../../../../assets/styles/main.scss";
+
+.title {
+  color: getColorHex("black-dark");
+  letter-spacing: rem(0.6);
+  margin-block-end: rem(12);
+  margin-block-start: rem(20);
+}
+
+.mapViewBtnLabel,
+.contactLabel,
+.storeOpenDay,
+.storeOpenTiming,
+.storeServiceInfo,
+.storeBrandsInfo,
+.availableBrandsTiitle,
+.brandsName {
+  font-size: rem(12);
+  font-weight: 400;
+  line-height: rem(20);
+  letter-spacing: rem(0.2);
+}
+
+.bookAppointmentButton{
+  text-transform: none;
+}
+
+.mapViewBtnLabel,
+.availableBrandsTitle {
+  text-transform: uppercase;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+.addressWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: rem(8);
+  row-gap: rem(5);
+}
+
+.storeCity{
+  
+  & > p{
+    margin: 0;
+  }
+}
+
+.storeAddress{
+
+  & > p{
+    margin: 0;
+  }
+}
+
+.vline {
+  height: rem(16);
+  margin: 0 rem(5);
+  background-color: getColorHex("black-dark");
+  width: rem(1);
+}
+
+.storeImage {
+  position: relative;
+  height: rem(224);
+  width: 100%;
+  margin-bottom: rem(28);
+}
+
+.storeImg {
+  border-radius: rem(16 0 16 0);
+  object-fit: cover;
+  height: rem(224);
+  width: 100%;
+}
+
+.storeContactWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: rem(20);
+}
+
+.contactLabelWrapper {
+  flex: 0 1 auto;
+}
+
+.contactWrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.vDivider {
+  background-color: getColorHex("grey-light");
+  width: rem(1);
+  height: rem(16);
+  margin: 0 rem(16);
+}
+
+.storeTimingWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(8);
+}
+
+.timingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: rem(12);
+  width: 100%;
+}
+
+.serviceList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.serviceList li {
+  margin-bottom: rem(8);
+}
+
+.brandsWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: rem(32);
+  margin-top: rem(12);
+  margin-bottom: rem(16);
+  flex-wrap: wrap; 
+}
+
+.brandSeparator {
+  width: rem(1);
+  height: rem(20);
+  background-color: getColorHex("black-dark");
+  margin: 0 rem(4);
+}
+
+.divider {
+  border-top: rem(1) solid getColorHex("grey-light");
+  margin-top: rem(16);
+  margin-bottom: rem(28);
+}
+
+.mapViewBtnLabel {
+  color: getColorHex("grey-mid");
+}
+
+.mapViewBtn {
+  margin-top: rem(20);
+  margin-bottom: rem(12);
+}
+
+.mapIcon {
+  margin-right: rem(5);
+  height: rem(16);
+  width: rem(16);
+}
+.WhatsappIcon {
+  margin-right: rem(12);
+  color: getColorHex("black-dark");
+  height: rem(20);
+  width: rem(20);
+}
+
+.contactLabel,
+.storeOpenDay,
+.storeServiceInfo,
+.brandsName {
+  color: getColorHex("grey");
+}
+.availableBrandsTitle {
+  color: getColorHex("grey-mid");
+  
+  & > p{
+    margin: 0;
+  }
+}
+.storeOpenTiming {
+  color: getColorHex("black-dark");
+}
+
+.locationInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: getColorHex("grey");
+  margin-bottom: rem(12);
+  margin-top: rem(12);
+  gap: rem(15);
+}
+
+.storeMapLink{
+  text-transform: none;
+}
+
+.leftSection {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 1 60%;
+}
+
+.iconWrapper {
+  margin-right: rem(12);
+}
+.timeIcon,
+.serviceIcon,
+.brandsIcon {
+  height: rem(20);
+  width: rem(20);
+}
+
+.timingItems {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.timingDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.storeOpenDay {
+  margin-right: rem(12);
+}
+
+.storeOpenTiming {
+  text-align: right;
+}
+
+.serviceWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.storeServiceInfo {
+  flex: 1;
+}
+
+.serviceList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.serviceList li {
+  margin-bottom: rem(8);
+}
+
+.appointmentBtn,
+.viewAllBrandsBtn,
+.getDirectionBtn {
+  text-transform: none;
+}
+
+.whatsappBtn,
+.contactBtn {
+  text-transform: capitalize;
+}
+
+.storeBrandsInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.iconSection {
+  display: flex;
+  align-items: flex-start;
+  margin-right: rem(12);
+}
+
+.availableBrandsLabel {
+  flex: 1;
+}
+
+.mapContainer {
+  position: relative;
+  height: rem(224);
+  width: 100%;
+  margin-bottom: rem(28);
+  div {
+    border-radius: rem(16) rem(0);
+  }
+}
+
+.imageContainer,
+.mapContainer {
+  margin-bottom: rem(28);
+  border-radius: rem(16) rem(0);
+}
+
+.contentWrapper {
+  padding: rem(16);
+}
+
+.twoColumnLayout {
+  display: flex;
+  flex-direction: column;
+}
+
+.twoColumnLayout {
+  @include md {
+    flex-direction: row;
+  }
+}
+
+.infoColumn {
+  flex: 1;
+}
+
+.imageColumn {
+  flex: 0 0 rem(300);
+  display: flex;
+  justify-content: center;
+}
+
+.storeContactWrapper,
+.storeTimingWrapper,
+.serviceWrapper,
+.storeBrandsInfo {
+  margin-bottom: rem(16);
+}

@@ -1,0 +1,244 @@
+@import "./../../../assets/styles/main.scss";
+
+.servicesSection {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: rem(60) rem(28);
+  gap: rem(40);
+
+  &.cream {
+    background-color: getColorHex("cream");
+  }
+
+  &.white {
+    background-color: getColorHex("white");
+  }
+
+  @include md {
+    width: 100%;
+    gap: rem(64);
+    padding: rem(120) rem(0);
+  }
+
+  .headerSections {
+    display: flex;
+    flex-direction: column;
+    width: rem(336);
+    height: auto; //rem(148);
+    gap: rem(14);
+
+    @include md {
+      width: rem(800);
+      //height: rem(112);
+      gap: rem(9);
+    }
+
+    .title {
+      @include heading_regular;
+      font-size: rem(34);
+      letter-spacing: rem(0.4);
+      font-weight: 500;
+      line-height: rem(40);
+      text-align: center;
+      text-transform: uppercase;
+      color: getColorHex("black-dark");
+      margin: 0;
+
+      @include md {
+        font-size: rem(40);
+        line-height: rem(46);
+      }
+
+      .title{
+        margin-bottom: 0;
+      }
+    }
+
+    .bar {
+      width: rem(70);
+      height: rem(2);
+      text-align: center;
+      margin: rem(0) auto;
+      background-color: getColorHex("metallic");
+
+      @include md {
+        margin: rem(0) auto;
+      }
+    }
+
+    .subTitle {
+      @include body_regular;
+      font-size: rem(22);
+      letter-spacing: rem(0.6);
+      font-weight: 500;
+      line-height: rem(30);
+      text-align: center;
+      color: getColorHex("black-dark");
+      margin-bottom: rem(0);
+
+      @include md {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: rem(26);
+        letter-spacing: rem(0.2);
+      }
+
+      p{
+        margin: 0;
+      }
+    }
+  }
+
+  .cardSection {
+    width: 100%; //rem(336);
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(30);
+
+    @include md {
+      max-width: rem(1440);
+    }
+
+    .stepItem {
+      width: 100%; //rem(336);
+      // height: rem(474);
+      height: auto;
+      padding-top: rem(20);
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+
+      @include md {
+        max-width: rem(1440);
+        height: rem(419);
+        padding: rem(0) rem(80);
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: rem(80);
+
+        &:nth-child(odd) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+
+    .image {
+      width: 100%;
+      //height: rem(224);
+      aspect-ratio: 1/1;
+      border-radius: rem(16) rem(0) rem(16) rem(0);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+
+      @include md {
+        aspect-ratio: auto;
+        width: rem(628);
+        height: rem(419);
+      }
+    }
+
+    .text {
+      width: 100%;
+      height: auto;
+
+      @include md {
+        width: rem(250);
+      }
+
+      @include lg {
+        width: rem(572);
+      }
+
+      .stepNumber {
+        @include heading_regular;
+        font-size: rem(18);
+        line-height: rem(26);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: rem(0.4);
+        margin-top: rem(0);
+        margin-bottom: rem(0);
+        color: getColorHex("black-dark");
+
+        @include md {
+          margin-top: rem(0);
+          font-size: rem(26);
+          line-height: rem(32);
+          letter-spacing: rem(0.6);
+
+        }
+      }
+
+      .textTitle {
+        @include heading_regular;
+        font-size: rem(27);
+        line-height: rem(34);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: rem(0.4);
+        margin-bottom: rem(12);
+        color: getColorHex("black-dark");
+        margin-top: rem(0);
+
+        @include md {
+          font-size: rem(40);
+          line-height: rem(46);
+          margin-bottom: rem(28);
+        }
+      }
+
+      .description {
+        @include body_regular;
+        font-size: rem(14);
+        line-height: rem(22);
+        font-weight: 300;
+        letter-spacing: rem(0.2);
+        color: getColorHex("black-dark");
+
+        @include md {
+          font-weight: 400;
+          font-size: rem(16);
+          line-height: rem(26);
+        }
+
+        a {
+          color: inherit;
+          position: relative; 
+      
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;        
+            left: 0;            
+            width: 0;
+            height: rem(1);    
+            background-color: currentColor;
+            transition: width 0.3s ease;
+          }
+      
+          &:hover{
+            color: getColorHex("opulent-bronze");
+      
+            &::after {
+              width: 100%;
+              background-color: getColorHex("opulent-bronze");
+            }
+          }
+        }
+
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+}

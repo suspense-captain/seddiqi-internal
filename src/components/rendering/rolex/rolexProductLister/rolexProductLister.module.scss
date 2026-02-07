@@ -1,0 +1,141 @@
+@import "./../../../../assets/styles/main.scss";
+
+.productListerContainer {
+  // padding: rem(0 28);
+  margin: 0 auto;
+  max-width: rem(850);
+
+  .swiperWrapper {
+    max-width: rem(850);
+    margin: 0 auto;
+
+    .swiperSlide {
+      // width: rem(270);
+      // height: rem(270);
+    }
+  }
+
+  .productLister {
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      // width: rem(270);
+      // height: rem(270);
+    }
+
+    .swiperSlide {
+      width: rem(270);
+      // height: rem(270);
+    }
+
+    .productItem {
+      // width: rem(270);
+      // height: rem(270);
+      text-align: left;
+
+      .imageContainer {
+        position: relative;
+        // width: rem(348);
+        // height: rem(348);
+        // margin: 0 auto;
+        overflow: hidden;
+        .productImage {
+          object-fit: contain;
+        }
+
+        @include lg {
+          width: rem(270);
+          height: rem(270);
+        }
+      }
+
+      .productInfo {
+        margin-top: rem(16);
+        display: flex;
+        flex-direction: column;
+        gap: rem(4);
+
+        .productTitle {
+          font-family: Helvetica;
+          color: getColorHex("black");
+          font-size: rem(12);
+          font-weight: 400;
+          line-height: rem(18);
+          letter-spacing: rem(0.4);
+
+          @include lg {
+            line-height: rem(20);
+          }
+        }
+        .productBrand {
+          font-family: Helvetica;
+          color: getColorHex("black-dark");
+          font-size: rem(12);
+          font-weight: 700;
+          line-height: rem(16);
+          letter-spacing: rem(0.4);
+        }
+
+        .productName {
+          font-family: Helvetica;
+          color: getColorHex("black");
+          font-size: rem(12);
+          font-weight: 700;
+          line-height: rem(18);
+          letter-spacing: rem(1);
+          text-transform: uppercase;
+
+          @include lg {
+            font-size: rem(14);
+          }
+        }
+
+        .productDesc {
+          color: getColorHex("rolex-grey");
+          font-family: Helvetica;
+          font-size: rem(12);
+          font-style: normal;
+          font-weight: 400;
+          line-height: rem(16); 
+          text-transform: capitalize;
+        }
+
+        .productPrice {
+          font-family: Helvetica;
+          color: getColorHex("black-dark");
+          font-size: rem(12);
+          font-weight: 400;
+          line-height: rem(16);
+        }
+      }
+    }
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(24);
+
+    @include lg {
+      margin-top: rem(40);
+    }
+  }
+
+  .discoverButton {
+    @include rolex_regular;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: rem(119);
+    padding: rem(0 28);
+    height: rem(36);
+    border-radius: rem(40);
+    background-color: getColorHex("green-Salem");
+    color: getColorHex("white");
+    text-align: center;
+    font-size: rem(12);
+    line-height: rem(18);
+    letter-spacing: rem(1);
+    text-transform: capitalize;
+  }
+}

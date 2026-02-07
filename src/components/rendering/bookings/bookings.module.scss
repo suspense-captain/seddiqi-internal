@@ -1,0 +1,95 @@
+@import "./../../../assets/styles/main.scss";
+
+.accountPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 28px;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 100px;
+}
+
+.sectionContainer {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.leftContainer {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 18px;
+  padding: 0 20px;
+  height: 78px;
+  width: 100%;
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.navButton:hover {
+  background-color: #FAF5ED;
+}
+
+.activeButton {
+  background-color: #FAF5ED;
+}
+
+.logoutButton {
+  margin-top: 47px;
+  padding: 0 40px;
+ button{
+  width: 100%;
+ }
+}
+
+.helpSection {
+  margin-top: 56px;
+
+  .helpTitle {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .helpDescription {
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+}
+
+.iconsContainer {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightContainer {
+  flex: 1;
+  background-color: #e0e0e0;
+  padding: 20px;
+}

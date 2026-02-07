@@ -1,0 +1,123 @@
+@import "rolexMixins";
+@import "rolexTypography";
+@import "rolexVariables";
+
+$sqrt3: 1.2;
+$hex-height: 3rem;
+$hex-min-width: $hex-height * $sqrt3 / 2;
+$hex-distance: ($hex-height / (2 * $sqrt3));
+$border-width: rem(1);
+
+.rolex-button {
+  @include rolex_regular;
+  @include transition-3s;
+  padding: rem(12 20);
+  font-size: rem(14);
+  line-height: rem(18);
+  cursor: pointer;
+  border: none;
+  min-width: rem(200);
+  width: auto;
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  border-radius: rem(100);
+  outline: none;
+
+  @include md {
+    
+  }
+
+  [dir="rtl"] & {
+    align-self: flex-end;
+  }
+
+  &.solid {
+    background: getColorHex("rolex-green");
+    color: getColorHex("white");
+    
+    &:hover {
+      background: getColorHex("rolex-green-dark");
+    }
+  }
+
+  &.transparent {
+    border: rem(1) solid getColorHex("rolex-green");
+    color: getColorHex("black");
+    background: transparent;
+
+    &:hover {
+      color: getColorHex("white");
+      background: getColorHex("rolex-green");
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.rolex-text-button {
+  @include rolex_regular;
+  @include transition-3s;
+  font-size: rem(12);
+  line-height: rem(16);
+  letter-spacing: rem(1);
+  color: getColorHex("rolex-green");
+  display: inline-flex;
+  outline: none;
+  text-decoration: none;
+
+  @include md {
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+
+  &:hover{
+    color: getColorHex("black");
+  }
+  
+}
+
+.svg {
+  @include vertical_align_center;
+  @include pointer;
+  @include svg;
+}
+
+
+.rolex-small-button {
+  @include rolex_regular;
+    display: flex;
+    // width: rem(115);
+    height: rem(48);
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(40);
+    background-color: getColorHex("green-Salem");
+    color: getColorHex("white");
+    text-align: center;
+    font-size: rem(12);
+    height: rem(40);
+    line-height: rem(16);
+    padding: rem(0 28);
+    width: max-content;
+    text-transform: capitalize;
+    width: auto !important; 
+
+    &.left {
+      justify-content: flex-start !important;
+
+    }
+  
+  &:hover {
+    color: getColorHex("white");
+  }
+  
+}

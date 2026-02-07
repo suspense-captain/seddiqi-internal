@@ -1,0 +1,58 @@
+@import "./../../../../assets/styles/main.scss";
+
+.categoryListItem {
+  position: relative;
+  width: rem(200);
+
+  .image {
+    border-radius: rem(16) 0 rem(16) 0;
+    width: 100%;
+    height: rem(299);
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+  }
+
+  .containerImg {
+    border-radius: rem(16) 0 rem(16) 0;
+    height: rem(299);
+    width: rem(200);
+    position: relative;
+  }
+}
+.contentWrapper {
+  margin-top: rem(0);
+  padding-top: rem(8);
+  text-align: center;
+
+  .titleContainer {
+    margin-top: rem(0);
+    padding-top: rem(0);
+  }
+
+  .slideTitle {
+    @include heading_light;
+    line-height: rem(20);
+    text-transform: uppercase;
+    font-size: rem(14);
+    color: getColorHex("midnight-brown");
+    cursor: pointer;
+
+    @include md {
+      font-size: rem(16);
+    }
+
+    [dir="rtl"] & {
+      text-align: center;
+    }
+  }
+
+  .descriptionContainer {
+    margin-top: rem(4);
+  }
+
+  .slideDescription {
+    font-size: rem(14);
+    color: getColorHex("dark-gray");
+  }
+}

@@ -1,0 +1,282 @@
+@import "./../../../../assets/styles/main.scss";
+
+.rolexNavbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 rem(17);
+  height: rem(82);
+
+  @include xl {
+  }
+
+  background: linear-gradient(
+    90deg,
+    getColorHex("green-racing") 0%,
+    getColorHex("green-spring") 100%
+  );
+  position: fixed;
+  transition: all 0.3s;
+  top: rem(80);
+
+  @include breakpoint-min-width(rem(1299)){
+    border-top: rem(1) solid getColorHex("grey-space", 0.15);
+    border-bottom: rem(1) solid getColorHex("grey-space", 0.15);
+    top: rem(152);
+    padding: 0 calc(8vw);
+  }
+
+  @include breakpoint-min-width(rem(1300)) {
+    top: rem(152);
+  }
+  @include breakpoint-min-width(rem(1500)) {
+    padding: 0 rem(110);
+  }
+
+  @include breakpoint-max-width(rem(1320)) {
+    padding: 0 rem(60);
+  }
+  @include breakpoint-max-width(rem(768)) {
+    padding: 0 rem(17);
+  }
+
+  &.forPlp{
+    top: rem(80);
+
+    @include md{
+      top: rem(80)
+    }
+
+    @include xl{
+      top: rem(152);
+
+      &.scrolled{
+        top: rem(78);
+      }
+    }
+  }
+
+  .rolexLogo,
+  .rolexLogoBlack {
+    height: rem(42.5);
+    width: rem(85);
+    // height: rem(60);
+    // width: rem(120);
+
+    @include lg {
+      height: rem(42.5);
+      width: rem(85);
+    }
+  }
+
+  .rolexLogoBlack {
+    width: rem(90.6);
+    height: rem(38);
+
+    @include lg {
+      width: rem(109.47);
+      height: rem(48);
+    }
+  }
+
+  .navbarLinks {
+    display: flex;
+    // gap: rem(36);
+    list-style: none;
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+
+    li {
+      .navLink {
+        color: getColorHex("white");
+        font-size: rem(18);
+        line-height: rem(22);
+        // letter-spacing: rem(0.4);
+        text-transform: capitalize;
+        transition: all 0.3s;
+        font-weight: 700;
+        cursor: pointer;
+
+        @include md {
+          font-size: rem(12);
+          line-height: rem(18);
+        }
+
+        &:hover {
+          color: getColorHex("green-pine");
+        }
+      }
+
+      .navBlack {
+        color: getColorHex("brown-grey");
+        font-weight: 400;
+        cursor: pointer;
+
+        &:hover {
+          color: getColorHex("green-dark");
+        }
+      }
+    }
+  }
+
+  .navbarGreenLinks {
+    gap: rem(40);
+  }
+
+  .contactButton {
+    .btnWhite {
+      padding: rem(11) rem(26.5);
+      border-radius: rem(30);
+      border: rem(1) solid getColorHex("white");
+      color: getColorHex("white");
+      text-align: center;
+      font-size: rem(14);
+      line-height: rem(18);
+      letter-spacing: rem(1);
+      text-transform: uppercase;
+    }
+
+    .btnGreen {
+      border: rem(1) solid getColorHex("green-spring");
+      color: getColorHex("green-spring");
+    }
+  }
+}
+
+.container {
+  position: fixed;
+  transition: all 0.3s;
+  width: 100%;
+  z-index: 1000;
+  top: rem(120);
+
+  @include breakpoint-min-width(rem(1037)) {
+    top: rem(152);
+  }
+}
+
+.scrolled {
+  @include md {
+    top: rem(78);
+  }
+}
+
+.rolexMobileNavbar {
+  height: rem(70);
+}
+
+.dropdownContainer {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-left: rem(16);
+    }
+  }
+  transition: all 0.3s;
+  cursor: pointer;
+
+  .menu {
+    color: getColorHex("green-dark");
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: rem(26);
+    letter-spacing: rem(0.4);
+    text-transform: capitalize;
+
+    &.menuWhite {
+      color: getColorHex("white");
+    }
+  }
+
+  .activeArrow {
+    transform: rotate(180deg);
+  }
+}
+
+.navbarMobileLinks,
+.navbarMobileGreenLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  background-color: getColorHex("white");
+  width: 100%;
+  position: absolute;
+  top: rem(69);
+  left: 0;
+
+  li {
+    .navMobileLink,
+    .navMobileBlack {
+      display: flex;
+      align-items: flex-start;
+      font-size: rem(12);
+      letter-spacing: rem(0.4);
+      text-transform: capitalize;
+      color: getColorHex("green-dark");
+
+      &.navMobileBlack {
+        padding: rem(14) rem(17);
+        justify-content: center;
+        color: getColorHex("green-dark");
+        border-bottom: rem(1) solid getColorHex("white-flash");
+      }
+    }
+  }
+}
+
+.navbarMobileGreenLinks {
+  gap: rem(36);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-bottom: rem(36);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+  align-items: flex-start;
+  background: linear-gradient(
+    90deg,
+    getColorHex("green-racing") 0%,
+    getColorHex("green-spring") 100%
+  );
+
+  li {
+    padding: rem(0 28);
+    width: 100%;
+
+    &:first-child {
+      padding-top: rem(40);
+    }
+
+    &:last-child {
+      padding-bottom: rem(40);
+    }
+
+    .navMobileLink {
+      font-size: rem(14);
+      line-height: rem(20);
+      color: getColorHex("white");
+    }
+  }
+}
+
+// CPO
+.whiteBg {
+  background: getColorHex("white");
+  // height: rem(82);
+}
+
+.blackBg {
+  background: getColorHex("black-dark");
+}

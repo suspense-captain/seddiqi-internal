@@ -1,0 +1,74 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: rem(33 0);
+
+ :global(button.button) {
+  
+    &:nth-child(1),
+    &:nth-child(2) {
+      width: 100%;
+    }
+  }
+
+  .filterBtns {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    flex-wrap: wrap;
+  }
+
+  .sortSection {
+    display: flex;
+    align-items: flex-end;
+    gap: rem(20);
+    flex-wrap: wrap;
+  }
+
+  .productsLength {
+    @include body_regular;
+    font-size: rem(14);
+    font-weight: 300;
+    line-height: rem(22);
+    letter-spacing: rem(0.4);
+    text-align: left;
+    min-width: rem(85);
+  }
+
+  .selectedOptions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: rem(32);
+    gap: rem(16);
+    @include md {
+      gap: rem(20); 
+    }
+    .selectedOption {
+      background-color: getColorHex("green-greyish");
+      padding: rem(6 12);
+      border-radius: rem(4);
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+      .option {
+        @include body_light;
+        font-size: rem(10);
+        @include md {
+          font-size: rem(14);
+        }
+      }
+    }
+
+    .deleteOption {
+      cursor: pointer;
+      svg {
+        width: rem(10);
+        height: rem(10);
+        color: getHexColor("black-dark");
+      }
+    }
+  }
+}

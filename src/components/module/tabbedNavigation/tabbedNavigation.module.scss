@@ -1,0 +1,73 @@
+@import "./../../../assets/styles/main.scss";
+
+.tabsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(28);
+
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-bottom: rem(24);
+    }
+  }
+  overflow: hidden;
+  transition: all 0.5s;
+  align-items: center;
+
+  .hide {
+    display: none;
+  }
+
+
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: rem(0);
+    margin: rem(0 28);
+    border-bottom: rem(1) solid getColorHex("grey-light-3");
+
+    .tab {
+      @include heading_medium;
+      color: getColorHex("brown-grey");
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+      font-size: rem(14);
+      line-height: rem(20);
+      letter-spacing: rem(0.6);
+      cursor: pointer;
+      padding: rem(16);
+      border-bottom: rem(2) solid getColorHex("opulent-bronze", 0);
+
+      &.activeTab {
+        border-bottom: rem(2) solid getColorHex("opulent-bronze");
+        color: getColorHex("black");
+      }
+    }
+
+    .tabExtra {
+
+    }
+  }
+
+  .tabsExtra {
+    margin: 0 !important;
+    margin-left: rem(28) !important;
+  }
+}
+
+
+
+.tabs {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

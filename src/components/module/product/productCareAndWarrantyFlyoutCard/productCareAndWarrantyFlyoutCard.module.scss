@@ -1,0 +1,37 @@
+@import "./../../../../assets/styles/main.scss";
+
+// PRODUCT DESCRIPTION POPUP
+.description {
+  @include body_regular;
+  color: getColorHex("green-metallic");
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.4);
+}
+
+
+.accordianDesc {
+  @include body_regular;
+  color: getColorHex("green-metallic");
+  font-size: rem(16);
+  line-height: rem(26);
+  letter-spacing: rem(0.4);
+  margin-top: rem(22);
+}
+
+.bar {
+  height: rem(1);
+  background-color: getColorHex("grey-light");
+  margin: rem(20 0);
+}
+
+.btns {
+  display: flex;
+  gap: rem(32);
+  margin-top: rem(20);
+}
+
+.serviceBtn,
+.downloadBtn {
+  text-transform: capitalize;
+}

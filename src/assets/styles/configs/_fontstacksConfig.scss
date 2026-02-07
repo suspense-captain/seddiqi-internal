@@ -1,0 +1,246 @@
+/* <link rel="stylesheet" href="
+https://use.typekit.net/rkl4lug.css"> */
+
+
+@font-face {
+  font-family: "Haboro_Contrast_Light";
+  src: url("https://use.typekit.net/af/28db33/00000000000000007735bdce/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/28db33/00000000000000007735bdce/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/28db33/00000000000000007735bdce/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 200;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "haboro-contrast-normal";
+  src: url("https://use.typekit.net/af/460e46/00000000000000007735bdd9/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/460e46/00000000000000007735bdd9/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/460e46/00000000000000007735bdd9/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Haboro_Contrast_Light_Italic";
+  src: url("https://use.typekit.net/af/39d6e6/00000000000000007735bdd1/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/39d6e6/00000000000000007735bdd1/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/39d6e6/00000000000000007735bdd1/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 200;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Haboro_Contrast_Regular";
+  src: url("https://use.typekit.net/af/9ea62d/00000000000000007735bddc/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/9ea62d/00000000000000007735bddc/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/9ea62d/00000000000000007735bddc/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Haboro_Contrast_Italic";
+  src: url("https://use.typekit.net/af/1884ed/00000000000000007735bddd/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/1884ed/00000000000000007735bddd/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/1884ed/00000000000000007735bddd/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Haboro_Contrast_Medium";
+  src: url("https://use.typekit.net/af/ced8e8/00000000000000007735bde1/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/ced8e8/00000000000000007735bde1/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/ced8e8/00000000000000007735bde1/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Haboro_Contrast_Medium_Italic";
+  src: url("https://use.typekit.net/af/8b4b2a/00000000000000007735bde5/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/8b4b2a/00000000000000007735bde5/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/8b4b2a/00000000000000007735bde5/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 500;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Haboro_Contrast_Bold";
+  src: url("https://use.typekit.net/af/5390b6/00000000000000007735bdee/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/5390b6/00000000000000007735bdee/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/5390b6/00000000000000007735bdee/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Haboro_Contrast_Bold_Italic";
+  src: url("https://use.typekit.net/af/faccb7/00000000000000007735bdf1/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/faccb7/00000000000000007735bdf1/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/faccb7/00000000000000007735bdf1/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Regular";
+  src: url("../../fonts/Urbanist-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Bold";
+  src: url("../../fonts/Urbanist-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Italic";
+  src: url("../../fonts/Urbanist-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Bold_Italic";
+  src: url("../../fonts/Urbanist-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Light";
+  src: url("../../fonts/Urbanist-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Light_Italic";
+  src: url("../../fonts/Urbanist-LightItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Medium";
+  src: url("../../fonts/Urbanist-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist_Medium_Italic";
+  src: url("../../fonts/Urbanist-MediumItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheSansArabic_Plain";
+  src: url("../../fonts/TheSansArabic-Plain.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheSansArabic_Bold";
+  src: url("../../fonts/TheSansArabic-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheSansArabic_ExtraBold";
+  src: url("../../fonts/TheSansArabic-ExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheSansArabic_ExtraLight";
+  src: url("../../fonts/TheSansArabic-ExtraLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheSansArabic_Light";
+  src: url("../../fonts/TheSansArabic-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheSansArabic_SemiBold";
+  src: url("../../fonts/TheSansArabic-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TheSansArabic_SemiLight";
+  src: url("../../fonts/TheSansArabic-SemiLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LaureenproArabic-Light";
+  src: url("../../fonts/LaureenproArabic-Light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LaureenproArabic-Regular";
+  src: url("../../fonts/LaureenproArabic-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,50 @@
+@import "./../../../assets/styles/main.scss";
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(40);
+  gap: rem(44);
+  padding: rem(0 28);
+
+  span.appointmentBtn {
+    text-underline-offset: rem(10);
+    text-align: left;
+  }
+}
+
+.recommendText {
+  @include heading_light;
+  color: getColorHex("green-dark");
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+}
+
+.recommendContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  .recommendText {
+    text-transform: uppercase;
+    @include heading_medium;
+  }
+
+  .logos {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+  }
+}
+
+.headerFooter {
+  padding: rem(42 0);
+}
+
+
+.image {
+  height: rem(67);
+}

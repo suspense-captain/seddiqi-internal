@@ -1,0 +1,49 @@
+@import './../../../assets/styles/main.scss';
+.colorTabWrapper {
+    display: flex;              
+    flex-wrap: wrap;           
+    gap: rem(16);                 
+    margin-top: rem(16);          
+  }
+  
+  .outerCircle {
+    width: rem(30);                 
+    height: rem(30);               
+    border-radius: 50%;         
+    border: rem(1) solid getColorHex("grey-light");
+    display: flex;              
+    align-items: center;         
+    justify-content: center;
+  }
+  
+  .innerCircle {
+    width: rem(20);                 
+    height: rem(20);                
+    border-radius: 50%;         
+  }
+  
+  .outerCircle:hover {
+    border-color: getColorHex("black"); 
+  }
+  
+  
+  .description {
+    color: getColorHex("green-metallic");
+    @include body_regular;
+    font-size: rem(14);
+    line-height: rem(22);
+    letter-spacing: rem(0.2);
+    margin-bottom: rem(24);
+  
+    @include md {
+      font-size: rem(16);
+      line-height: rem(26);
+      margin-bottom: rem(24);
+    }
+  }
+
+  .customSideDrawerStyle {
+    .title{
+      text-transform: uppercase;
+    }
+  }

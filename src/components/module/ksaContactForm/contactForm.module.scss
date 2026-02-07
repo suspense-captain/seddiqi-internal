@@ -1,0 +1,90 @@
+@import "./../../../assets/styles/main.scss";
+
+.contactForm {
+  max-width: rem(800);
+  gap: rem(44);
+  display: flex;
+  flex-direction: column;
+  @include iphone12-fix {
+    gap: unset;
+    & > *:not(:last-child) {
+      margin-bottom: rem(44);
+    }
+  }
+  margin: rem(0 28);
+
+  @include md {
+    margin: 0 auto;
+  }
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(500);
+  gap: rem(44);
+  margin: 0 auto;
+  margin-top: rem(80);
+  width: 100%;
+}
+
+.titleColor {
+  color: getColorHex("black-dark")
+}
+
+.heading {
+  @include heading_regular;
+  color: getColorHex("black-dark");
+  text-align: center;
+  margin: 0;
+  font-size: rem(32);
+  font-weight: 500;
+  line-height: rem(44);
+  letter-spacing: rem(0.6);
+
+  [dir="rtl"] & {
+    text-align: center;
+  }
+}
+
+.doubleForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40);
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.singleForm {
+  grid-template-columns: 1fr;
+}
+
+.optionSelector {
+  display: flex;
+  gap: rem(12);
+  flex-direction: row;
+
+  @include md {
+    gap: rem(24);
+  }
+
+  div:last-child {
+    width: 100%;
+  }
+}
+
+.btnContainer {
+  width: 100%;
+  text-align: center;
+
+  // [dir="rtl"] & {
+  //   text-align: right;
+  // }
+
+  .submitBtn {
+    width: rem(252);
+  }
+}
+

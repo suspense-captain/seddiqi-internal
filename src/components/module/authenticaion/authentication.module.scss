@@ -1,0 +1,15 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  max-width: rem(560);
+  margin: auto;
+  margin: rem(80) rem(28) rem(120) rem(28);
+
+  @include md {
+    margin: rem(80) auto rem(120) auto;
+  }
+}
+
+.tabNavigation {
+  width: 100%;
+}

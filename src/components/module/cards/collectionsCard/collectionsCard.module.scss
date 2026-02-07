@@ -1,0 +1,139 @@
+@import "./../../../../assets/styles/main.scss";
+
+.height {
+  height: rem(336);
+
+  @include md {
+    height: rem(480);
+  }
+}
+
+.gradient {
+  height: 100%;
+}
+
+.collectionHeight {
+  height: rem(336);
+  
+  @include md {
+    height: rem(520);
+  }
+}
+
+.image,
+.productImg {
+  // width: rem(360);
+  height: rem(336);
+  object-fit: cover;
+  width: 100%;
+
+  @include md {
+    height: rem(520);
+  }
+}
+
+.productImg {
+  height: rem(384);
+  object-fit: contain;
+  @include md {
+    height: rem(464);
+  }
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: rem(336);
+
+  @include md {
+    height: rem(520);
+  }
+
+  .video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8;
+  }
+}
+
+.productItem {
+  height: rem(448);
+  border: rem(1) solid getColorHex("grey-light-4", 0.4);
+  // border:rem(4) solid red;
+  border-left: none;
+  border-bottom: none;
+  
+  &:nth-child(n+4) {
+    border-top: none;
+  }
+
+  
+  @include md {
+    border-bottom: rem(1) solid getColorHex("grey-light-4", 0.4);
+    height: rem(562);
+  }
+}
+
+.item {
+  position: relative;
+  z-index: 100;
+
+  .itemContent,
+  .productContent {
+    z-index: 100;
+    position: absolute;
+    bottom: rem(0);
+    color: getColorHex("white");
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    bottom: rem(32);
+    
+    [dir="rtl"] & {
+      padding: rem(0 28);
+      align-items: center;
+    }
+    .category {
+      @include heading_light;
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: rem(20);
+      letter-spacing: rem(0.4);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .title {
+      @include body_regular;
+      font-size: rem(16);
+      line-height: rem(26);
+      letter-spacing: rem(0.4);
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: rem(0);
+    }
+
+    .itemBar {
+      height: rem(2);
+      width: rem(36);
+      background-color: getColorHex("white");
+      margin: 0 auto;
+      margin-top: rem(8);
+      
+      [dir="rtl"] & {
+        margin: 0;
+        margin-top: rem(8);
+      }
+    }
+  }
+
+  .productContent {
+    color: getColorHex("black-dark");
+  }
+}

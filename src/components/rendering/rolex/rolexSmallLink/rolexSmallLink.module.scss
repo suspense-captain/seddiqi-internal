@@ -1,0 +1,22 @@
+@import './../../../../assets/styles/rolex/rolexMain.scss';
+
+
+.rolexLink {
+  display: flex;
+  align-items: center;
+  
+  span {
+    margin-right: rem(8);
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: rem(8);
+    }
+  }
+
+  svg {
+    [dir="rtl"] & {
+      rotate: 180deg;
+    }
+  }
+}

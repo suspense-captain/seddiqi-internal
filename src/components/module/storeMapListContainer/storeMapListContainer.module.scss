@@ -1,0 +1,354 @@
+@import "../../../assets/styles/main.scss";
+
+.storeMapListContainer{
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+  
+    @include md{
+      position: absolute;
+      left: rem(40);
+      top: rem(72);
+      background: getColorHex("white");
+      width: 70%;
+      max-width: rem(512);
+      max-height: rem(676);
+      min-height: rem(676);
+      padding: rem(40) 0 rem(18) rem(40);
+      overflow: hidden;
+  
+      [dir="rtl"] & {
+        padding: rem(40) rem(40) rem(18) 0;
+      }
+
+      &.isRelative{
+          position: relative;
+          left: 0;
+          top: 0;
+          padding: 0;
+          width: 100%;
+          max-width: 100%;
+          background: transparent;
+
+          &.noScrollbar{
+              max-height: none;
+              min-height: auto;
+          }
+
+          .storeMapList{
+
+            .storeMap{
+                max-width: 100%;
+                width: 100%;
+            }
+          }
+      }
+    }
+  
+    @include lg{
+      left: rem(80);
+      width: 100%;
+
+      [dir="rtl"] & {
+        // right: rem(80);
+      }
+    }
+  
+    .storeMapListSwiper{
+  
+      & > div:last-of-type{
+        right: rem(20);
+        background: none;
+        width: rem(6);
+        
+        [dir="rtl"] & {
+          right: auto;
+          left: rem(20);
+        }
+  
+        & > div{
+          background: getColorHex("dark-brown");
+        }
+      }
+    }
+
+    & > div > div:first-child{
+        display: flex;
+    }
+
+    & > div > div:last-child{
+
+        & > div{
+            height: rem(160) !important;
+            background: getColorHex("black-dark");;
+        }
+    }
+}
+
+.storeMapList{
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    height: 50vh;
+
+    @include md{
+        gap: rem(32);
+        background: getColorHex("white");
+        width: 100%;
+        height: auto;
+    }
+}
+
+.storeMap{
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16);
+    //transition: all 0.3s ease;
+    border-bottom: rem(1) solid getColorHex("grey-light");
+    padding-bottom: rem(20);
+
+    @include sm{
+        row-gap: rem(36);
+    }
+
+    @include md{
+        padding: 0 0 rem(32) rem(28);
+        width: calc(100% - 42px);
+        box-sizing: border-box;
+    }
+
+/*&:hover{
+    padding: rem(20);
+    border: rem(1) solid getColorHex("green-dark");
+    -webkit-border-top-rght-radius: rem(16);
+    -webkit-border-bottom-left-radius: rem(16);
+    -moz-border-radius-topright: rem(16);
+    -moz-border-radius-bottomleft: rem(16);
+    border-top-right-radius: rem(16);
+    border-bottom-left-radius: rem(16);
+
+    @include sm{
+    padding: rem(28);
+    -webkit-border-top-rght-radius: rem(24);
+    -webkit-border-bottom-left-radius: rem(24);
+    -moz-border-radius-topright: rem(24);
+    -moz-border-radius-bottomleft: rem(24);
+    border-top-right-radius: rem(24);
+    border-bottom-left-radius: rem(24);
+    }
+
+    .storeMapLink{
+    display: block;
+    }
+}*/
+
+&.isActive{
+    padding: rem(20);
+    border: rem(1) solid getColorHex("green-dark");
+    -webkit-border-top-right-radius: rem(16);
+    -webkit-border-bottom-left-radius: rem(16);
+    -moz-border-radius-topright: rem(16);
+    -moz-border-radius-bottomleft: rem(16);
+    border-top-right-radius: rem(16);
+    border-bottom-left-radius: rem(16);
+
+    [dir="rtl"] & {
+        -webkit-border-top-left-radius: rem(16);
+        -webkit-border-top-right-radius: 0;
+        -webkit-border-bottom-right-radius: rem(16);
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius-topleft: rem(16);
+        -moz-border-radius-topright: 0;
+        -moz-border-radius-bottomright: rem(16);
+        -moz-border-radius-bottomleft: 0;
+        border-top-left-radius: rem(16);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: rem(16);
+        border-bottom-left-radius: 0;
+    }
+
+    @include sm{
+        padding: rem(28);
+        -webkit-border-top-right-radius: rem(24);
+        -webkit-border-bottom-left-radius: rem(24);
+        -moz-border-radius-topright: rem(24);
+        -moz-border-radius-bottomleft: rem(24);
+        border-top-right-radius: rem(24);
+        border-bottom-left-radius: rem(24);
+
+        [dir="rtl"] & {
+            -webkit-border-top-left-radius: rem(24);
+            -webkit-border-top-right-radius: 0;
+            -webkit-border-bottom-right-radius: rem(24);
+            -webkit-border-bottom-left-radius: 0;
+            -moz-border-radius-topleft: rem(24);
+            -moz-border-radius-topright: 0;
+            -moz-border-radius-bottomright: rem(24);
+            -moz-border-radius-bottomleft: 0;
+            border-top-left-radius: rem(24);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: rem(24);
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    .storeMapLinksContainer{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: rem(20);
+        row-gap: rem(10);
+    }
+    
+    .storeMapLink{
+        display: block;
+        text-transform: none;
+    }
+}
+
+&Details{
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+
+    @include sm{
+    row-gap: rem(12);
+    }
+}
+
+&Name{
+    @include heading_light;
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: rem(26);
+    letter-spacing: rem(0.4);
+    color: getColorHex("black-dark");
+    display: block;
+    margin: 0;
+    text-align: left;
+
+    [dir="rtl"] & {
+        text-align: right;
+    }
+
+    @include sm{
+        font-size: rem(26);
+        line-height: rem(36);
+        letter-spacing: rem(0.6);
+    }
+}
+
+&Location{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    column-gap: rem(12);
+    row-gap: rem(12);
+    justify-content: space-between;
+
+    @include md{
+        column-gap: rem(40);
+    }
+
+    .locationContainer{
+        display: flex;
+        align-items: center;
+        column-gap: rem(3);
+        text-align: left;
+
+        [dir="rtl"] & {
+            text-align: right;
+        }
+
+        @include md {
+            align-items: flex-start;
+        }
+
+        .vLine {
+            flex-wrap: nowrap;
+            align-items: flex-start
+        }
+    }
+
+    p {
+        @include body_light;
+        font-weight: 300;
+        font-size: rem(14);
+        line-height: rem(22);
+        letter-spacing: rem(0.2);
+        color: getColorHex("black-dark");
+        display: flex;
+        align-items: center;
+        column-gap: rem(3);
+        row-gap: rem(6);
+        flex-wrap: wrap;
+
+        @include sm{
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: rem(26);
+        }
+
+        &.vLine {
+            & > :not(:first-child)::before {
+                content: "|";
+                margin: 0 rem(4);
+            }
+        }
+
+        span{
+            display: flex;
+            align-items: center;
+
+            &:first-child{
+                column-gap: rem(12);
+                align-items: flex-start;
+                line-height: 1.3;
+            }
+
+            &:last-child{
+                text-align: left;
+                line-height: normal;
+                align-items: flex-start;
+
+                [dir="rtl"] & {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+&Distance{
+    display: block;
+    white-space: nowrap;
+
+    /*@include md{
+    display: none !important;
+    }*/
+}
+
+&Link{
+    display: none;
+
+    [dir="rtl"] & {
+    text-align: right;
+    }
+}
+
+}
+
+.storeMapLinksContainer{
+    display: none;
+}
+
+.storeDetailsBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 999;
+}

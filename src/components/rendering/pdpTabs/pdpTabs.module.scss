@@ -1,0 +1,761 @@
+@import "./../../../assets/styles/main.scss";
+
+.pdpTabsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+  margin-bottom: rem(40);
+  //padding-top: rem(150); //To be removed later
+  background-color: getColorHex("light-cream");
+
+  @include md {
+    gap: rem(40);
+    margin-bottom: rem(12);
+    //padding-top: rem(200); //To be removed later
+  }
+}
+
+.tabsContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.tabHeaders {
+  display: flex;
+  padding: 0 rem(28);
+  margin-bottom: rem(12);
+  border-bottom: rem(1) solid getColorHex("grey-light");
+
+  @include md {
+    margin-bottom: rem(80);
+  }
+
+  & > div{
+    width: auto;
+    align-self: flex-start;
+    margin: 0 auto;
+  }
+}
+
+.tabSlide{
+  width: auto;
+
+  &:last-child{
+    margin-right: 0 !important;
+
+    [dir="rtl"] & {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.tabButton {
+  @include heading_regular;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  color: getColorHex("grey-brown");
+  flex: 1;
+  padding: rem(16) rem(12);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: none;
+  border-bottom: rem(2) solid transparent;
+  text-transform: uppercase;
+
+  @include md {
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: rem(28);
+    letter-spacing: rem(0.6);
+    padding: rem(20);
+  }
+
+  &:hover, &.active{
+    color: getColorHex("black-dark");
+    background: getColorHex("desert-storm");
+    border-bottom: rem(2) solid getColorHex("midnight-brown");
+  }
+}
+
+.tabContent {
+  position: relative;
+  display: flex;
+  padding: 0 rem(28);
+  overflow: hidden;
+
+  @include md {
+    padding: 0 rem(40);
+  }
+
+  @include lg {
+    padding: 0 rem(80);
+  }
+}
+
+.tabDataContent{
+  display: flex;
+  width: 100%;
+  max-width: rem(1000);
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+
+  @include md {
+    padding: 0 rem(38);
+  }
+
+  @include lg {
+    padding: 0 rem(38) 0 rem(63);
+  }
+}
+
+.tabPane {
+  position: relative;
+  width: 100%;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  row-gap: rem(20);
+
+  @include md {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    row-gap: rem(23);
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+  order: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+  order: 4;
+  //margin-left: rem(200);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  padding: 0 rem(38) 0 rem(63);
+
+  [dir="rtl"] & {
+    padding: 0 rem(63) 0 rem(38);
+  }
+}
+
+.specsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: rem(28);
+  padding: 0 rem(20);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+
+  @include md {
+    gap: rem(32);
+  }
+
+  @include lg {
+    gap: rem(36);
+    padding: rem(36) rem(20);
+    max-width: 38.5%; //rem(300);
+  }
+
+  li{
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+
+    h5{
+      @include heading_light;
+      font-weight: 500;
+      font-size: rem(14);
+      line-height: rem(20);
+      letter-spacing: rem(0.4);
+      color: getColorHex("black-dark");
+      margin: 0;
+
+      @include md {
+        font-weight: 500;
+        font-size: rem(20);
+        line-height: rem(28);
+        letter-spacing: rem(0.6);
+      }
+    }
+
+    p{
+      @include heading_light;
+      font-weight: 300;
+      font-size: rem(14);
+      line-height: rem(22);
+      letter-spacing: rem(0.4);
+      color: getColorHex("green-metallic");
+      margin: 0;
+
+      @include md {
+        @include heading_light;
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: rem(26);
+      }
+    }
+  }
+}
+
+.productImage{
+  display: flex;
+  width: 100%;
+
+  @include md {
+    width: 70%;
+    padding-bottom: rem(30);
+  }
+
+  @include lg {
+    width: 100%;
+    max-width: 61.5%;
+  }
+}
+
+
+//Technical Specifications CSS
+.techSpecsContent{
+  display: flex;
+  flex-direction: column;
+}
+
+.techSpecsContainer{
+  display: flex;
+  flex-direction: column;
+  //gap: rem(40);
+  width: 100%;
+  padding: 0 rem(28);
+  margin: 0 auto;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.8s ease;
+  scroll-margin: 78px;
+
+  @include md {
+    //gap: rem(50);
+    padding: 0 rem(50);
+  }
+
+  @include lg {
+    //gap: rem(60);
+    max-width: rem(1440);
+    padding: 0 rem(80);
+  }
+
+  &:global(.techSpecsContainerClassOpened){
+    height: auto !important;
+  }
+
+  .techSpecsMainTitle{
+    @include heading_light;
+    font-size: rem(22);
+    font-weight: 500;
+    line-height: rem(30);
+    letter-spacing: rem(0.6);
+    color: getColorHex("black-dark");
+    text-transform: uppercase;
+    margin: 0 0 rem(40);
+
+    @include md {
+      font-size: rem(32);
+      line-height: rem(36);
+      margin: 0 0 rem(50);
+    }
+
+    @include lg {
+      margin: 0 0 rem(60);
+    }
+  }
+
+  .mainSpecsList{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    row-gap: rem(40);
+
+    @include md {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 6.25%; //8%;
+      row-gap: rem(80);
+    }
+
+    @include lg {
+      //column-gap: 6.25%;
+    }
+
+    .spec{
+      display: flex;
+      flex-direction: column;
+      //gap: rem(20);
+      width: 100%;
+      padding-bottom: rem(20);
+      border-bottom: rem(1) solid getColorHex("grey-light");
+
+      @include md {
+        //gap: rem(25);
+        padding-bottom: 0;
+        border: none;
+        width: 20.31%; //28%;
+      }
+
+      @include lg {
+        //gap: rem(30);
+        //width: 20.31%;
+      }
+
+      &Title{
+        @include heading_light;
+        font-size: rem(18);
+        font-weight: 500;
+        line-height: rem(26);
+        letter-spacing: rem(0.4);
+        color: getColorHex("black-dark");
+        text-transform: uppercase;
+        margin: 0;
+        pointer-events: all;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(5);
+
+        @include md {
+          font-size: rem(26);
+          line-height: rem(32);
+          letter-spacing: rem(0.6);
+          pointer-events: none;
+        }
+
+        &::after{
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.9998 12L11.9998 19.2H12.9998L12.9998 12H19.1998V11H12.9998V4.79999H11.9998L11.9998 11H4.7998V12H11.9998Z' fill='%23282828'/%3E%3C/svg%3E%0A");
+          background-repeat: no-repeat;
+          background-size: rem(24);
+          height: rem(24);
+          width: rem(24);
+
+          @include md {
+            content: none;
+          }
+        }
+
+        &.openedSpec{
+          
+          &::after{
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='3' y1='11.5' x2='21' y2='11.5' stroke='%23282828'/%3E%3C/svg%3E");
+          }
+        }
+      }
+    }
+
+    .itemsList{
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(40);
+      list-style: none;
+      padding: 0;
+      overflow: hidden;
+      transition: height 0.3s ease;
+      height: 0;
+      margin: 0;
+
+      @include md {
+        //margin: rem(25) 0 0 0;
+        row-gap: rem(50);
+        height: auto !important;
+        overflow: visible;
+      }
+
+      @include lg {
+        //margin: rem(30) 0 0 0;
+        row-gap: rem(60);
+      }
+
+      &.openedItem{
+
+        .item{
+          margin-top: rem(20);
+
+          @include md {
+            margin-top: rem(25);
+          }
+
+          @include lg {
+            margin-top: rem(30);
+          }
+        }
+      }
+    }
+
+    .item{
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(8);
+      margin: 0;
+      transition: margin 0.3s ease;
+      
+      &:first-child{
+        margin: rem(20) 0 0;
+      }
+
+      @include md {
+        &:first-child{
+          margin: rem(40) 0 0;
+        }
+      }
+
+      &Title, &Description{
+        @include heading_light;
+        font-size: rem(14);
+        font-weight: 500;
+        line-height: rem(20);
+        letter-spacing: rem(0.4);
+        color: getColorHex("green-metallic");
+        text-transform: capitalize;
+        margin: 0;
+
+        @include md {
+          font-size: rem(20);
+          line-height: rem(28);
+          letter-spacing: rem(0.6);
+        }
+      }
+
+      &Title{
+        color: getColorHex("black-dark");
+      }
+
+      &Description{
+        font-weight: 300;
+        line-height: rem(22);
+
+        @include md {
+          font-size: rem(16);
+          font-weight: 400;
+          line-height: rem(26);
+          letter-spacing: rem(0.4);
+        }
+      }
+    }
+  }
+}
+
+.viewMoreDetails{
+  display: flex;
+  width: auto;
+  margin: rem(30) auto;
+  margin-bottom: rem(35);
+  line-height: rem(18);
+  transform: translateY(0%);
+  transition: all 0.5s ease;
+  color: getColorHex("black-dark");
+
+  [dir="rtl"] & {
+    margin: rem(32);
+  }
+  @include md {
+    transform: translateY(-320%);
+    margin-bottom: rem(0);
+    [dir="rtl"] & {
+      margin: rem(30 60);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &.isOpened{
+    margin: rem(68) auto rem(35);
+
+    @include md {
+      transform: translateY(0%);
+      margin: rem(60) auto rem(60);
+    }
+  }
+}
+
+
+
+//Non-Tab CSS
+.pdpNonTabContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: rem(60) rem(28);
+  background: getColorHex("light-cream");
+
+  @include md{
+    padding: rem(100) rem(28);
+  }
+
+  .nonTabMainContainer{
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    max-height: rem(1000); // adjust based on expected content
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+
+    &.collapsed {
+      max-height: 0;
+    }
+  }
+
+  .nonTabTitle{
+    @include heading_light;
+    font-size: rem(22);
+    font-weight: 500;
+    line-height: rem(30);
+    letter-spacing: rem(0.6);
+    color: getColorHex("black-dark");
+    text-transform: uppercase;
+    margin: 0 0 rem(40);
+    text-align: center;
+  
+    @include md {
+      font-size: rem(32);
+      line-height: rem(36);
+      margin: 0 0 rem(50);
+    }
+  
+    @include lg {
+      margin: 0 0 rem(60);
+    }
+
+    &:empty{
+      display: none;
+    }
+  }
+
+  .specsContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: rem(1280);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+
+    @include md {
+      align-items: stretch;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .specs{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      border-bottom: rem(1) solid getColorHex("grey-light");
+      padding: rem(24) 0;
+      width: 100%;
+      column-gap: rem(28);
+
+      &:last-child{
+        border: none;
+
+        @include md{
+          border-right: rem(1) solid getColorHex("grey-light");
+        }
+      }
+
+      @include md {
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        border: none;
+        border-right: rem(1) solid getColorHex("grey-light");
+        padding: rem(44) rem(20);
+        //max-width: rem(400);
+        column-gap: 0;
+        row-gap: rem(36);
+        width: 33.33%;
+
+        [dir="rtl"] & {
+          border-right: none;
+          border-left: rem(1) solid getColorHex("grey-light");
+        }
+
+        &:nth-child(3n){
+          border: none;
+        }
+      }
+
+      .spec{
+        display: flex;
+        flex-direction: column;
+        //row-gap: rem(4);
+        //width: calc(50% - 14px);
+        width: 100%;
+
+        @include md{
+          //row-gap: rem(8);
+          //width: 100%;
+        }
+
+        &.hasMoreItems{
+          row-gap: rem(4);
+          width: calc(50% - 14px);
+
+          @include md{
+            row-gap: rem(8);
+            width: 100%;
+          }
+        }
+
+        h5{
+          @include heading_light;
+          font-weight: 500;
+          font-size: rem(14);
+          line-height: rem(20);
+          letter-spacing: rem(0.4);
+          color: getColorHex("black-dark");
+          margin: 0;
+          text-align: center;
+          text-transform: capitalize;
+    
+          @include md {
+            font-weight: 500;
+            font-size: rem(20);
+            line-height: rem(28);
+            letter-spacing: rem(0.6);
+          }
+        }
+    
+        p{
+          @include heading_light;
+          font-weight: 300;
+          font-size: rem(14);
+          line-height: rem(22);
+          letter-spacing: rem(0.4);
+          color: getColorHex("green-metallic");
+          margin: 0;
+          text-align: center;
+          text-transform: capitalize;
+    
+          @include md {
+            @include heading_light;
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: rem(26);
+          }
+        }
+      }
+    }
+  }
+
+  .techSpecsContent{
+    margin-top: rem(32);
+
+    @include md{
+      margin-top: rem(50);
+    }
+
+    .viewMoreDetails{
+      transform: translateY(0);
+    }
+  }
+
+  &.isWatches{
+    
+    .specsContainer{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    
+    .specs{
+      width: 100%;
+
+      // &:nth-child(1){
+      //   order: 1;
+      // }
+
+      // &:nth-child(2){
+      //   order: 3;
+      // }
+
+      // &:nth-child(3){
+      //   order: 5;
+      // }
+
+      // &:nth-child(4){
+      //   order: 2;
+      // }
+
+      // &:nth-child(5){
+      //   order: 4;
+      // }
+
+      // &:nth-child(6){
+      //   order: 6;
+      // }
+
+      @include xs{
+        width: 50%;
+        
+        &:last-child, &:nth-last-child(2):not(:nth-child(4)) {
+          border-bottom: none;
+        }
+
+        &:nth-child(3):nth-last-child(2), &:nth-child(4):last-child{
+          border-bottom: none;
+        }
+      }
+
+      @include md{
+        width: 33.33%;
+
+        &:last-child:not(:nth-child(4)):not(:nth-child(5)){
+          border: none;
+        }
+
+        // &:nth-child(1){
+        //   order: 1;
+        // }
+  
+        // &:nth-child(2){
+        //   order: 2;
+        // }
+  
+        // &:nth-child(3){
+        //   order: 3;
+        // }
+  
+        // &:nth-child(4){
+        //   order: 4;
+        // }
+  
+        // &:nth-child(5){
+        //   order: 5;
+        // }
+  
+        // &:nth-child(6){
+        //   order: 6;
+        // }
+      }
+    }
+  }
+}
+

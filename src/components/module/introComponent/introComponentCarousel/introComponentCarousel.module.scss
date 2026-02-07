@@ -1,0 +1,149 @@
+@import "./../../../../assets/styles/main.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+  position: relative;
+  min-height: rem(736);
+  justify-content: center;
+}
+.titleSection {
+  padding: rem(0 28);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  [dir="rtl"] & {
+    align-items: flex-start;
+  }
+
+  h3 {
+    @include heading_regular;
+    color: getColorHex("midnight-brown");
+    text-align: center;
+    font-size: rem(28);
+    font-weight: 500;
+    line-height: rem(34);
+    letter-spacing: rem(0.4);
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: rem(8);
+  }
+
+  p {
+    @include body_regular;
+    color: getColorHex("grey");
+    text-align: center;
+    font-size: rem(14);
+    font-weight: 300;
+    line-height: rem(22);
+    letter-spacing: rem(0.2);
+  }
+}
+
+.cards {
+  margin-left: rem(40);
+}
+
+.imageCard {
+  display: flex;
+  width: rem(282);
+  height: rem(398);
+
+  .image {
+    width: rem(282);
+    height: rem(398);
+    object-fit: cover;
+    border-radius: rem(16) 0;
+  }
+}
+
+.swiperSlide {
+  width: rem(282);
+  height: rem(398);
+}
+
+.mySwiper {
+  div[class^="swiper-button-prev"],
+  div[class^="swiper-button-next"] {
+    width: rem(40);
+    height: rem(40);
+    border-radius: rem(12) 0 rem(12);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg' class='articleListCarousel_arrowLeft__IiUa9'%3E%3Cmask id='path-1-inside-1_29_6412' fill='white'%3E%3Cpath d='M0 12L6 6L0 0'%3E%3C/path%3E%3C/mask%3E%3Cpath d='M6 6L6.70711 6.70711V5.29289L6 6ZM0.707107 12.7071L6.70711 6.70711L5.29289 5.29289L-0.707107 11.2929L0.707107 12.7071ZM6.70711 5.29289L0.707107 -0.707107L-0.707107 0.707107L5.29289 6.70711L6.70711 5.29289Z' fill='white' mask='url(%23path-1-inside-1_29_6412)'%3E%3C/path%3E%3C/svg%3E");
+    background-color: getColorHex("Khaki");
+    @include md {
+      display: block;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  div[class^="swiper-button-prev"] {
+    left: rem(32);
+    transform: rotate(-180deg);
+  }
+
+  div[class^="swiper-button-next"] {
+    right: rem(32);
+    [dir="rtl"] & {
+      right: auto;
+    }
+  }
+
+  div[class^="swiper-button-prev swiper-button-disabled"] {
+    display: none;
+  }
+
+  div[class^="swiper-button-next swiper-button-disabled"] {
+    display: none;
+  }
+}
+
+.toggleBtn {
+  display: flex;
+  justify-content: flex-end;
+  
+  [dir="rtl"] & {
+    justify-content: flex-start;
+
+  }
+
+  div {
+    @include heading_regular;
+    margin-right: rem(28);
+    display: inline-flex;
+    height: rem(36);
+    padding: 0 rem(12);
+    align-items: center;
+    gap: rem(20);
+    flex-shrink: 0;
+    border-radius: rem(8) 0;
+    background: getColorHex("white");
+    box-shadow: 0 0 rem(10) 0 rgba(0, 0, 0, 0.2);
+    color: getColorHex("midnight-brown");
+    cursor: pointer;
+    font-size: rem(12);
+    font-weight: 500;
+    line-height: rem(14);
+
+    bottom: rem(34);
+    right: rem(28);
+    z-index: 999;
+    margin-top: rem(40);
+  }
+}
+
+.sliderImage {
+  border-radius: rem(16) 0;
+}

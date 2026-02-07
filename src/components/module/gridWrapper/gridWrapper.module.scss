@@ -1,0 +1,45 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(rem(150), 1fr));
+  border: rem(1) solid getColorHex("grey-light-4", 0.4);
+  border-left: none;
+  gap: rem(1);
+  overflow: hidden;
+
+  & > * {
+    position: relative;
+
+    &:before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: getColorHex("grey-light-4", 0.4);
+      z-index: 1;
+    }
+
+    &::after {
+      width: 100vw;
+      height: rem(1);
+      left: 0;
+      top: -1px;
+    }
+
+    &::before {
+      width: rem(1);
+      height: 100%;
+      left: 1px;
+      top: 0;
+    }
+  }
+
+  @include md {
+    grid-template-columns: repeat(auto-fit, minmax(rem(346.75), 1fr));
+  }
+
+  @include xxl {
+    grid-template-columns: repeat(4, minmax(rem(346.75), 1fr));
+  }
+
+}

@@ -1,0 +1,23 @@
+@import "../../../assets/styles/main.scss";
+
+.toggleResultsContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(20);
+
+    .storeResult{
+        @include body_regular;
+        font-weight: 400;
+        font-size: rem(12);
+        line-height: rem(20);
+        letter-spacing: rem(0.2);
+        color: getColorHex("grey-mid");
+
+        @include md{
+        font-size: rem(14);
+        line-height: rem(22);
+        }
+    }
+}

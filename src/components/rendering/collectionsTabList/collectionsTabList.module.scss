@@ -1,0 +1,148 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  // margin: rem(60) 0 0 0;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+  @include iphone12-fix {
+    gap: unset;
+    & > * {
+      margin-bottom: rem(40);
+    }
+    & > *:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  @include md {
+    // margin: rem(120) 0 0 0;
+  }
+}
+.titleColor {
+  color: getColorHex('opulent-bronze');
+}
+
+.subTitleColor {
+  color: getColorHex("black-dark");
+}
+
+.barColor {
+  background: getColorHex("metallic");
+}
+
+:global(.bgCreamTextMidnightBrown){
+
+  .titleColor {
+    color: getColorHex('black-dark');
+  }
+}
+
+.tabNavigation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 rem(28);
+  justify-content: center;
+
+  @include lg {
+    width: rem(800);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+    margin-bottom: rem(20);
+  }
+}
+
+.containerSlider {
+  margin: rem(0 0 0 56);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+
+  width: 100%;
+  border-left: rem(1) solid getColorHex("grey-light-4", 0.4);
+  
+  border-bottom: rem(1) solid getColorHex("grey-light-4", 0.4);
+  @include md {
+    border-bottom: none;
+  }
+}
+
+.mySwiper {
+  margin: rem(28);
+  margin: 0;
+}
+
+.containerGrid {
+  padding: 0 rem(60);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(40);
+ 
+  .container4Grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(rem(360), 1fr));
+    border-left: rem(1) solid getColorHex("grey-light-4", 0.4);
+    
+    border-bottom: rem(1) solid getColorHex("grey-light-4", 0.4);
+    @include md {
+      border-bottom: none;
+    }
+    width: 100%;
+
+    @include md {
+      max-width: rem(1082);
+    }
+  }
+
+  .container6Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(360), 1fr));
+    width: 100%;
+    border-left: rem(1) solid getColorHex("grey-light-4", 0.4);
+    
+    border-bottom: rem(1) solid getColorHex("grey-light-4", 0.4);
+    @include md {
+      border-bottom: none;
+    }
+
+
+    @include lg {
+      grid-template-columns: repeat(3, minmax(rem(260), 1fr));
+      max-width: rem(1082);
+    }
+  }
+
+  .containerGap {
+    gap: rem(1);
+  }
+
+  .containerGridItems {
+    display: grid;
+    grid-template-columns: repeat(1fr, minmax(rem(260), 1fr));
+    width: 100%;
+    border-left: rem(1) solid getColorHex("grey-light-4", 0.4);
+    
+    border-bottom: rem(1) solid getColorHex("grey-light-4", 0.4);
+    @include md {
+      border-bottom: none;
+    }
+
+
+    @include lg {
+      grid-template-columns: repeat(3, minmax(rem(260), 1fr));
+      max-width: rem(1082);
+    }
+  }
+}

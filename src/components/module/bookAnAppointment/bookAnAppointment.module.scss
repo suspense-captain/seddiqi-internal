@@ -1,0 +1,105 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  margin: rem(40) auto;
+  padding: rem(0 28);
+  max-width: rem(1440);
+
+  @include md{
+    padding: rem(0 40);
+  }
+
+  @include xl{
+    padding: rem(0 80);
+  }
+
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md {
+      display: none;
+    }
+
+    .title {
+      @include heading_light;
+      color: getColorHex("black-dark");
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: rem(20);
+      letter-spacing: rem(0.4);
+      text-transform: uppercase;
+    }
+  }
+}
+
+.breadcrumb {
+  margin: rem(32 28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include lg {
+    margin: rem(60 28);
+  }
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  border-radius: 50%;
+  color: getColorHex("brown-grey");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(14);
+  transition: all 0.3s ease;
+  border: rem(1) solid getColorHex("grey-light");
+  cursor: pointer;
+  width: rem(22);
+  height: rem(22);
+  pointer-events: none;
+
+  @include md {
+    font-size: rem(16);
+    width: rem(36);
+    height: rem(36);
+  }
+
+  &:hover {
+    border: rem(1) solid getColorHex("chocolate-brown");
+    color: getColorHex("chocolate-brown");
+  }
+}
+
+.active {
+  border: rem(1) solid getColorHex("chocolate-brown");
+  color: getColorHex("chocolate-brown");
+}
+
+.completed {
+  background: getColorHex("chocolate-brown");
+  border: rem(1) solid getColorHex("chocolate-brown");
+  color: getColorHex("white");
+  pointer-events: all;
+
+  &:hover {
+    color: getColorHex("white");
+  }
+}
+
+.line {
+  width: rem(40.5);
+  height: rem(1);
+  background: getColorHex("grey-light");
+  margin: 0 rem(8);
+
+  @include md {
+    margin: 0 rem(12);
+    width: rem(72);
+  }
+}

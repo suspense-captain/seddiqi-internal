@@ -1,0 +1,232 @@
+@import "configs/baseConfig";
+@import "partials/base";
+@import "rolex/rolexMain";
+
+.error-page {
+  height: auto;
+  padding: 0 rem(80) rem(40);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: getColorHex("grey-tint");
+  color: getColorHex("midnight-brown");
+
+  [dir="rtl"] & {
+    align-items: center;
+  }
+
+  @include md {
+    padding: 0 rem(80) rem(60);
+  }
+
+  .error-image {
+    display: flex;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    margin-bottom: rem(40);
+  }
+
+  h1 {
+    font-size: rem(18);
+    line-height: rem(26);
+    letter-spacing: rem(0.4);
+    @include heading_regular;
+    margin: 0 0 rem(12);
+    color: getColorHex("black-dark");
+    text-transform: uppercase;
+    font-weight: 500;
+
+    @include md {
+      font-size: rem(32);
+      line-height: rem(36);
+      letter-spacing: rem(0.6);
+      margin: 0 0 rem(28);
+    }
+  }
+
+  p {
+    @include body_regular;
+    font-size: rem(14);
+    line-height: rem(22);
+    letter-spacing: rem(0.2);
+    text-align: center;
+    margin-bottom: rem(24);
+
+    // [dir="rtl"] & {
+    //   text-align: right !important;
+    // }
+
+    @include md {
+      font-size: rem(16);
+      line-height: rem(26);
+      margin-bottom: rem(28);
+    }
+  }
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.image_overlay {
+  height: 100%;
+  width: 100%;
+  background-color: getColorHex("black");
+  position: relative;
+}
+
+.bg-green {
+  background-color: getColorHex("green");
+  color: getColorHex("sand");
+}
+
+.bg-white {
+  background-color: getColorHex("white");
+  color: getColorHex("black");
+}
+
+.bg-sand {
+  background-color: getColorHex("sand");
+  color: getColorHex("green");
+}
+
+.bg-black {
+  background-color: getColorHex("black");
+  color: getColorHex("sand");
+}
+
+.metallic {
+  background-color: getColorHex("metallic");
+}
+
+.bronze-grey {
+  background-color: getColorHex("bronze-grey");
+}
+
+.green-dark {
+  background-color: getColorHex("green-dark");
+}
+
+.black {
+  background-color: getColorHex("black");
+}
+
+.white {
+  background-color: getColorHex("white");
+}
+
+.grey-light {
+  background-color: getColorHex("grey-light");
+}
+
+.light-cream {
+  background-color: getColorHex("light-cream");
+}
+.grey-pampas {
+  background-color: getColorHex("grey-pampas");
+}
+
+.beige {
+  background: getColorHex("beige");
+}
+.cream {
+  background-color: getColorHex("cream");
+}
+
+/*Customized Background -Text Color Combinations */
+.bgWhiteTextDarkGreen {
+  background-color: getColorHex("white");
+  color: getColorHex("black"); /* Dark-Green text */
+}
+
+.bgCreamTextMidnightBrown {
+  background-color: getColorHex("cream");
+  color: getColorHex("black-dark"); /* Midnight-brown text */
+}
+
+.bgDefaultTextGreen {
+  background-color: getColorHex("white");
+  color: getColorHex("black"); /* dark-green text */
+}
+
+//Customized Hideunderline Color based on Textcolor
+.customBarColor {
+  &.greenDark {
+    background-color: getColorHex("metallic") !important;
+  }
+
+  &.midnightBrown {
+    background-color: getColorHex("black-dark") !important;
+  }
+
+  &.cream {
+    background-color: getColorHex("black") !important;
+  }
+}
+
+.rolex,
+.rolexCpo {
+  // padding-top: rem(69);
+  // @include breakpoint-min-width(rem(768)) {
+  //   padding-top: rem(23);
+  // }
+  // @include breakpoint-min-width(rem(1037)) {
+  //   padding-top: rem(55);
+  // }
+  // @include breakpoint-min-width(rem(1250)) {
+  //   padding-top: rem(67);
+
+  padding-top: rem(70);
+  @include md {
+    padding-top: rem(82);
+  }
+
+  // }
+}
+
+.rolex-padding {
+  padding-top: rem(106);
+  @include md {
+    padding-top: rem(118);
+  }
+}
+
+.rolexCpo {
+  // padding-top: rem(69);
+  // @include breakpoint-min-width(rem(768)) {
+  //   padding-top: rem(23);
+  // }
+  // @include breakpoint-min-width(rem(1037)) {
+  //   padding-top: rem(55);
+  // }
+  // @include breakpoint-min-width(rem(1250)) {
+  //   padding-top: rem(79);
+  // }
+  padding-top: rem(82);
+}
+
+//Please remove the CSS below once services are finalized.
+.seddiqi-theme{
+  div[class^="findABotiqueListing_storeLocatorContainer"] ~ div[class^="sideDrawer_drawerWrapper"] div[class^="filterAccordian_accordionItem"]:last-child {
+    visibility: hidden;
+  }
+}
+
+.hiddenScrollbar {
+  overflow-y: auto; /* Enables scrolling */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+}
+
+.hiddenScrollbar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Hides scrollbar in WebKit browsers */
+}
+
+.amp-dc-image-pic {
+  object-fit: cover;
+  width: 100%;
+}

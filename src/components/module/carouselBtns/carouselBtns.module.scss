@@ -1,0 +1,65 @@
+@import './../../../assets/styles/main.scss';
+
+
+.image {
+  object-fit: cover;
+}
+
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: rem(62);
+
+  [dir="rtl"] & { 
+    flex-direction: row-reverse;
+  }
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: rem(6); 
+  height: rem(8);
+
+  .carouselBtn {
+    width: rem(16);
+    height: rem(2);
+    cursor: pointer;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    z-index: 100;
+  }
+
+  .activeCarouselBtn {
+    width: rem(24);
+    background-color: getColorHex("metallic");
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+
+  .activeCarouselBtnGreen {
+    background-color: getColorHex("green-Salem");
+  }
+}
+
+.arrowLeft,
+.arrowRight {
+  cursor: pointer;
+  width: rem(16);
+  height: rem(16);
+}
+
+.arrowLeft {
+  transform: rotate(180deg);
+}
+
+
+.white {
+  background-color: getColorHex("white");
+}
+
+.grey-light-5 {
+  background-color: getColorHex("grey-light-5");
+}
+.metallic {
+  background-color: getColorHex("grey-light-5");
+}

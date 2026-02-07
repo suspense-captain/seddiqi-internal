@@ -1,0 +1,51 @@
+@import "./../../../../assets/styles/main.scss";
+
+.stockContainer {
+  display: flex;
+  align-items: center;
+  color: getColorHex("black-dark");
+  @include heading_light;
+  font-size: rem(14);
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  text-transform: uppercase;
+  position: relative;
+  margin: 0;
+  min-height: rem(26);
+
+  @include lg {
+      font-size: rem(16);
+      margin: 0;
+  }
+
+  .stock {
+    display: flex;
+    padding: rem(6 12);
+    align-items: center;
+    gap: rem(10);
+    border-radius: rem(4) 0 rem(4) 0;
+    background: getColorHex("tint-grey");
+    color: getColorHex("black");
+    //top: rem(10);
+    //left: rem(0);
+    z-index: 100;
+    margin-right: 0; //rem(20);
+
+    @include body_regular;
+    font-size: rem(10);
+    line-height: rem(14);
+    letter-spacing: rem(0.4);
+    text-transform: uppercase;
+    position: relative;
+
+    @include lg {
+      //position: absolute;
+      //top: rem(20);
+      //left: rem(20);
+    }
+
+    &:empty{
+      opacity: 0;
+    }
+  }
+}

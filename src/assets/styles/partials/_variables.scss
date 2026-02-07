@@ -1,0 +1,163 @@
+// colors
+
+// Brand Colours
+$colors: (
+  "midnight-brown": #271610,
+  "rolex-brown": #462C1F,
+  "metallic": #a98e76,
+  "Khaki": #BAA58D,
+  "chocolate-brown": #7e6952,
+  "metallic-grey": #c5b5a3,
+  "brown-grey": #a3a3a3,
+  "brown-dark": #2B2219,
+  "tint-broze": #fcf6ea,
+  "bronze-grey": #e4ddcd,
+  "green-dark": #464f4a,
+  "green-racing": #0D482D,
+  "green-rolex": #258255,
+  "green-spring": #196F48,
+  "green-Salem": #147749,
+  "green-pine": #55ae86,
+  "green-metallic": #686f5d,
+  "green-grey": #869184,
+  "green-greyish": #f2f4f2,
+  "green-greyish-light": #dadeda,
+  "noir": #513629,
+  "cream": #FAF5ED,
+  "light-cream": #FAF5ED66,
+  "pearl-bush": #eae1d3,
+  "tint-grey": #F6F5F5,
+  "brown-light": #F4EFEA,
+
+  "grey": #403f3d,
+  "grey-dark": #282828,
+  "grey-brown": #847B72,
+  "grey-space": #464F4A,
+  "grey-pampas": #F8F7F3,
+  "grey-mid": #787775,
+  "rolex-grey": #636363,
+  "grey-high": #c7c9c6,
+  "grey-light": #e9e8e3,
+  "grey-light-2": #f8f8f8,
+  "grey-light-3": #e9e6e3,
+  "grey-light-4": #d2cbc2,
+  "grey-light-5": #CCCBC7,
+  "grey-light-6": #edefed,
+  "grey-light-7": #fafafa,
+  "grey-tint": #f6f5f2,
+  "grey-black": #19191a,
+  "blue": #0033a0,
+  "turquoise": #00aec7,
+  "sky-blue": #00a3e0,
+  "green-blue": #153642,
+  "dark-blue": #001d2b,
+  "light-blue": #376377,
+  "gold": #af8d69,
+  "gold-light": #f3e7d6,
+  "gold-metallic": #9c815c,
+  "white": #ffffff,
+  "white2": #eaeaeb,
+  "white-flash": #f3f3f3,
+  "white-anti-flash": #f2f2f280,
+  "black": #180d22,
+  "black-raisin": #212121,
+  "black-dark": #000000,
+  "black-light": #4B4B4B,
+  "yellow": #ffc72c,
+  "orange": #faab51,
+  "pink": #e7519d,
+  "red": #e61933,
+  "dark-red": #9B0009,
+  "red-dark": #6a2102,
+  "maroon": #401c32,
+  "close-red": #B30003,
+  "dark-purple": #1d2995,
+  "dark-pink": #c131ba,
+  "peach": #ae9296,
+  "brass": #c8b594,
+  "strong-brass": #d1a458,
+  "transparent-grey": #ffffff33,
+  "transparent-black": #01010163,
+  "full-transparent-black": #0000,
+  "green": #032715,
+  "green-palm": #365244,
+  "green-palm-dark": #384643,
+  "green-tint": #cdd4d0,
+  "sand": #c1b496,
+  "sand-mid": #d4cbb5,
+  "sand-tint": #ece9df,
+  "rose": #ecc7ce,
+  "plumeria": #e6e0d8,
+  "plumeria-tint": #f8f3ed,
+  "salmon": #fbdfbf,
+  "tint": #f9f6ef,
+  "white-with-opacity": #ffffff29,
+  "black-with-opacity": #180d221f,
+  "steel-gray": #746e7a,
+  "success": #1e955d,
+  "desert-storm": #eee7db,
+  "beige": #f4efeb,
+  "rolex-green": #147749,
+  "gilded-sage": #A5B89D,
+  "opulent-bronze": #A58F79,
+  "brown-quartz": #4E3624,
+  
+) !default;
+
+// animations
+$transition-time: 0.3s;
+$transition-name: ease-in-out;
+
+// button variables
+
+$mBtnPadding: 8 16;
+$dBtnPadding: 8 52;
+$mCtaSize: 14;
+$mCtaLineHeight: 18;
+$dCtaSize: 16;
+$dCtaLineHeight: 20;
+$ctaLetterSpacing: 1;
+
+$mInputPadding: 12 16;
+$dInputPadding: 12 16;
+$mInputSize: 16;
+$mInputLineHeight: 22;
+$dInputSize: 16;
+$dInputLineHeight: 22;
+$inputLetterSpacing: 0.4;
+
+$mDropdownPadding: 12 16;
+$dDropdownPadding: 12 16;
+$mDropdownSize: 16;
+$mDropdownLineHeight: 22;
+$dDropdownSize: 16;
+$dDropdownLineHeight: 22;
+$dropdownLetterSpacing: 0.4;
+
+$mSelectPadding: 8 16 8 28;
+$dSelectPadding: 8 16 8px 28;
+$mSelectSize: 14;
+$mSelectLineHeight: 18;
+$dSelectSize: 16;
+$dSelectLineHeight: 20;
+$selectLetterSpacing: 0.4;
+
+@function getColorHex($colorname, $opacity: 1) {
+  $color: map-get($colors, $colorname);
+  @if $opacity == 1 {
+    @return $color;
+  } @else {
+    @return rgba(red($color), green($color), blue($color), $opacity);
+  }
+}
+
+$baseFont: 16;
+
+@function rem($pxWidths) {
+  $remValues: null;
+
+  @each $pxValue in $pxWidths {
+    $remValues: append($remValues, $pxValue / $baseFont + rem);
+  }
+  @return $remValues;
+}

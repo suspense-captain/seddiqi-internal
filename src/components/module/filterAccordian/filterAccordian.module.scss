@@ -1,0 +1,87 @@
+@import "./../../../assets/styles/main.scss";
+
+.accordion {
+  border-radius: rem(4);
+}
+
+.accordionItem {
+  margin-bottom: rem(24);
+  border-bottom: rem(1) solid getColorHex("grey-light");
+
+  @include md {
+    margin-bottom: rem(32);
+  }
+  .accordionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(16) 0px;
+    position: relative;
+
+    &Click{
+      position: absolute;
+      left: 0;
+      top: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .accordionHeaderText {
+    @include body_regular;
+    font-size: rem(14);
+    text-transform: uppercase;
+
+    @include md {
+      font-size: rem(16);
+    }
+  }
+
+  .iconGroup {
+    display: flex;
+    align-items: center;
+  }
+
+  .clearTextContainer{
+    position: relative;
+    z-index: 10;
+  }
+
+  .clearText {
+    //margin-right: rem(16);
+    font-size: rem(14);
+    cursor: pointer;
+    color: getColorHex("grey");
+    text-transform: uppercase;
+    
+    /*[dir="rtl"] & {
+      margin-left: rem(16);
+    }*/
+  }
+
+  .accordionContent {
+    padding: rem(16) 0;
+    border-top: none;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .accordionContent::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  margin-left: rem(28);
+
+  [dir="rtl"] & {
+    margin-right: rem(28);
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

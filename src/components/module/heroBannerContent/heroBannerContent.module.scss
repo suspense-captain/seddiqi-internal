@@ -1,0 +1,256 @@
+@import "./../../../assets/styles/main.scss";
+
+.bannerItem {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 101;
+}
+
+.textContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  width: 80%;
+  color: getColorHex("white");
+  padding: rem(28);
+  line-height: rem(26);
+
+  @include lg {
+    padding: rem(80);
+    width: rem(635);
+  }
+
+  .logo {
+    [dir="rtl"] & {
+      display: flex;
+      // width: 100%;
+    }
+
+  }
+
+  &.bottomPadding {
+    padding-bottom: rem(100);
+  }
+
+  &.left-center {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: left;
+    align-items: flex-start;
+
+    .description {
+      [dir="rtl"] & {
+        text-align: right !important;
+      }
+    }
+
+  }
+
+  &.left-bottom {
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    align-items: flex-start;
+    
+    .description {
+      [dir="rtl"] & {
+        text-align: right !important;
+      }
+    }
+
+  }
+
+  &.right-center {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: right;
+    align-items: start;
+    .description {
+      margin-right: rem(22);
+    }
+
+    .description {
+      [dir="rtl"] & {
+        text-align: right !important;
+        margin-right: 0;
+      }
+    }
+
+    .rolexDescription {
+      margin-right: 0;
+    }
+  }
+
+  &.right-bottom {
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    align-items: start;
+  }
+
+  &.center-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+    @include xl {
+      width: 56%;
+    }
+
+    .title {
+      [dir="rtl"] & {
+        text-align: center;
+      }
+    }
+
+    .underlineConainer {
+      [dir="rtl"] & {
+        justify-content: center;
+      }
+    }
+
+  }
+
+  &.center-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.logoIcon {
+  max-width: rem(280);
+  // min-height: rem(40);
+  height: auto;
+  margin-bottom: rem(28);
+
+  @include md {
+    margin-bottom: rem(0);
+  }
+  
+  @include lg {
+    margin-bottom: rem(28);
+  }
+}
+.title {
+  @include heading_light;
+  font-size: rem(34) !important;
+  text-transform: uppercase;
+  // margin-bottom: rem(16);
+  margin-bottom: rem(28);
+
+  h1 {
+    margin: 0;
+  }
+
+  @include xl {
+    font-size: rem(48) !important;
+    margin-bottom: rem(28);
+  }
+
+  [dir="rtl"] & {
+    width: 100%;
+    text-align: right;
+  }
+
+  &.rolexTitle {
+    @include rolex_regular;
+    color: getColorHex("white");
+    font-size: rem(14);
+    line-height: rem(22);
+    letter-spacing: rem(0.4);
+    text-transform: capitalize;
+    margin-bottom: 0;
+
+    @include md {
+      line-height: rem(26);
+      font-size: rem(16);
+    }
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+}
+
+
+.underlineConainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  [dir="rtl"] & {
+    justify-content: flex-start;
+  }
+}
+
+.underlineConainerAlignment {
+  justify-content: flex-start;
+}
+
+.underline {
+  width: rem(70);
+  height: rem(3);
+  background-color: getColorHex("white");
+  margin-bottom: rem(28);
+}
+
+.description {
+  @include body_regular;
+  font-size: rem(14);
+  margin-bottom: rem(28);
+
+  p {
+    margin: 0;
+  }
+
+  @include md {
+    font-size: rem(16);
+  }
+
+  [dir="rtl"] & {
+    // width: 100%;
+    text-align: right;
+  }
+}
+.rolexDescription {
+  @include rolex_regular;
+  color: getColorHex("white");
+  font-size: rem(36);
+  font-weight: 700;
+  line-height: rem(40);
+  letter-spacing: rem(0.6);
+  margin: rem(4) 0 rem(16) 0;
+
+  @include md {
+    line-height: rem(58);
+    font-size: rem(58);
+    font-weight: 700;
+  }
+}
+
+.ctaButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  [dir="rtl"] & {
+    justify-content: flex-start;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  &.ctaButtonLeft {
+    justify-content: flex-start;
+  }
+}

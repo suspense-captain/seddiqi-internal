@@ -1,0 +1,349 @@
+@import "./../../../../assets/styles/main.scss";
+@import "./../../../../assets/styles/rolex/rolexMain.scss";
+
+.rolexMapContainer {
+  width: 100%;
+}
+.metallic {
+  background: getColorHex("metallic");
+}
+.bronze-grey {
+  background: getColorHex("bronze-grey");
+}
+.green-dark {
+  background: getColorHex("green-dark");
+}
+.black {
+  background: getColorHex("black");
+}
+.white {
+  background: getColorHex("white");
+}
+.grey-light {
+  background: getColorHex("grey-light");
+}
+.light-cream {
+  background: getColorHex("light-cream");
+}
+.grey-pampas {
+  background: getColorHex("grey-pampas");
+}
+.beige {
+  background: getColorHex("beige");
+}
+.cream {
+  background: getColorHex("cream");
+} 
+
+.rolexMapWrapper {
+  max-width: 1220px;
+  margin: 0 auto;
+  @include xl-max {
+    padding: 0 20px;
+  }
+}
+
+.toggleContainer {
+  display: flex;
+  gap: rem(24);
+  margin-bottom: rem(16);
+  @include md {
+    max-width: rem(1218);
+    margin: 0 auto rem(16);
+    justify-content: flex-start;
+  }
+}
+
+.inMap {
+  @include md {
+    max-width: none;
+    margin: 0 0 rem(16);
+  }
+}
+
+.inList {
+  @include md {
+    max-width: rem(1218);
+    margin: 0 auto rem(16);
+  }
+}
+
+.toggleButton {
+  p {
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: rem(16);
+    font-weight: 700;
+    color: getColorHex("black-raisin");
+    display: inline-flex;
+    align-items: center;
+    gap: rem(4);
+    // min-width: rem(42);
+    
+    &.active {
+      color: getColorHex("rolex-green");
+      &::after {
+        content: "";
+        width: rem(6);
+        height: rem(6);
+        border-radius: 50%;
+        background: getColorHex("rolex-green");
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.mapArea {
+  position: relative;
+  overflow: hidden;
+}
+
+.mapContainer {
+  width: 100%;
+  // height: rem(880);
+  height: rem(550);
+  @include md{
+    height: rem(680);
+  }
+}
+
+.listWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(12);
+  justify-content: center;
+
+  @include md {
+    max-width: rem(1218);
+    margin: 0 auto;
+  }
+}
+
+.storeCard {
+  width: 100%;
+  height: rem(322);
+  background: getColorHex("white");
+  // border: rem(1) solid getColorHex("grey-light");
+  // box-shadow: 0 0 rem(4) rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: rem(27) rem(48);
+  @include lg {
+    width: rem(398);
+  }
+}
+
+.storeCard h4 {
+  @include heading_light;
+  margin: 0;
+  font-size: rem(20);
+  color: getColorHex("rolex-brown");
+}
+
+.cardTitle {
+  margin-bottom: 16px;
+}
+
+.cardAddress {
+  margin: 0;
+  width: 100%;
+  max-width: 180px;
+  p {
+    @include body_regular;
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+}
+
+.cardIcons {
+  display: flex;
+  gap: rem(16);
+}
+
+.cardIcon {
+  width: rem(36);
+  height: rem(36);
+  border-radius: 50%;
+  background: getColorHex("brown-light");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    svg,
+    svg * {
+      fill: getColorHex("rolex-green");
+      stroke: getColorHex("rolex-green");
+    }
+  }
+}
+
+.sideContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: rem(264);
+  background: getColorHex("white");
+  display: flex;
+  flex-direction: column; 
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(100%);
+}
+
+.localtionImage {
+  display: none;
+}
+
+.open {
+  transform: translateY(0);
+}
+.close {
+  transform: translateY(100%);
+}
+
+.closeButton {
+  align-self: flex-end;
+  margin-top: rem(16);
+  margin-right: rem(16);
+  background: none;
+  border: none;
+  cursor: pointer;
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.storeDetails {
+  padding: rem(20 40);
+  overflow-y: auto;
+}
+
+.storeTitle {
+  font-size: rem(20);
+  font-weight: 700;
+  line-height: rem(24);
+  margin-bottom: 16px;
+  color: getColorHex("rolex-brown");
+  p {
+    margin: 0;
+  }
+}
+
+.address {
+  font-weight: 300;
+  font-size: rem(14);
+  width: 100%;
+  max-width: rem(179);
+  margin-bottom: 36px;
+  p {
+    margin: 0;
+  }
+}
+
+.infoRow {
+  display: none;
+}
+
+.mobileIconRow {
+  display: flex;
+  gap: rem(20);
+  justify-content: center;
+  margin-top: auto;
+  svg {
+    width: rem(38);
+    height: rem(38);
+    border-radius: 50%;
+    background: getColorHex("brown-light");
+    padding: rem(14);
+  }
+}
+
+.iconCircle {
+  width: rem(36);
+  height: rem(36);
+  border-radius: 50%;
+  background: getColorHex("brown-light");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    svg,
+    svg * {
+      fill: getColorHex("rolex-green");
+      stroke: getColorHex("rolex-green");
+    }
+  }
+}
+
+@include md {
+  .sideContainer {
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: rem(400);
+    height: rem(680);
+    transform: translateX(-100%);
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+  .close {
+    transform: translateX(-100%);
+  }
+
+  .localtionImage {
+    display: block;
+  }
+
+  .closeButton {
+    align-self: flex-end;
+    margin-top: rem(8);
+    margin-right: rem(8);
+  }
+
+  .storeDetails {
+    padding: rem(24) rem(28);
+  }
+
+  .infoRow {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    margin-bottom: 16px;
+    p {
+      margin: 0;
+    }
+
+    &:hover {
+      .inforDetails {
+        color: getColorHex("rolex-green");
+      }
+      svg,
+      svg * {
+        fill: getColorHex("rolex-green");
+        stroke: getColorHex("rolex-green");
+      }
+    }
+
+    .inforDetails {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: getColorHex("rolex-brown");
+    }
+  }
+
+  .mobileIconRow {
+    display: none;
+  }
+}

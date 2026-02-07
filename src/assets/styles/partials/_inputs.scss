@@ -1,0 +1,209 @@
+@import "mixins";
+@import "typography";
+@import "variables";
+
+@mixin phone-number-input {
+  @include cta_regular;
+  padding: rem($mInputPadding);
+  font-size: rem($mInputSize);
+  line-height: rem($mInputLineHeight);
+  @include transition-3s;
+  letter-spacing: rem($inputLetterSpacing);
+  background: transparent;
+  border-width: rem(1);
+  border-style: solid;
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    color: inherit;
+  }
+
+  &::placeholder {
+    @include cta_regular;
+    opacity: 0.75;
+  }
+
+  @include md {
+    padding: rem($dInputPadding);
+    font-size: rem($dInputSize);
+    line-height: rem($dInputLineHeight);
+  }
+}
+
+.input {
+  input {
+    padding: rem(0 16);
+    height: rem(48);
+    border: none;
+    font-size: rem(16);
+    line-height: rem(24);
+    @include body_regular;
+    color: getColorHex("black");
+    width: 100%;
+    border-radius: rem(4);
+    background-color: getColorHex("tint");
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    font-size: rem(16);
+    line-height: rem(24);
+    @include body_regular;
+    color: getColorHex("black");
+    display: block;
+    padding: rem(0 0 8 0);
+  }
+}
+
+@mixin input-select-error {
+  font-size: rem(12);
+  line-height: rem(16);
+  letter-spacing: rem(0.4);
+  position: absolute;
+  @include cta_regular;
+  color: getColorHex("red");
+  bottom: rem(-16);
+  left: 0;
+}
+
+.checkbox {
+  @include transition-3s;
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  input {
+    display: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    cursor: pointer;
+    .checkboxIcon {
+      height: rem(20);
+      width: rem(20);
+      border-width: rem(2);
+      border-style: solid;
+      overflow: hidden;
+      border-color: var(--custom-text-color-dynamic);
+      border-radius: rem(4);
+      color: transparent;
+      display: flex;
+      color: transparent;
+      justify-content: center;
+      align-items: center;
+    }
+    .checked {
+      color: var(--custom-text-color-dynamic);
+    }
+  }
+}
+#checkbox {
+  .rich-text p {
+    @include body_regular;
+    text-align: justify;
+    font-size: rem(16);
+    letter-spacing: rem(0.4);
+    line-height: rem(22);
+  }
+}
+
+.radioWrap {
+  display: flex;
+  gap: rem(16);
+}
+.radio {
+  @include transition-3s;
+  input {
+    display: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    font-weight: 300 !important;
+    cursor: pointer;
+    .radioIcon {
+      height: rem(20);
+      width: rem(20);
+      border-width: rem(2);
+      border-style: solid;
+      overflow: hidden;
+      border-color: var(--custom-text-color-dynamic);
+      border-radius: rem(32);
+      color: transparent;
+      display: flex;
+      color: transparent;
+      justify-content: center;
+      align-items: center;
+    }
+    .checked {
+      & > span {
+        border-radius: rem(32);
+        display: block;
+        height: rem(10);
+        width: rem(10);
+        background-color: var(--custom-text-color-dynamic);
+      }
+    }
+  }
+}
+
+.checkbox-customize-design {
+  input[type="checkbox"] + label {
+    cursor: pointer;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    span {
+      font-size: rem(16);
+      line-height: rem(24);
+      @include body_bold;
+      color: getColorHex("black");
+    }
+  }
+  input[type="checkbox"] + label:before {
+    content: "✔";
+    border: rem(1) solid getColorHex("green");
+    border-radius: rem(2);
+    display: flex;
+    width: rem(14);
+    height: rem(14);
+    min-width: rem(14);
+    position: relative;
+    top: rem(4);
+    vertical-align: bottom;
+    color: transparent;
+    transition: 0.2s;
+    font-size: rem(10) !important;
+    justify-content: center;
+    align-items: center;
+    @include md{
+      top: rem(2);
+    }
+  }
+  input[type="checkbox"]:checked + label:before {
+    background-color: transparent;
+    color: getColorHex("green");
+    border: rem(1) solid getColorHex("green");
+  }
+  input[type="checkbox"]:checked + label:after {
+    display: block;
+    position: absolute;
+    top: rem(11);
+    left: rem(16);
+    width: rem(4);
+    height: rem(10);
+    border: rem(1) solid none !important;
+    border-width: rem(0 2 2 0);
+    transform: rotate(45deg);
+  }
+}

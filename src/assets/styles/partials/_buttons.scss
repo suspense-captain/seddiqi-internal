@@ -1,0 +1,321 @@
+@import "mixins";
+@import "typography";
+@import "variables";
+
+$sqrt3: 1.2;
+$hex-height: 3rem;
+$hex-min-width: $hex-height * $sqrt3 / 2;
+$hex-distance: ($hex-height / (2 * $sqrt3));
+$border-width: rem(1);
+
+.button {
+  @include cta_regular;
+  @include transition-3s;
+  padding: rem(12 20);
+  font-size: rem(14);
+  line-height: rem(18);
+  letter-spacing: rem(1);
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: getColorHex("black-dark");
+  color: getColorHex("white");
+  border: none;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  border-radius: rem(12 0 12 0);
+
+  @include md {
+    padding: rem(12 28);
+    font-size: rem(14);
+    line-height: rem(20);
+    min-width: rem(174);
+  }
+
+  &:hover {
+    background-color: getColorHex("brown-quartz");
+    color: getColorHex("white");
+  }
+
+  &.solid {
+    background-color: getColorHex("black-dark");
+    color: getColorHex("white");
+    border: rem(1) solid getColorHex("black-dark");
+
+    &:hover {
+      background-color: getColorHex("black-dark");
+      color: getColorHex("white");
+    }
+
+    &.metallic {
+      background-color: getColorHex("metallic");
+      color: getColorHex("white");
+      border: rem(1) solid getColorHex("metallic");
+
+      &:hover {
+        background-color: getColorHex("opulent-bronze");
+        border: rem(1) solid getColorHex("opulent-bronze");
+      }
+    }
+
+    &.bronze_grey {
+      background-color: getColorHex("bronze-grey");
+      color: getColorHex("midnight-brown");
+      border: rem(1) solid getColorHex("bronze-grey");
+
+      &:hover {
+        background-color: getColorHex("midnight-brown");
+        color: getColorHex("white");
+        border: rem(1) solid getColorHex("midnight-brown");
+      }
+    }
+    &.white {
+      background-color: getColorHex("white");
+      color: getColorHex("black-dark");
+      //border: rem(1) solid getColorHex("black-dark");
+
+      &:hover {
+        background-color: getColorHex("black-dark");
+        color: getColorHex("white");
+        //border: rem(1) solid getColorHex("black-dark");
+      }
+    }
+    &.brown_gold {
+      background-color: getColorHex("white");
+      color: getColorHex("opulent-bronze");
+      border: rem(1) solid getColorHex("opulent-bronze");
+
+      &:hover {
+        background-color: getColorHex("opulent-bronze");
+        color: getColorHex("white");
+        //border: rem(1) solid getColorHex("black-dark");
+      }
+    }
+    &.black_dark {
+      background-color: getColorHex("black-dark");
+      color: getColorHex("white");
+      border: rem(1) solid getColorHex("black-dark");
+
+      &:hover {
+        background-color: getColorHex("black-dark");
+        border: rem(1) solid getColorHex("black-dark");
+      }
+    }
+    &.green_grey {
+      background-color: getColorHex("green-grey");
+      color: getColorHex("white");
+      border: rem(1) solid getColorHex("green-grey");
+
+      &:hover {
+        background-color: getColorHex("green-dark");
+        border: rem(1) solid getColorHex("green-dark");
+      }
+    }
+    &.rolex_green {
+      background-color: getColorHex("rolex-green");
+      color: getColorHex("white");
+      border: rem(1) solid getColorHex("rolex-green");
+    }
+  }
+
+  &.transparent {
+    border: rem(1) solid transparent;
+    color: getColorHex("black-dark");
+    border-color: getColorHex("black-dark");
+    background-color: transparent;
+
+    &:hover {
+      color: getColorHex("white");
+      background-color: getColorHex("black-dark");
+    }
+
+    &.black {
+      color: getColorHex("black-dark");
+      border-color: getColorHex("black-dark");
+
+      &:hover {
+        color: getColorHex("white");
+        background-color: getColorHex("black-dark");
+      }
+    }
+
+    &.grey {
+      color: getColorHex("bronze-grey");
+      border-color: getColorHex("bronze-grey");
+
+      &:hover {
+        color: getColorHex("midnight-brown");
+        background-color: getColorHex("bronze-grey");
+      }
+    }
+    &.black_dark {
+      color: getColorHex("black-dark");
+      border-color: getColorHex("black-dark");
+
+      &:hover {
+        color: getColorHex("white");
+        background-color: getColorHex("black-dark");
+      }
+    }
+    &.grey_light {
+      color: getColorHex("green-greyish-light");
+      border-color: getColorHex("green-greyish-light");
+
+      &:hover {
+        color: getColorHex("green-dark");
+        background-color: getColorHex("green-greyish-light");
+      }
+    }
+    &.white {
+      color: getColorHex("white");
+      border-color: getColorHex("white");
+
+      &:hover {
+        color: getColorHex("black-dark");
+        background-color: getColorHex("white");
+      }
+    }
+  }
+
+  &.plain {
+    padding: 0;
+    min-width: auto;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    color: getColorHex("black-dark");
+   
+    span {
+      color: getColorHex("black-dark");
+      
+      &::after {
+        margin-top: rem(0.2);
+        content: "";
+        display: block;
+        width: 0;
+        height: rem(1);
+        background-color: getColorHex("opulent-bronze");
+        transition: width 0.3s;
+      }
+    
+      &:hover{
+        color: getColorHex("opulent-bronze");
+
+        &::after {
+          width: 100%;
+          background-color: getColorHex("opulent-bronze");
+        }
+      }
+    }
+
+    &.black_dark {
+      span {
+        color: getColorHex("black-dark");
+        &::after {
+          margin-top: rem(0.2);
+          content: "";
+          display: block;
+          width: 0;
+          height: rem(1);
+          background-color: getColorHex("black-dark");
+          transition: width 0.3s;
+        }
+      
+        &:hover{
+          color: getColorHex("opulent-bronze");
+  
+          &::after {
+            width: 100%;
+            background-color: getColorHex("opulent-bronze");
+          }
+        }
+      }
+    }
+    &.brown_dark {
+      span {
+        color: getColorHex("black-dark");
+        &::after {
+          margin-top: rem(0.2);
+          content: "";
+          display: block;
+          width: 0;
+          height: rem(1);
+          background-color: getColorHex("black-dark");
+          transition: width 0.3s;
+        }
+      
+        &:hover{
+          color: getColorHex("opulent-bronze");
+  
+          &::after {
+            width: 100%;
+            background-color: getColorHex("opulent-bronze");
+          }
+        }
+      }
+    }
+    &.brown_gold {
+      span {
+        color: getColorHex("black-dark");
+        &::after {
+          margin-top: rem(0.2);
+          content: "";
+          display: block;
+          width: 0;
+          height: rem(1);
+          background-color: getColorHex("black-dark");
+          transition: width 0.3s;
+        }
+      
+        &:hover{
+          color: getColorHex("opulent-bronze");
+  
+          &::after {
+            width: 100%;
+            background-color: getColorHex("opulent-bronze");
+          }
+        }
+      }
+    }
+
+    &.white {
+      span {
+        color: getColorHex("white");
+
+        &::after {
+          margin-top: rem(0.2);
+          content: "";
+          display: block;
+          width: 0;
+          height: rem(1);
+          background-color: getColorHex("white");
+          transition: width 0.3s;
+        }
+      
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+
+    &.grey_light {
+      background-color: getColorHex("grey-light");
+      color: getColorHex("black-dark");
+      //border: rem(1) solid getColorHex("black-dark");
+      opacity: 1;
+    }
+  }
+}
+
+.svg {
+  @include vertical_align_center;
+  @include pointer;
+  @include svg;
+}

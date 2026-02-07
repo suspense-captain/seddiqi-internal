@@ -1,0 +1,353 @@
+@import "../../assets/styles/main.scss";
+
+.storeLocatorContainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(40);
+
+  @include md{
+    row-gap: rem(32);
+  }
+
+  //Remove the css codes below this once other brands are available
+  & > div:nth-child(2){
+    align-self: flex-start;
+  }
+}
+
+.productInfoContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: rem(16);
+
+  @include md{
+    column-gap: rem(20);
+  }
+
+  &Image{
+    display: flex;
+    width: 100%;
+    max-width: rem(100);
+    position: relative;
+    border: rem(1) solid getColorHex("grey-light");
+
+    @include md{
+      max-width: rem(120);
+    }
+
+    img{
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &Texts{
+    display: flex;
+    flex-direction: column;
+    padding: rem(16) 0 0 0;
+    row-gap: rem(8);
+    width: 100%;
+
+    @include md{
+      padding: rem(20) 0 0 0;
+    }
+
+    h6{
+      @include heading_medium;
+      font-size: rem(12);
+      line-height: rem(18);
+      font-weight: 500;
+      letter-spacing: rem(0.4);
+      color: getColorHex("black");
+      display: block;
+      text-transform: uppercase;
+      margin: 0;
+
+      @include md{
+        @include heading_light;
+        font-size: rem(16);
+        line-height: rem(20);
+        font-weight: 400;
+      }
+    }
+
+    p{
+      @include heading_light;
+      font-size: rem(16);
+      line-height: rem(26);
+      font-weight: 400;
+      letter-spacing: rem(0.4);
+      color: getColorHex("black-dark");
+      display: block;
+      margin: 0;
+
+      @include md{
+        font-size: rem(18);
+        line-height: rem(28);
+      }
+    }
+
+    span{
+      @include body_regular;
+      font-size: rem(10);
+      line-height: rem(14);
+      font-weight: 400;
+      letter-spacing: rem(0.4);
+      color: getColorHex("black");
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
+.tabsSwiperContainer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  @include md{
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.storeListContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  row-gap: rem(20);
+
+  @include sm{
+    row-gap: rem(40);
+  }
+}
+
+.storeList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: rem(32);
+  margin: 0;
+  list-style: none;
+  padding: 0;
+
+  @include sm{
+    //row-gap: rem(20);
+    padding: 0 rem(20);
+  }
+
+  @include md{
+    row-gap: rem(60);
+  }
+
+  .store{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+
+    @include sm{
+      width: calc(50% - 10px);
+    }
+
+    &ImageContainer{
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      margin: 0 0 rem(20);
+      -webkit-border-top-left-radius: rem(16);
+      -webkit-border-bottom-right-radius: rem(16);
+      -moz-border-radius-topleft: rem(16);
+      -moz-border-radius-bottomright: rem(16);
+      border-top-left-radius: rem(16);
+      border-bottom-right-radius: rem(16);
+      min-height: rem(224);
+
+      
+
+      @include sm{
+        -webkit-border-top-left-radius: rem(30);
+        -webkit-border-bottom-right-radius: rem(30);
+        -moz-border-radius-topleft: rem(30);
+        -moz-border-radius-bottomright: rem(30);
+        border-top-left-radius: rem(30);
+        border-bottom-right-radius: rem(30);
+        min-height: rem(167);
+      }
+    }
+
+    &Image{
+      display: flex;
+      object-fit: cover;
+    }
+
+    .nearestStore{
+      @include body_regular;
+      font-weight: 400;
+      font-size: rem(10);
+      line-height: rem(14);
+      letter-spacing: rem(0.2);
+      color: getColorHex("black-dark");
+      text-transform: uppercase;
+      display: flex;
+      position: absolute;
+      left: rem(20);
+      top: rem(20);
+      background-color: getColorHex("green-greyish");
+      padding: rem(6) rem(12);
+      margin: 0;
+      -webkit-border-top-left-radius: rem(4);
+      -webkit-border-bottom-right-radius: rem(4);
+      -moz-border-radius-topleft: rem(4);
+      -moz-border-radius-bottomright: rem(4);
+      border-top-left-radius: rem(4);
+      border-bottom-right-radius: rem(4);
+    }
+
+    &Details{
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(8);
+
+      @include sm{
+        row-gap: rem(12);
+      }
+    }
+    
+    &Name{
+      @include heading_light;
+      font-weight: 500;
+      font-size: rem(18);
+      line-height: rem(26);
+      letter-spacing: rem(0.4);
+      color: getColorHex("black-dark");
+      display: block;
+      margin: 0;
+
+      @include sm{
+        font-size: rem(20);
+        line-height: rem(30);
+        letter-spacing: rem(0.6);
+      }
+    }
+
+    &Location{
+      display: flex;
+      align-items: center;
+      gap: rem(3);
+
+      p{
+        @include body_light;
+        font-weight: 300;
+        font-size: rem(14);
+        line-height: rem(22);
+        letter-spacing: rem(0.2);
+        color: getColorHex("black-dark");
+        display: flex;
+        align-items: center;
+        gap: rem(3);
+
+        span{
+          display: flex;
+          align-items: center;
+          gap: rem(3);
+
+          &:last-child{
+
+            &::before{
+              content: "|";
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.storeMapListWrapper{
+  display: flex;
+  flex-direction: column;
+
+  & > div{
+
+    & > ul > li{
+      padding-left: 0;
+      padding-right: 0;
+
+      & > div:last-child{
+        display: none;
+      }
+
+      &.isActive{
+        
+        & > div:last-child{
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+.storeMapLinksContainer{
+  display: none !important;
+  flex-wrap: wrap;
+  column-gap: rem(20);
+  row-gap: rem(10);
+}
+
+.storeMapLink{
+  display: block;
+  text-transform: none;
+}
+
+.mapContainer{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  -webkit-border-top-left-radius: rem(16);
+  -webkit-border-bottom-right-radius: rem(16);
+  -moz-border-radius-topleft: rem(16);
+  -moz-border-radius-bottomright: rem(16);
+  border-top-left-radius: rem(16);
+  border-bottom-right-radius: rem(16);
+  height: rem(224);
+
+  @include md{
+    -webkit-border-top-left-radius: rem(30);
+    -webkit-border-bottom-right-radius: rem(30);
+    -moz-border-radius-topleft: rem(30);
+    -moz-border-radius-bottomright: rem(30);
+    border-top-left-radius: rem(30);
+    border-bottom-right-radius: rem(30);
+    height: rem(362);
+    margin: 0;
+  }
+}
+
+.map{
+  display: block;
+  width: 100%;
+  max-height: rem(224);
+  height: rem(500);
+  max-height: rem(363);
+
+  @include md{
+    max-height: rem(860);
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}

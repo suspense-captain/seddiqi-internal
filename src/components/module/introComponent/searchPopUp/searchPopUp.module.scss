@@ -1,0 +1,172 @@
+@import "./../../../../assets/styles/main.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(24);
+  width: 100%;
+  height: 100vh;
+  background: getColorHex("white");
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: rem(60 28);
+
+  @include breakpoint-min-width(rem(930)) {
+    gap: rem(28);
+    padding: rem(160 205);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image2 {
+  flex: 1;
+  object-fit: cover;
+  height: 100% !important;
+  width: 100%;
+  min-width: rem(400);
+  min-height: rem(535);
+}
+
+.closeIcon {
+  z-index: 99999;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  @include breakpoint-min-width(rem(930)) {
+    width: auto;
+    position: absolute;
+    right: rem(80);
+    top: rem(80);
+  }
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @include breakpoint-min-width(rem(930)) {
+    min-width: rem(800);
+  }
+}
+
+.searchContainer {
+  display: flex;
+  width: 100%;
+  height: rem(60);
+  padding: 0 rem(28);
+  align-items: center;
+  gap: rem(20);
+
+  border-radius: rem(16) 0;
+  border: rem(1) solid getColorHex("grey-light");
+  background: getColorHex("white");
+  box-shadow: 0 0 rem(30) 0 rgba(0, 0, 0, 0.15);
+
+  @include breakpoint-min-width(rem(930)) {
+    height: rem(76);
+    width: rem(800);
+  }
+}
+
+.input {
+  @include heading_regular;
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: rem(20);
+  color: #333;
+  padding: 0;
+  margin-right: rem(8);
+  width: 100%;
+
+  @include breakpoint-min-width(rem(930)) {
+    flex: 1;
+  }
+}
+
+.input::placeholder {
+  @include heading_regular;
+  color: getColorHex("midnight-brown");
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+
+  @include breakpoint-min-width(rem(930)) {
+    font-size: rem(20);
+    line-height: rem(30);
+    letter-spacing: rem(0.6);
+  }
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: rem(20);
+  height: rem(20);
+  background: url("/path-to-your-icon.png") no-repeat center center;
+  background-size: contain;
+}
+
+.seddiqiLogo {
+  border-radius: rem(40);
+  background: getColorHex("desert-storm");
+  display: flex;
+  width: rem(44);
+  height: rem(44);
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  flex-shrink: 0;
+}
+
+.legacyContainer {
+  margin-top: rem(20);
+  width: 100%;
+
+  @include breakpoint-min-width(rem(930)) {
+    width: rem(780);
+  }
+}
+
+.legacyList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: rem(16);
+  color: #333;
+  line-height: 1.6;
+}
+
+.legacyList li {
+  @include heading_regular;
+  padding: rem(20) 0;
+  border-bottom: rem(1) solid getColorHex("tint-grey");
+  color: getColorHex("grey");
+  font-size: rem(12);
+  font-weight: 500;
+  line-height: rem(18);
+  letter-spacing: rem(0.2);
+}
+
+.legacyList li:last-child {
+  //   border-bottom: none;
+}

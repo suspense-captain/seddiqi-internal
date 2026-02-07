@@ -1,0 +1,118 @@
+@import "./../../../assets/styles/main.scss";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .leftBtn,
+  .rightBtn {
+    width: rem(40);
+    height: rem(40);
+    border-radius: rem(12) 0 rem(12);
+    background: getColorHex("metallic");
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2000;
+    
+    @include md {
+      display: flex;
+    }
+
+    .arrowLeft {
+      transform: rotate(180deg);
+      [dir="rtl"] & {
+        transform: rotate(0);
+      }
+    }
+
+    .arrowRight {
+      [dir="rtl"] & {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .leftBtn {
+    left: rem(50);
+    [dir="rtl"] & {
+      right: rem(50);
+      left: auto;
+    }
+  }
+  .rightBtn {
+    right: rem(50);
+    [dir="rtl"] & {
+      left: rem(50);
+      right: auto;
+    }
+  }
+
+  .sliderItem {
+    position: relative;
+    width: 100%;
+    // height: rem(368);
+  }
+}
+
+.image {
+  height: rem(368);
+  object-fit: cover;
+  width: 100%;
+  z-index: -1;
+  position: relative;
+}
+
+.sliderContent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: rem(28);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+
+  .contentInfo {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    z-index: 100;
+
+    [dir="rtl"] & {
+      text-align: right;
+    }
+
+    .label {
+      color: getColorHex("white");
+      @include heading_light;
+      font-size: rem(16);
+      line-height: rem(20);
+      letter-spacing: rem(0.4);
+      text-transform: uppercase;
+    }
+
+    .desc {
+      @include body_regular;
+      color: getColorHex("white");
+      font-size: rem(14);
+      line-height: rem(22);
+      letter-spacing: rem(0.4);
+    }
+  }
+
+  .iconBg {
+    display: flex;
+    min-width: rem(36);
+    min-height: rem(36);
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(40);
+    background-color: getColorHex("white", 0.3);
+    cursor: pointer;
+    z-index: 100;
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../../assets/styles/main.scss";
+
+.title {
+  @include heading_light;
+  text-transform: uppercase;
+  margin-bottom: rem(24);
+  color:  getColorHex("black-dark");
+
+  @include md {
+    margin-bottom: rem(20);
+  }
+}
+
+.sizeGuidetableTitle {
+  @include heading_light;
+  color:  getColorHex("black-dark");
+  text-transform: uppercase;
+  margin-bottom: rem(12);
+}
+
+.description,
+.sizeGuidetableDesc {
+  @include body_regular;
+  font-size: rem(14);
+  line-height: rem(22);
+  letter-spacing: rem(0.2);
+  margin-bottom: rem(24);
+  color: getColorHex("green-metallic");
+
+  @include md {
+    font-size: rem(16);
+    line-height: rem(28);
+    margin-bottom: rem(24);
+  }
+}
+
+.tableContent {
+  width: 100%;
+  tr {
+    width: 100%;
+    display: flex;
+    padding-bottom: rem(20);
+    align-items: flex-start;
+    gap: rem(32);
+    border-bottom: rem(1) solid getColorHex("grey-light");
+  }
+
+  th,
+  td {
+    flex-basis: 50%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  th {
+    @include heading_light;
+    font-size: rem(12);
+    line-height: rem(18);
+    letter-spacing: rem(0.8);
+    font-weight:400;
+    text-transform: capitalize;
+    color:  getColorHex("black-dark");
+
+    @include md {
+      font-size: rem(16);
+      line-height: rem(20);
+      letter-spacing: rem(0.4);
+    }
+  }
+
+  td {
+    @include body_regular;
+    font-size: rem(14);
+    line-height: rem(22);
+    letter-spacing: rem(0.4);
+    color: getColorHex("green-metallic");
+
+    @include md {
+      font-size: rem(16);
+      line-height: rem(26);
+    }
+  }
+}

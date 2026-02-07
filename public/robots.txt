@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+Disallow: /privacy
+Disallow: /terms-and-conditions
+Disallow: /cookie-policy
+Sitemap: https://www.seddiqi.com/sitemap.xml

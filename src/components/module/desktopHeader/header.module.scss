@@ -1,0 +1,64 @@
+@import "./../../../assets/styles/main.scss";
+
+.headerContainer {
+  height: rem(152);
+  background-color: getColorHex("white");
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 6000;
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    height: rem(78);
+    padding: rem(0);
+    gap: rem(0);
+    justify-content: center;
+
+    .headerHeight {
+      transition: all 0.3s;
+      top: rem(78);
+      height: calc(100vh - 78px);
+    }
+
+    .headerMargin {
+      padding: rem(0);
+    }
+    .headerLogoContainer {
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin-top: rem(-3);
+    }
+  }
+
+  .headerScrolled {
+    margin: rem(0);
+  }
+
+  .headerMargin {
+    border-bottom: rem(1) solid getColorHex("grey-light");
+    margin: rem(0 40);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    justify-content: space-evenly;
+  }
+}
+
+.headerLogoContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  justify-content: center;
+  margin-top: rem(20);
+
+  .mainLogo {
+    height: rem(48);
+    width: rem(260);
+    object-fit: contain;
+  }
+}

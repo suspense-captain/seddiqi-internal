@@ -1,0 +1,174 @@
+@import "./../../../assets/styles/main.scss";
+
+// Variables
+$mobile-margin: rem(0 32);
+$desktop-margin: rem(0 32);
+$mobile-gap: rem(40);
+$desktop-gap: rem(10);
+$product-gap: rem(28);
+$border-radius: rem(12 0 12 0);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Main container
+
+.container {
+  display: flex;
+  justify-content: center; 
+  margin: $mobile-margin;
+  @include md {
+    margin: $desktop-margin;
+  }
+}
+.containerContent {
+  @include flex-center;
+  flex-direction: column;
+  gap: $mobile-gap;
+  width: 100%;
+  
+  @include lg {
+    gap: $desktop-gap;
+    margin: rem(0 32);
+    flex-direction: row;
+    width: rem(1085);
+    justify-content: space-between;
+  }
+}
+
+// Products container
+.productsContainer {
+  @include flex-column;
+  align-items: center;
+  gap: $product-gap;
+  width: 100%;
+  height: 100%;
+  // padding: rem(0 18);
+
+  @include lg {
+    margin: 0;
+    height: rem(759);
+    width: rem(356);
+  }
+}
+
+// Image container
+.containerImg {
+  width: 100%;
+
+  @include lg {
+    width: rem(569);
+  }
+}
+
+// Product
+.product {
+  @include flex-column;
+  align-items: center;
+  gap: $product-gap;
+}
+
+// Heading
+.headingPrimary {
+  @include heading_light;
+  margin: 0;
+  text-transform: uppercase;
+  color: getColorHex("midnight-brown");
+  font-size: rem(40);
+  width: 100%;
+  text-align: center;
+}
+
+// Product image
+.productImg {
+  @include flex-center;
+  position: relative;
+  width: 100%;
+  height: rem(400);
+  // background-color: getColorHex("grey-light-4");
+  border-radius: $border-radius;
+  overflow: hidden;
+
+
+  @include lg {
+    height: rem(474);
+    margin: 0;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .icon {
+    position: absolute;
+    top: rem(22);
+    right: rem(22);
+  }
+}
+
+// Product content
+.productContent {
+  @include flex-column;
+  gap: rem(8);
+}
+
+// Typography styles
+.title {
+  @include heading_light;
+  color: getColorHex("black");
+  text-transform: uppercase;
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  font-size: rem(12);
+
+  @include md {
+    font-size: rem(16)
+  }
+}
+
+.type {
+  @include body_regular;
+  font-size: rem(16);
+  line-height: rem(28);
+  letter-spacing: rem(0.4);
+  color: getColorHex('grey');
+
+  @include md {
+    font-size: rem(18)
+  }
+}
+
+.info {
+  @include body_regular;
+  font-size: rem(12);
+  line-height: rem(22);
+  letter-spacing: rem(0.4);
+  color: getColorHex('grey-mid');
+
+  @include md {
+    font-size: rem(14)
+  }
+}
+
+.price {
+  @include heading_light;
+  font-size: rem(14);
+  line-height: rem(20);
+  letter-spacing: rem(0.4);
+  color: getColorHex('black');
+
+  @include md {
+    font-size: rem(16)
+  }
+}

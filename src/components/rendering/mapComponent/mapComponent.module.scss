@@ -1,0 +1,138 @@
+@import "./../../../assets/styles/main.scss";
+
+.mapWrapperClass {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+  position: relative;
+
+  .mapSection {
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+
+    @include lg{
+      height: rem(820);
+    }
+  }
+
+  .listSection {
+    position: absolute;
+    left: 50%; //rem(40);
+    //right: rem(40);
+    margin: 0 auto;
+    transform: translateX(-50%);
+
+    top: auto;
+    bottom: rem(24);
+    background: getColorHex("white");
+    width: 85%;
+    //height: rem(308);
+    
+    max-height: rem(678);
+    min-height: rem(308);
+    padding: rem(40) rem(20) rem(40) rem(40);
+    overflow: hidden;
+    border-top-left-radius: rem(16);
+    border-bottom-right-radius: rem(16);
+
+    @include md{
+      max-width: rem(512);
+    }
+
+    @include lg {
+      top: rem(72);
+      bottom: auto;
+      right: auto;
+      left: rem(80);
+      margin: auto;
+      height: 100%;
+      transform: none;
+      padding: rem(40) 0 rem(40) rem(40);
+      
+      [dir="rtl"] & {
+        padding: rem(40) rem(40) rem(40) 0;
+      }
+    }
+
+    .toreMapListContaine {
+      max-height: rem(672) !important;
+    }
+    .title {
+      @include heading_light;
+      font-size: rem(22);
+      line-height: rem(30);
+      color: getColorHex("brown-dark");
+      margin-bottom: rem(24);
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+
+      @include lg {
+        font-size: rem(32);
+        line-height: rem(36);
+      }
+    }
+
+    h4 {
+      font-size: rem(14);
+    }
+
+    p,
+    a {
+      font-size: rem(12);
+    }
+
+    li {
+      row-gap: rem(16);
+      box-sizing: border-box;
+      width: calc(100% - 42px);
+    }
+    @include lg {
+      h4 {
+        font-size: rem(20);
+      }
+
+      p,
+      a {
+        font-size: rem(14);
+      }
+
+      li {
+        row-gap: rem(24);
+      }
+    }
+  }
+}
+
+.mapWrapperClass {
+  .listSection {
+    p {
+      margin: 0;
+    }
+    :global([class*="isRelative"]) {
+      min-height: rem(308);
+      max-height: rem(308);
+
+      @include lg{
+        min-height: rem(538);
+        max-height: rem(538);
+      }
+    }
+  }
+}
+
+
+.mapWrapperClass .listSection :global(.swiper-wrapper) {
+  margin-top: 0 !important; //Waki Swiper has an inline "margin-top" style on .swiper-wrapper, o we must use !important to override that inline style
+}
+
+.mapWrapperClass
+  .listSection
+    :global(.swiper-scrollbar.swiper-scrollbar-vertical) {
+    @include sm-max {
+      right: 0;
+    }
+}
