@@ -37,18 +37,18 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     };
   }
 
-  // const shippingDeliveryKey = `shipping/${product?.response?.c_shippingContent ? product?.response?.brand.toLowerCase() : "global"}`;
+  const shippingDeliveryKey = `shipping/${product?.response?.c_shippingContent ? product?.response?.brand.toLowerCase() : "global"}`;
 
-  // const shippingData = await fetchStandardPageData(
-  //   {
-  //     content: {
-  //       page: {
-  //         key: `${localePrefix}${shippingDeliveryKey}`,
-  //       },
-  //     },
-  //   },
-  //   context,
-  // );
+  const shippingData = await fetchStandardPageData(
+    {
+      content: {
+        page: {
+          key: `${localePrefix}${shippingDeliveryKey}`,
+        },
+      },
+    },
+    context,
+  );
 
   // const amplienceDeliveryKey = `warranty/${product?.response?.c_warranty ? `brand/${product?.response?.c_warranty?.toLowerCase()}` : "global"}`;
 
