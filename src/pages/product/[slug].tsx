@@ -89,7 +89,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   // const productTechSpecs = product?.techSpecs || {};
   // productTechSpecs.category = productTechSpecs?.category || null;
 
-  // const dataDictionary = await getContentItemByKey("dataDictionary");
+  const dataDictionary = await getContentItemByKey("dataDictionary");
 
   // return {
   //   props: {
@@ -108,7 +108,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   // };
   return {
     props: {
-      product
+      product,
+      dataDictionary
     }
   }
 }
