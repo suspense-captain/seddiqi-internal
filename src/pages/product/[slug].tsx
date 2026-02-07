@@ -18,14 +18,14 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   const localePrefix = getLocalePrefix(context?.locale, context?.defaultLocale);
 
-  const data = await fetchStandardPageData(
-    {
-      content: {
-        page: { key: `${localePrefix}product/${plpKey}` },
-      },
-    },
-    context,
-  );
+  // const data = await fetchStandardPageData(
+  //   {
+  //     content: {
+  //       page: { key: `${localePrefix}product/${plpKey}` },
+  //     },
+  //   },
+  //   context,
+  // );
 
   const product = await getProductDetails({ productId: plpKey, method: "GET" });
 
@@ -37,103 +37,97 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     };
   }
 
-  const shippingDeliveryKey = `shipping/${product?.response?.c_shippingContent ? product?.response?.brand.toLowerCase() : "global"}`;
+  // const shippingDeliveryKey = `shipping/${product?.response?.c_shippingContent ? product?.response?.brand.toLowerCase() : "global"}`;
 
-  const shippingData = await fetchStandardPageData(
-    {
-      content: {
-        page: {
-          key: `${localePrefix}${shippingDeliveryKey}`,
-        },
-      },
-    },
-    context,
-  );
+  // const shippingData = await fetchStandardPageData(
+  //   {
+  //     content: {
+  //       page: {
+  //         key: `${localePrefix}${shippingDeliveryKey}`,
+  //       },
+  //     },
+  //   },
+  //   context,
+  // );
 
-  const amplienceDeliveryKey = `warranty/${product?.response?.c_warranty ? `brand/${product?.response?.c_warranty?.toLowerCase()}` : "global"}`;
+  // const amplienceDeliveryKey = `warranty/${product?.response?.c_warranty ? `brand/${product?.response?.c_warranty?.toLowerCase()}` : "global"}`;
 
-  const warrantyData = await fetchStandardPageData(
-    {
-      content: {
-        page: {
-          key: `${localePrefix}${amplienceDeliveryKey}`,
-        },
-      },
-    },
-    context,
-  );
-  const editorsView = await fetchStandardPageData(
-    {
-      content: {
-        page: {
-          key: `${localePrefix}product/editors-view`,
-        },
-      },
-    },
-    context,
-  );
+  // const warrantyData = await fetchStandardPageData(
+  //   {
+  //     content: {
+  //       page: {
+  //         key: `${localePrefix}${amplienceDeliveryKey}`,
+  //       },
+  //     },
+  //   },
+  //   context,
+  // );
+  // const editorsView = await fetchStandardPageData(
+  //   {
+  //     content: {
+  //       page: {
+  //         key: `${localePrefix}product/editors-view`,
+  //       },
+  //     },
+  //   },
+  //   context,
+  // );
 
-  const sizeGuideDataKeyGender = product?.response?.c_gender?.toLowerCase();
-  const sizeGuideDataKeyCategory = product?.response?.c_categoryName?.toLowerCase();
-  const sizeGuidePlpKey = `${sizeGuideDataKeyGender}-${sizeGuideDataKeyCategory}`;
+  // const sizeGuideDataKeyGender = product?.response?.c_gender?.toLowerCase();
+  // const sizeGuideDataKeyCategory = product?.response?.c_categoryName?.toLowerCase();
+  // const sizeGuidePlpKey = `${sizeGuideDataKeyGender}-${sizeGuideDataKeyCategory}`;
 
-  const sizeGuideData = await fetchStandardPageData(
-    {
-      content: {
-        page: { key: `${localePrefix}product-size-guide/${sizeGuidePlpKey}` },
-      },
-    },
-    context,
-  );
+  // const sizeGuideData = await fetchStandardPageData(
+  //   {
+  //     content: {
+  //       page: { key: `${localePrefix}product-size-guide/${sizeGuidePlpKey}` },
+  //     },
+  //   },
+  //   context,
+  // );
 
-  const productTechSpecs = product?.techSpecs || {};
-  productTechSpecs.category = productTechSpecs?.category || null;
+  // const productTechSpecs = product?.techSpecs || {};
+  // productTechSpecs.category = productTechSpecs?.category || null;
 
-  const dataDictionary = await getContentItemByKey("dataDictionary");
+  // const dataDictionary = await getContentItemByKey("dataDictionary");
 
+  // return {
+  //   props: {
+  //     ...data,
+  //     dataDictionary,
+  //     sizeGuideData,
+  //     product: {
+  //       ...product,
+  //       techSpecs: productTechSpecs, // Ensure techSpecs have default values
+  //     },
+  //     shippingData,
+  //     warrantyData,
+  //     editorsView,
+  //     vse: vse || "",
+  //   },
+  // };
   return {
     props: {
-      ...data,
-      dataDictionary,
-      sizeGuideData,
-      product: {
-        ...product,
-        techSpecs: productTechSpecs, // Ensure techSpecs have default values
-      },
-      shippingData,
-      warrantyData,
-      editorsView,
-      vse: vse || "",
-    },
-  };
+      product
+    }
+  }
 }
 
 export default function ProductPage({
-  content,
-  dataDictionary,
+  // content,
+  // dataDictionary,
   product,
-  sizeGuideDataWomenWatches,
-  sizeGuideDataMenWatches,
-  shippingData,
-  warrantyData,
-  editorsView,
-  sizeGuideData,
+  // sizeGuideDataWomenWatches,
+  // sizeGuideDataMenWatches,
+  // shippingData,
+  // warrantyData,
+  // editorsView,
+  // sizeGuideData,
 }) {
-  const productTechSpecs = product?.techSpecs;
-  const productResponse = product?.response;
-  const dataDictionaryControl = dataDictionary?.pdpTabControl;
+  // const productTechSpecs = product?.techSpecs;
+  // const productResponse = product?.response;
+  // const dataDictionaryControl = dataDictionary?.pdpTabControl;
   console.log("PRODUCT", product);
-  console.log(
-    content,
-    dataDictionary,
-    product,
-    sizeGuideDataWomenWatches,
-    sizeGuideDataMenWatches,
-    shippingData,
-    warrantyData,
-    editorsView,
-    sizeGuideData,
-  );
   return (
     <div className="main-content">
       <div>{JSON.stringify(product)}</div>
