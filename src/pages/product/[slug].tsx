@@ -18,14 +18,14 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   const localePrefix = getLocalePrefix(context?.locale, context?.defaultLocale);
 
-  // const data = await fetchStandardPageData(
-  //   {
-  //     content: {
-  //       page: { key: `${localePrefix}product/${plpKey}` },
-  //     },
-  //   },
-  //   context,
-  // );
+  const data = await fetchStandardPageData(
+    {
+      content: {
+        page: { key: `${localePrefix}product/${plpKey}` },
+      },
+    },
+    context,
+  );
 
   const product = await getProductDetails({ productId: plpKey, method: "GET" });
 
@@ -108,6 +108,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   // };
   return {
     props: {
+      ...data,
       product,
       dataDictionary
     }
@@ -116,7 +117,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 export default function ProductPage({
   // content,
-  // dataDictionary,
   product,
   // sizeGuideDataWomenWatches,
   // sizeGuideDataMenWatches,
