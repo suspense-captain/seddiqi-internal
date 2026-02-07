@@ -50,28 +50,28 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     context,
   );
 
-  // const amplienceDeliveryKey = `warranty/${product?.response?.c_warranty ? `brand/${product?.response?.c_warranty?.toLowerCase()}` : "global"}`;
+  const amplienceDeliveryKey = `warranty/${product?.response?.c_warranty ? `brand/${product?.response?.c_warranty?.toLowerCase()}` : "global"}`;
 
-  // const warrantyData = await fetchStandardPageData(
-  //   {
-  //     content: {
-  //       page: {
-  //         key: `${localePrefix}${amplienceDeliveryKey}`,
-  //       },
-  //     },
-  //   },
-  //   context,
-  // );
-  // const editorsView = await fetchStandardPageData(
-  //   {
-  //     content: {
-  //       page: {
-  //         key: `${localePrefix}product/editors-view`,
-  //       },
-  //     },
-  //   },
-  //   context,
-  // );
+  const warrantyData = await fetchStandardPageData(
+    {
+      content: {
+        page: {
+          key: `${localePrefix}${amplienceDeliveryKey}`,
+        },
+      },
+    },
+    context,
+  );
+  const editorsView = await fetchStandardPageData(
+    {
+      content: {
+        page: {
+          key: `${localePrefix}product/editors-view`,
+        },
+      },
+    },
+    context,
+  );
 
   // const sizeGuideDataKeyGender = product?.response?.c_gender?.toLowerCase();
   // const sizeGuideDataKeyCategory = product?.response?.c_categoryName?.toLowerCase();
