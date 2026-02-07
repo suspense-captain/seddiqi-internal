@@ -73,9 +73,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     context,
   );
 
-  // const sizeGuideDataKeyGender = product?.response?.c_gender?.toLowerCase();
-  // const sizeGuideDataKeyCategory = product?.response?.c_categoryName?.toLowerCase();
-  // const sizeGuidePlpKey = `${sizeGuideDataKeyGender}-${sizeGuideDataKeyCategory}`;
+  const sizeGuideDataKeyGender = product?.response?.c_gender?.toLowerCase();
+  const sizeGuideDataKeyCategory = product?.response?.c_categoryName?.toLowerCase();
+  const sizeGuidePlpKey = `${sizeGuideDataKeyGender}-${sizeGuideDataKeyCategory}`;
 
   // const sizeGuideData = await fetchStandardPageData(
   //   {
