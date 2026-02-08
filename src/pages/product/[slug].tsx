@@ -109,11 +109,11 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 }
 
 export default function ProductPage({
-  content,
+  // content,
   product,
   dataDictionary,
-  sizeGuideDataWomenWatches,
-  sizeGuideDataMenWatches,
+  // sizeGuideDataWomenWatches,
+  // sizeGuideDataMenWatches,
   shippingData,
   warrantyData,
   editorsView,
@@ -122,7 +122,15 @@ export default function ProductPage({
   const productTechSpecs = product?.techSpecs;
   const productResponse = product?.response;
   const dataDictionaryControl = dataDictionary?.pdpTabControl;
+  // console.log("content", content);
   console.log("PRODUCT", product);
+  console.log("dataDictionary", dataDictionary);
+  // console.log("sizeGuideDataWomenWatches", sizeGuideDataWomenWatches);
+  // console.log("sizeGuideDataMenWatches", sizeGuideDataMenWatches);
+  console.log("shippingData", shippingData);
+  console.log("warrantyData", warrantyData);
+  console.log("editorsView", editorsView);
+  console.log("sizeGuideData", sizeGuideData);
   return (
     <div className="main-content">
       <div>{JSON.stringify(product)}</div>
