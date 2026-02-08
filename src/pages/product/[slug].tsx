@@ -93,7 +93,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   return {
     props: {
-      ...data,
+      // ...data,
       dataDictionary,
       sizeGuideData,
       product: {
