@@ -90,19 +90,21 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   productTechSpecs.category = productTechSpecs?.category || null;
 
   const dataDictionary = await getContentItemByKey("dataDictionary");
+  function safeSerialize(data: any) {
+    return JSON.parse(JSON.stringify(data ?? null));
+  }
 
   return {
     props: {
-      // ...data,
-      dataDictionary,
-      sizeGuideData,
-      product: {
+      dataDictionary: safeSerialize(dataDictionary),
+      sizeGuideData: safeSerialize(sizeGuideData),
+      product: safeSerialize({
         ...product,
-        techSpecs: productTechSpecs, // Ensure techSpecs have default values
-      },
-      shippingData,
-      warrantyData,
-      editorsView,
+        techSpecs: productTechSpecs,
+      }),
+      shippingData: safeSerialize(shippingData),
+      warrantyData: safeSerialize(warrantyData),
+      editorsView: safeSerialize(editorsView),
       vse: vse || "",
     },
   };
