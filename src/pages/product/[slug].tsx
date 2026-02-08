@@ -77,17 +77,17 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const sizeGuideDataKeyCategory = product?.response?.c_categoryName?.toLowerCase();
   const sizeGuidePlpKey = `${sizeGuideDataKeyGender}-${sizeGuideDataKeyCategory}`;
 
-  // const sizeGuideData = await fetchStandardPageData(
-  //   {
-  //     content: {
-  //       page: { key: `${localePrefix}product-size-guide/${sizeGuidePlpKey}` },
-  //     },
-  //   },
-  //   context,
-  // );
+  const sizeGuideData = await fetchStandardPageData(
+    {
+      content: {
+        page: { key: `${localePrefix}product-size-guide/${sizeGuidePlpKey}` },
+      },
+    },
+    context,
+  );
 
-  // const productTechSpecs = product?.techSpecs || {};
-  // productTechSpecs.category = productTechSpecs?.category || null;
+  const productTechSpecs = product?.techSpecs || {};
+  productTechSpecs.category = productTechSpecs?.category || null;
 
   const dataDictionary = await getContentItemByKey("dataDictionary");
 
