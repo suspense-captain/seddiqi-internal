@@ -21,7 +21,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const data = await fetchStandardPageData(
     {
       content: {
-        page: { key: `/` },
+        page: { key: `${localePrefix}product/${plpKey}` },
       },
     },
     context
@@ -124,11 +124,10 @@ export default function ProductPage({
   const productResponse = product?.response;
   const dataDictionaryControl = dataDictionary?.pdpTabControl;
 
-  console.log("content",content)
-
   return (
     <div className="main-content">
-      <BookAppointmentProvider>
+      {JSON.stringify(product)}
+      {/* <BookAppointmentProvider>
       <ProductDetailInfo
         product={product?.response}
         content={content}
@@ -139,16 +138,16 @@ export default function ProductPage({
         sizeGuideDataWomenWatches={sizeGuideDataWomenWatches}
         sizeGuideData={sizeGuideData}
       />
-      </BookAppointmentProvider>
-      {productTechSpecs.category &&
+      </BookAppointmentProvider> */}
+      {/* {productTechSpecs.category &&
       <PdpTabs productTechSpecs={productTechSpecs} amplienceData={""} productResponse={productResponse} dataDictionary={dataDictionaryControl} />
-      }
+      } */}
       {/* Other components like ScrollToTop and StickyWhatsapp */}
       {/*<StickyWhatsapp />*/}
-      <ScrollToTop />
+      {/* <ScrollToTop />
       {compact(content?.page?.components).map((content) => (
         <ContentBlock content={content} key={content?._meta.deliveryId} />
-      ))}
+      ))} */}
     </div>
   );
 }
