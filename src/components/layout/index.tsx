@@ -16,6 +16,9 @@ const Layout = ({ children, pageProps }: LayoutProps) => {
   const footerData = pageProps?.hierarchies?.pages?.find((data) =>
     data?.root?.key?.includes("footerNavigation")
   );
+
+  console.log("headerData", headerData)
+
   return (
     <SearchProvider>
       <HeaderProvider headerData={{ ...headerData }}>

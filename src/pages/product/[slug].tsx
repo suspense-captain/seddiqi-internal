@@ -21,15 +21,15 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const data = await fetchStandardPageData(
     {
       content: {
-        page: { key: `${localePrefix}product/${plpKey}` },
+        page: { key: `/` },
       },
     },
-    context,
+    context
   );
 
   const product = await getProductDetails({ productId: plpKey, method: "GET" });
 
-  if (isEmpty(product.response) || product?.error) {
+  if (isEmpty(product.response)|| product?.error) {
     return {
       redirect: {
         destination: `/${localePrefix}page-not-found`,
@@ -37,7 +37,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     };
   }
 
-  const shippingDeliveryKey = `shipping/${product?.response?.c_shippingContent ? product?.response?.brand.toLowerCase() : "global"}`;
+  const shippingDeliveryKey = `shipping/${product?.response?.c_shippingContent ? product?.response?.brand.toLowerCase() : "global"}`
 
   const shippingData = await fetchStandardPageData(
     {
@@ -47,7 +47,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         },
       },
     },
-    context,
+    context
   );
 
   const amplienceDeliveryKey = `warranty/${product?.response?.c_warranty ? `brand/${product?.response?.c_warranty?.toLowerCase()}` : "global"}`;
@@ -60,7 +60,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         },
       },
     },
-    context,
+    context
   );
   const editorsView = await fetchStandardPageData(
     {
@@ -70,11 +70,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         },
       },
     },
-    context,
+    context
   );
 
   const sizeGuideDataKeyGender = product?.response?.c_gender?.toLowerCase();
-  const sizeGuideDataKeyCategory = product?.response?.c_categoryName?.toLowerCase();
+  const sizeGuideDataKeyCategory =
+    product?.response?.c_categoryName?.toLowerCase();
   const sizeGuidePlpKey = `${sizeGuideDataKeyGender}-${sizeGuideDataKeyCategory}`;
 
   const sizeGuideData = await fetchStandardPageData(
@@ -83,39 +84,37 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         page: { key: `${localePrefix}product-size-guide/${sizeGuidePlpKey}` },
       },
     },
-    context,
+    context
   );
 
   const productTechSpecs = product?.techSpecs || {};
   productTechSpecs.category = productTechSpecs?.category || null;
 
-  const dataDictionary = await getContentItemByKey("dataDictionary");
-  function safeSerialize(data: any) {
-    return JSON.parse(JSON.stringify(data ?? null));
-  }
+  const dataDictionary = await getContentItemByKey('dataDictionary');
 
   return {
     props: {
-      dataDictionary: safeSerialize(dataDictionary),
-      sizeGuideData: safeSerialize(sizeGuideData),
-      product: safeSerialize({
+      ...data,
+      dataDictionary,
+      sizeGuideData,
+      product: {
         ...product,
-        techSpecs: productTechSpecs,
-      }),
-      shippingData: safeSerialize(shippingData),
-      warrantyData: safeSerialize(warrantyData),
-      editorsView: safeSerialize(editorsView),
+        techSpecs: productTechSpecs, // Ensure techSpecs have default values
+      },
+      shippingData,
+      warrantyData,
+      editorsView,
       vse: vse || "",
     },
   };
 }
 
 export default function ProductPage({
-  // content,
-  product,
+  content,
   dataDictionary,
-  // sizeGuideDataWomenWatches,
-  // sizeGuideDataMenWatches,
+  product,
+  sizeGuideDataWomenWatches,
+  sizeGuideDataMenWatches,
   shippingData,
   warrantyData,
   editorsView,
@@ -124,19 +123,12 @@ export default function ProductPage({
   const productTechSpecs = product?.techSpecs;
   const productResponse = product?.response;
   const dataDictionaryControl = dataDictionary?.pdpTabControl;
-  // console.log("content", content);
-  console.log("PRODUCT", product);
-  console.log("dataDictionary", dataDictionary);
-  // console.log("sizeGuideDataWomenWatches", sizeGuideDataWomenWatches);
-  // console.log("sizeGuideDataMenWatches", sizeGuideDataMenWatches);
-  console.log("shippingData", shippingData);
-  console.log("warrantyData", warrantyData);
-  console.log("editorsView", editorsView);
-  console.log("sizeGuideData", sizeGuideData);
+
+  console.log("content",content)
+
   return (
     <div className="main-content">
-      <div>{JSON.stringify(product)}</div>
-      {/* <BookAppointmentProvider>
+      <BookAppointmentProvider>
       <ProductDetailInfo
         product={product?.response}
         content={content}
@@ -147,16 +139,16 @@ export default function ProductPage({
         sizeGuideDataWomenWatches={sizeGuideDataWomenWatches}
         sizeGuideData={sizeGuideData}
       />
-      </BookAppointmentProvider> */}
-      {/* {productTechSpecs.category &&
+      </BookAppointmentProvider>
+      {productTechSpecs.category &&
       <PdpTabs productTechSpecs={productTechSpecs} amplienceData={""} productResponse={productResponse} dataDictionary={dataDictionaryControl} />
-      } */}
+      }
       {/* Other components like ScrollToTop and StickyWhatsapp */}
       {/*<StickyWhatsapp />*/}
-      {/* <ScrollToTop /> */}
-      {/* {compact(content?.page?.components).map((content) => (
+      <ScrollToTop />
+      {compact(content?.page?.components).map((content) => (
         <ContentBlock content={content} key={content?._meta.deliveryId} />
-      ))} */}
+      ))}
     </div>
   );
 }
