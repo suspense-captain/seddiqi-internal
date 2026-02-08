@@ -91,43 +91,37 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   const dataDictionary = await getContentItemByKey("dataDictionary");
 
-  // return {
-  //   props: {
-  //     ...data,
-  //     dataDictionary,
-  //     sizeGuideData,
-  //     product: {
-  //       ...product,
-  //       techSpecs: productTechSpecs, // Ensure techSpecs have default values
-  //     },
-  //     shippingData,
-  //     warrantyData,
-  //     editorsView,
-  //     vse: vse || "",
-  //   },
-  // };
   return {
     props: {
       ...data,
-      product,
-      dataDictionary
-    }
-  }
+      dataDictionary,
+      sizeGuideData,
+      product: {
+        ...product,
+        techSpecs: productTechSpecs, // Ensure techSpecs have default values
+      },
+      shippingData,
+      warrantyData,
+      editorsView,
+      vse: vse || "",
+    },
+  };
 }
 
 export default function ProductPage({
-  // content,
+  content,
   product,
-  // sizeGuideDataWomenWatches,
-  // sizeGuideDataMenWatches,
-  // shippingData,
-  // warrantyData,
-  // editorsView,
-  // sizeGuideData,
+  dataDictionary,
+  sizeGuideDataWomenWatches,
+  sizeGuideDataMenWatches,
+  shippingData,
+  warrantyData,
+  editorsView,
+  sizeGuideData,
 }) {
-  // const productTechSpecs = product?.techSpecs;
-  // const productResponse = product?.response;
-  // const dataDictionaryControl = dataDictionary?.pdpTabControl;
+  const productTechSpecs = product?.techSpecs;
+  const productResponse = product?.response;
+  const dataDictionaryControl = dataDictionary?.pdpTabControl;
   console.log("PRODUCT", product);
   return (
     <div className="main-content">
